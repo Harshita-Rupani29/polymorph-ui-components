@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Forward the commit-message file path (git passes it as $1) to the script.
+./scripts/commit-msg.sh "$@"

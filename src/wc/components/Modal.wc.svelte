@@ -1,0 +1,41 @@
+<svelte:options
+  customElement={{
+    tag: 'pui-modal',
+    shadow: 'open',
+    props: {
+      size: { type: 'String', reflect: true },
+      align: { type: 'String', reflect: true },
+      showOverlay: { type: 'Boolean', reflect: true, attribute: 'show-overlay' },
+      supportHardwareBackPress: { type: 'Boolean', attribute: 'support-hardware-back-press' },
+      enableTransition: { type: 'Boolean', reflect: true, attribute: 'enable-transition' },
+      transitionType: { type: 'String', reflect: true, attribute: 'transition-type' },
+      header: { type: 'Object' },
+      footer: { type: 'Object' },
+      debounceTime: { type: 'Number', attribute: 'debounce-time' },
+      leftImageTestId: { type: 'String', attribute: 'left-image-test-id' },
+      testId: { type: 'String', attribute: 'test-id' },
+      classes: { type: 'String' },
+      onclose: { type: 'Object' },
+      onheaderrightimageclick: { type: 'Object' },
+      onheaderleftimageclick: { type: 'Object' },
+      onprimarybuttonclick: { type: 'Object' },
+      onsecondarybuttonclick: { type: 'Object' },
+      onoverlayclick: { type: 'Object' },
+      onkeydown: { type: 'Object' }
+    }
+  }}
+/>
+
+<script lang="ts">
+  import Modal from '$lib/Modal/Modal.svelte';
+  let props = $props();
+</script>
+
+<Modal {...props}>
+  {#snippet content()}
+    <slot></slot>
+  {/snippet}
+  {#snippet footerSnippet()}
+    <slot name="footer"></slot>
+  {/snippet}
+</Modal>

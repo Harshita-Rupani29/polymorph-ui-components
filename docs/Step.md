@@ -1,0 +1,52 @@
+# Step
+
+An individual step within a Stepper. Displays either a numbered circle or an icon image, a text label, and a dashed separator line. When clicked, fires the `onclick` event with `{ selectedIndex }`. The separator is hidden for the last step via CSS `--step-separator-display: none`.
+
+## Usage
+
+```svelte
+<script>
+  import { Step } from 'polymorph-ui-components';
+</script>
+
+<Step />
+```
+
+## Props
+
+| Prop      | Type     | Required | Default | Description                                                                                                                                                            |
+| --------- | -------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| stepIndex | `number` | Yes      | `-`     | The 1-based step number displayed inside the circle (when no icon is provided).                                                                                        |
+| label     | `string` | Yes      | `-`     | Text label displayed next to the step circle.                                                                                                                          |
+| icon      | `string` | No       | `-`     | Optional URL of an icon image that replaces the step number circle.                                                                                                    |
+| classes   | `string` | No       | `-`     | CSS class string applied to the component's top-level element. Useful for theming — define classes with CSS variable overrides and pass them to create variant styles. |
+
+## Events
+
+| Event     | Type                                         | Description                                                                               |
+| --------- | -------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| onclick   | `(event: { selectedIndex: number }) => void` | Fires when the step is clicked. Receives { selectedIndex: number } with the step's index. |
+| onkeydown | `(event: KeyboardEvent) => void`             | Fires when a key is pressed while the step has focus.                                     |
+
+## CSS Variables
+
+Override these custom properties to theme the component.
+
+| Variable                                  | Default             | CSS Property     | Description                                                            |
+| ----------------------------------------- | ------------------- | ---------------- | ---------------------------------------------------------------------- |
+| `--step-flex-direction`                   | `row`               | flex-direction   | Layout direction of the step (row for horizontal layout).              |
+| `--step-index-container-height`           | `30px`              | height           | Height of the step number circle.                                      |
+| `--step-index-container-width`            | `30px`              | width            | Width of the step number circle.                                       |
+| `--step-index-container-radius`           | `50%`               | border-radius    | Corner rounding of the step number circle.                             |
+| `--step-index-container-background-color` | `#798fa5cc`         | background-color | Background color of the step number circle.                            |
+| `--step-separator-display`                     | `block`             | display          | Display mode of the separator line (set 'none' to hide for last step). |
+| `--step-separator-height`                      | `1px`               | height           | Height (thickness) of the separator line.                              |
+| `--step-separator-width`                       | `50px`              | width            | Width of the separator line.                                           |
+| `--step-separator-margin`                      | `0px 12px 0px 12px` | margin           | Margin around the separator line.                                      |
+| `--step-text-margin`                      | `0px 0px 0px 12px`  | margin           | Margin around the step label text.                                     |
+| `--step-text-font-size`                   | `inherit`           | font-size        | Font size of the step label text.                                      |
+| `--step-text-color`                       | `inherit`           | color            | Color of the step label text.                                          |
+| `--step-index-font-size`                  | `14px`              | font-size        | Font size of the step number inside the circle.                        |
+| `--step-index-color`                      | `white`             | color            | Color of the step number text.                                         |
+| `--step-separator-background-image`            | `repeating-linear-gradient(...)` | background-image | Background image pattern for the step separator line.           |
+| `--step-separator-background-image-color`      | `#798fa5cc`         | color (in gradient) | Color of the dashed separator line between steps.              |

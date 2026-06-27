@@ -1,0 +1,19 @@
+<svelte:options
+  customElement={{
+    tag: 'pui-loading-dots',
+    shadow: 'open',
+    props: {
+      dots: { type: 'Number', reflect: true },
+      animation: { type: 'String', reflect: true },
+      testId: { type: 'String', attribute: 'test-id' },
+      classes: { type: 'String' }
+    }
+  }}
+/>
+
+<script lang="ts">
+  import LoadingDots from '$lib/LoadingDots/LoadingDots.svelte';
+  let props = $props();
+</script>
+
+<LoadingDots {...props} />

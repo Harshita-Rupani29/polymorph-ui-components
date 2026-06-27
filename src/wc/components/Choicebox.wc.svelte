@@ -1,0 +1,25 @@
+<svelte:options
+  customElement={{
+    tag: 'pui-choicebox',
+    shadow: 'open',
+    props: {
+      selected: { type: 'Boolean', reflect: true },
+      mode: { type: 'String', reflect: true },
+      disabled: { type: 'Boolean', reflect: true },
+      testId: { type: 'String', attribute: 'test-id' },
+      classes: { type: 'String' },
+      onclick: { type: 'Object' }
+    }
+  }}
+/>
+
+<script lang="ts">
+  import Choicebox from '$lib/Choicebox/Choicebox.svelte';
+  let props = $props();
+</script>
+
+<Choicebox {...props}>
+  {#snippet children()}
+    <slot></slot>
+  {/snippet}
+</Choicebox>

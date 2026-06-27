@@ -1,0 +1,182 @@
+:root {
+  /* Huemint-generated — light: cool near-white, ink-black text, electric-blue accent, crimson/magenta pop */
+  --doc-bg: #fdfdff;
+  --doc-sidebar-bg: #f4f6fb;
+  --doc-demo-bg: #f4f6fb;
+  --doc-input-bg: #ffffff;
+  --doc-table-header-bg: #eef1f9;
+  --doc-code-bg: #edf1f8;
+  --doc-btn-bg: #ffffff;
+  --doc-btn-hover-bg: #eef1f9;
+
+  --doc-border: #e1e7f2;
+  --doc-border-light: #eef1f8;
+  --doc-btn-border: #cdd6e6;
+
+  --doc-text-heading: #0f1626;
+  --doc-text-primary: #2b3446;
+  --doc-text-secondary: #495568;
+  --doc-text-muted: #636d80;
+  --doc-text-faint: #9aa3b4;
+  --doc-code-color: #d6157f;
+
+  --doc-accent: #0268a8;
+  --doc-accent-text: #015d97;
+  --doc-accent-bg: #e3f3fe;
+  --doc-accent-hover-bg: #eef8ff;
+  --doc-accent-subtle-bg: #cdeaff;
+  --doc-accent-border: #34b6f0;
+
+  --doc-pre-bg: #0f1626;
+  --doc-pre-color: #e6ecf6;
+
+  /* Typography */
+  --doc-font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --doc-font-heading: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --doc-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Fira Code', Menlo, monospace;
+
+  /* Shape & elevation */
+  --doc-radius: 10px;
+  --doc-radius-lg: 16px;
+  --doc-radius-pill: 999px;
+  --doc-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.07);
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  /* Huemint-generated — dark: deep blue-black, electric-blue glow, hot-pink pop */
+  --doc-bg: #0a0e16;
+  --doc-sidebar-bg: #0e131e;
+  --doc-demo-bg: #121a27;
+  --doc-input-bg: #131b2a;
+  --doc-table-header-bg: #131b2a;
+  --doc-code-bg: #131b2a;
+  --doc-btn-bg: #131b2a;
+  --doc-btn-hover-bg: #1c2638;
+
+  --doc-border: #212d42;
+  --doc-border-light: #19222f;
+  --doc-btn-border: #212d42;
+
+  --doc-text-heading: #eaf1fb;
+  --doc-text-primary: #c3cee0;
+  --doc-text-secondary: #93a1b8;
+  --doc-text-muted: #6c7689;
+  --doc-text-faint: #4a576b;
+  --doc-code-color: #ff5cb8;
+
+  --doc-accent: #38b6f0;
+  --doc-accent-text: #8fd4ff;
+  --doc-accent-bg: #11273d;
+  --doc-accent-hover-bg: #0e2031;
+  --doc-accent-subtle-bg: #143049;
+  --doc-accent-border: #0277c4;
+
+  --doc-pre-bg: #070b12;
+  --doc-pre-color: #e6ecf6;
+
+  --doc-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 28px rgba(0, 0, 0, 0.4);
+
+  color-scheme: dark;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-family: var(--doc-font-heading);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 4px 0 0;
+  color: var(--doc-text-heading);
+}
+
+.category-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--doc-accent);
+  background: var(--doc-accent-bg);
+  padding: 4px 11px;
+  border-radius: var(--doc-radius-pill);
+}
+
+/* Component preview canvas — a fixed neutral surface (in both light & dark site
+   themes) so the unstyled monochrome components always render with full contrast.
+   `color` sets the currentColor the components inherit (dark ink on the light canvas). */
+.demo-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 24px;
+  background: #f7f8fb;
+  color: #1a1a22;
+  border-radius: var(--doc-radius-lg);
+  border: 1px solid #e6e6ee;
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.04),
+    0 10px 28px rgba(16, 24, 40, 0.1);
+}
+
+.state-display {
+  font-size: 13px;
+  color: var(--doc-text-muted);
+  margin: 4px 0 0;
+  font-style: italic;
+}
+
+.scroll-item {
+  flex-shrink: 0;
+  width: 100px;
+  height: 60px;
+  background: var(--doc-accent-subtle-bg);
+  border-radius: var(--doc-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--doc-accent-text);
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--doc-btn-border);
+  border-radius: var(--doc-radius);
+  background: var(--doc-btn-bg);
+  color: var(--doc-text-primary);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.toggle-btn:hover {
+  background: var(--doc-btn-hover-bg);
+}
+
+.context-menu-target {
+  padding: 32px;
+  background: var(--doc-accent-hover-bg);
+  border: 2px dashed var(--doc-accent-border);
+  border-radius: var(--doc-radius-lg);
+  text-align: center;
+  color: var(--doc-accent-text);
+  font-weight: 600;
+  cursor: context-menu;
+  user-select: none;
+}
+
+.hover-target {
+  padding: 8px 16px;
+  background: var(--doc-accent-bg);
+  border-radius: var(--doc-radius);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--doc-accent-text);
+}

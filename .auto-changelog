@@ -1,0 +1,10 @@
+{
+  "output": "docs/CHANGELOG.md",
+  "template": "./docs/templates/changelog.hbs",
+  "commitLimit": false,
+  "breakingPattern": "(!:)",
+  "unreleased": true,
+  "releaseSummary": true,
+  "hideCredit": false,
+  "ignoreCommitPattern": "(\\[skip ci\\])"
+}

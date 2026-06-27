@@ -1,0 +1,220 @@
+<script lang="ts">
+  import { fly } from 'svelte/transition';
+  import type { ToastDirection, ToastProperties } from './properties';
+  import type { FlyAnimationConfig } from '$lib/types';
+  import { onMount } from 'svelte';
+  import Img from '../Img/Img.svelte';
+
+  let {
+    duration = 2000,
+    leftIcon,
+    message = '',
+    subtext,
+    rightIcon,
+    direction,
+    overlapPage = true,
+    inAnimationOffset,
+    inAnimationDuration,
+    outAnimationOffset,
+    outAnimationDuration,
+    testId,
+    messageTestId,
+    subTextTestId,
+    closeIconTestId,
+    ontoasthide,
+    bottomContent,
+    classes
+  }: ToastProperties = $props();
+
+  const animationConfig: FlyAnimationConfig = $derived(getAnimationConfig(overlapPage, direction));
+
+  let showToast = $state(false);
+  let timeoutId = $state<ReturnType<typeof setTimeout> | null>(null);
+
+  function hideToast() {
+    showToast = false;
+  }
+
+  function handleAnimationEnd() {
+    ontoasthide?.();
+  }
+
+  function getAnimationConfig(
+    overlapPage: boolean,
+    toastDirection?: ToastDirection
+  ): FlyAnimationConfig {
+    let inX: number = 0;
+    let inY: number = 0;
+    let outX: number = 0;
+    let outY: number = 0;
+
+    switch (toastDirection) {
+      case 'left-to-right':
+        inX = -1 * (inAnimationOffset ?? 500);
+        outX = -1 * (outAnimationOffset ?? 500);
+        break;
+      case 'right-to-left':
+        inX = inAnimationOffset ?? 500;
+        outX = outAnimationOffset ?? 500;
+        break;
+      case 'bottom-to-top':
+        inY = inAnimationOffset ?? (overlapPage ? 500 : 20);
+        outY = outAnimationOffset ?? (overlapPage ? 500 : 20);
+        break;
+      case 'top-to-bottom':
+      default:
+        inY = -1 * (inAnimationOffset ?? (overlapPage ? 500 : 20));
+        outY = -1 * (outAnimationOffset ?? (overlapPage ? 100 : 20));
+        break;
+    }
+
+    return {
+      in: {
+        x: inX,
+        y: inY,
+        duration: inAnimationDuration ?? 400
+      },
+      out: {
+        x: outX,
+        y: outY,
+        duration: outAnimationDuration ?? 800
+      }
+    };
+  }
+
+  onMount(() => {
+    showToast = true;
+    timeoutId = setTimeout(hideToast, duration);
+
+    return () => {
+      if (timeoutId !== null) {
+        clearTimeout(timeoutId);
+      }
+    };
+  });
+</script>
+
+{#if showToast}
+  <div
+    class="toast {classes ?? ''}"
+    class:no-page-overlap={!overlapPage}
+    role="alert"
+    aria-live="assertive"
+    in:fly={animationConfig.in}
+    out:fly={animationConfig.out}
+    onoutroend={handleAnimationEnd}
+    data-pw={testId}
+  >
+    {#if typeof leftIcon === 'string' && leftIcon.length > 0}
+      <div class="toast-icon-wrapper">
+        <Img src={leftIcon} alt="" />
+      </div>
+    {/if}
+
+    <div class="toast-message" data-pw={messageTestId}>
+      {message}
+      {#if typeof subtext === 'string' && subtext.length > 0}
+        <div class="toast-subtext" data-pw={subTextTestId}>{subtext}</div>
+      {/if}
+
+      {#if typeof bottomContent === 'function'}
+        {@render bottomContent()}
+      {/if}
+    </div>
+
+    {#if typeof rightIcon === 'string' && rightIcon.length > 0}
+      <div
+        class="close-button"
+        tabindex="0"
+        role="button"
+        onclick={hideToast}
+        onkeypress={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            hideToast();
+          }
+        }}
+        data-pw={closeIconTestId}
+      >
+        <Img src={rightIcon} alt="Close" />
+      </div>
+    {/if}
+  </div>
+{/if}
+
+<style>
+  .toast {
+    padding: var(--toast-padding, 10px);
+    font-size: var(--toast-font-size, 14px);
+    font-family: var(--toast-font-family, inherit);
+    font-weight: var(--toast-font-weight);
+    height: var(--toast-height, fit-content);
+    border-radius: var(--toast-border-radius, 6px);
+    border: var(--toast-border, none);
+    border-style: var(--toast-border-style);
+    width: var(--toast-width, fit-content);
+    align-items: var(--toast-align-items, center);
+    margin: var(--toast-margin, 0px 10px 10px 10px);
+    justify-content: var(--toast-justify-content, space-between);
+    z-index: var(--toast-z-index, 1000);
+    display: var(--toast-display, flex);
+    position: var(--toast-position, absolute);
+    top: var(--toast-top, 10px);
+    left: var(--toast-left, 0);
+    right: var(--toast-right, 0);
+    background-color: var(--toast-background-color, #000000);
+    color: var(--toast-color, #fff);
+    box-shadow: var(--toast-box-shadow, 0 4px 12px rgba(0, 0, 0, 0.15));
+    opacity: var(--toast-opacity, 1);
+    box-sizing: var(--toast-box-sizing);
+  }
+
+  .no-page-overlap {
+    position: var(--toast-position, relative);
+  }
+
+  .toast-icon-wrapper {
+    display: flex;
+    width: var(--toast-icon-wrapper-width, 20px);
+    height: var(--toast-icon-wrapper-height, 20px);
+    margin: var(--toast-icon-margin, 0px 6px 0px 0px);
+    padding: var(--toast-icon-wrapper-padding, 1px);
+    align-items: center;
+
+    --image-height: var(--toast-icon-height, 100%);
+    --image-width: fit-content;
+    --image-filter: var(--toast-icon-filter, none);
+    --image-border-radius: var(--toast-icon-border-radius, 50%);
+  }
+
+  .toast-message {
+    display: var(--toast-message-display, flex);
+    flex: var(--toast-message-flex, 1);
+    padding: var(--toast-message-padding, 1px);
+    flex-direction: column;
+  }
+
+  .toast-subtext {
+    color: var(--toast-subtext-color, inherit);
+    font-size: var(--toast-subtext-font-size, inherit);
+    font-weight: var(--toast-subtext-font-weight, inherit);
+    margin: var(--toast-subtext-margin, 10px 0px 0px 0px);
+  }
+
+  .close-button {
+    width: var(--toast-close-button-width, 20px);
+    height: var(--toast-close-button-height, 20px);
+    cursor: var(--toast-close-button-cursor, pointer);
+    gap: var(--toast-close-button-gap, 6px);
+    margin: var(--toast-close-button-margin, 0px 0px 0px 10px);
+    display: var(--toast-close-button-display, flex);
+    align-items: var(--toast-close-button-align-items, center);
+    justify-content: var(--toast-close-button-justify-content, center);
+    padding: var(--toast-close-button-padding, 1px);
+
+    --image-height: var(--toast-icon-height, 100%);
+    --image-width: fit-content;
+    --image-filter: var(--toast-icon-filter, none);
+    --image-border-radius: var(--toast-icon-border-radius, 50%);
+  }
+</style>

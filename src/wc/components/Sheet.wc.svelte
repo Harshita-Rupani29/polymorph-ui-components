@@ -1,0 +1,30 @@
+<svelte:options
+  customElement={{
+    tag: 'pui-sheet',
+    shadow: 'open',
+    props: {
+      open: { type: 'Boolean', reflect: true },
+      side: { type: 'String', reflect: true },
+      title: { type: 'String', reflect: true },
+      showOverlay: { type: 'Boolean', reflect: true, attribute: 'show-overlay' },
+      showCloseButton: { type: 'Boolean', reflect: true, attribute: 'show-close-button' },
+      testId: { type: 'String', attribute: 'test-id' },
+      classes: { type: 'String' },
+      onclose: { type: 'Object' }
+    }
+  }}
+/>
+
+<script lang="ts">
+  import Sheet from '$lib/Sheet/Sheet.svelte';
+  let props = $props();
+</script>
+
+<Sheet {...props}>
+  {#snippet content()}
+    <slot></slot>
+  {/snippet}
+  {#snippet footer()}
+    <slot name="footer"></slot>
+  {/snippet}
+</Sheet>

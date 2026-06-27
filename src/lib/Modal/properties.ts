@@ -1,0 +1,42 @@
+import type { ButtonProperties } from '$lib/Button/properties';
+import type { ModalTransition } from '$lib/types';
+import type { Snippet } from 'svelte';
+
+export type ModalSize = 'large' | 'medium' | 'small' | 'fit-content';
+export type ModalAlign = 'top' | 'center' | 'bottom';
+
+export type ModalProperties = ModalEventProperties & {
+  size?: ModalSize;
+  align?: ModalAlign;
+  showOverlay?: boolean;
+  supportHardwareBackPress?: boolean;
+  enableTransition?: boolean;
+  transitionType?: ModalTransition;
+  header?: {
+    leftImage?: string;
+    rightImage?: string;
+    text?: string;
+    testId?: string;
+    buttonTestId?: string;
+  };
+  footer?: {
+    primaryButton?: ButtonProperties;
+    secondaryButton?: ButtonProperties;
+  };
+  debounceTime?: number;
+  leftImageTestId?: string;
+  testId?: string;
+  content?: Snippet;
+  footerSnippet?: Snippet;
+  classes?: string;
+};
+
+export type ModalEventProperties = {
+  onclose?: () => void;
+  onheaderrightimageclick?: (event: MouseEvent) => void;
+  onheaderleftimageclick?: (event: MouseEvent) => void;
+  onprimarybuttonclick?: (event: MouseEvent) => void;
+  onsecondarybuttonclick?: (event: MouseEvent) => void;
+  onoverlayclick?: () => void;
+  onkeydown?: (event: KeyboardEvent) => void;
+};

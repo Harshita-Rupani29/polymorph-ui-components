@@ -1,0 +1,45 @@
+# Accordion
+
+An expandable/collapsible container that uses CSS grid row animation for smooth open/close transitions. When `expand` is true, the content is visible (grid-template-rows: 1fr); when false, it collapses to 0fr. Transition takes 0.2s ease-out. Render children content using the default `children` snippet.
+
+## Usage
+
+```svelte
+<script>
+  import { Accordion } from 'polymorph-ui-components';
+</script>
+
+<Accordion />
+```
+
+## Props
+
+| Prop    | Type      | Required | Default | Description                                                                                                                                                                                                                |
+| ------- | --------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| expand  | `boolean` | No       | `false` | Controls whether the accordion content is expanded (visible) or collapsed (hidden). Uses CSS grid animation.                                                                                                               |
+| testId  | `string`  | No       | `-`     | Value applied to the `data-pw` attribute for Playwright test selectors.                                                                                                                                                    |
+| classes | `string`  | No       | `-`     | CSS class string applied to the component's top-level element. Useful for theming — define classes with CSS variable overrides (e.g., `.btn-primary { --button-color: #0070f3; }`) and pass them to create variant styles. |
+
+## Snippets
+
+Svelte 5 Snippet props — pass content blocks to the component.
+
+| Snippet  | Type      | Description                                     |
+| -------- | --------- | ----------------------------------------------- |
+| children | `Snippet` | Content rendered inside the accordion panel. |
+
+## Web Component
+
+Tag: `<pui-accordion>`
+
+```html
+<pui-accordion expand>
+  <p>Expandable content here</p>
+</pui-accordion>
+```
+
+### Slots
+
+| Slot Name   | Maps to Snippet | Description                                 |
+| ----------- | --------------- | ------------------------------------------- |
+| _(default)_ | `children`      | Content rendered inside the accordion body. |
