@@ -50,7 +50,7 @@
   }
 
   .track {
-    stroke: var(--gauge-track-color, currentColor);
+    stroke: var(--gauge-track-color, #a1a1aa);
     stroke-width: var(--gauge-stroke-width, 8);
   }
 

@@ -58,7 +58,7 @@
     gap: var(--snippet-gap, 8px);
     background: var(--snippet-background, transparent);
     border: var(--snippet-border, 1px solid currentColor);
-    border-radius: var(--snippet-border-radius, 6px);
+    border-radius: var(--snippet-border-radius, 8px);
     padding: var(--snippet-padding, 12px 16px);
     font-family: var(--snippet-font-family, monospace);
     font-size: var(--snippet-font-size, 14px);
@@ -93,7 +93,7 @@
     --button-text-color: var(--snippet-copy-color, currentColor);
     --button-border: var(--snippet-copy-border, none);
     --button-padding: var(--snippet-copy-padding, 4px);
-    --button-border-radius: var(--snippet-copy-border-radius, 4px);
+    --button-border-radius: var(--snippet-copy-border-radius, 6px);
     --button-cursor: var(--snippet-copy-cursor, pointer);
     --button-hover-color: var(--snippet-copy-hover-background, transparent);
     display: flex;

@@ -68,7 +68,7 @@
     box-shadow: var(--avatar-box-shadow, none);
     cursor: var(--avatar-cursor, default);
     overflow: hidden;
-    background-color: var(--avatar-background, transparent);
+    background-color: var(--avatar-background, #a1a1aa);
     font-family: inherit;
   }
 
@@ -102,7 +102,7 @@
   }
 
   .avatar-initials {
-    color: var(--avatar-text-color, currentColor);
+    color: var(--avatar-text-color, #18181b);
     font-weight: var(--avatar-font-weight, 600);
     font-family: var(--avatar-font-family, inherit);
     user-select: none;

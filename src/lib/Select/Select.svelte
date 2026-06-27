@@ -339,9 +339,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    box-sizing: border-box;
     gap: var(--select-trigger-gap, 4px);
-    min-height: var(--select-trigger-min-height, 40px);
-    padding: var(--select-trigger-padding, 8px 12px);
+    min-height: var(--select-trigger-min-height, 38px);
+    padding: var(--select-trigger-padding, 6px 12px);
     background: var(--select-trigger-background, #ffffff);
     border: var(--select-trigger-border, 1px solid currentColor);
     border-radius: var(--select-trigger-border-radius, 6px);
@@ -421,7 +422,7 @@
     margin-top: var(--select-dropdown-gap, 4px);
     background: var(--select-dropdown-background, #ffffff);
     border: var(--select-dropdown-border, 1px solid currentColor);
-    border-radius: var(--select-dropdown-border-radius, 6px);
+    border-radius: var(--select-dropdown-border-radius, 8px);
     box-shadow: var(--select-dropdown-shadow, 0 4px 12px rgba(0, 0, 0, 0.1));
     max-height: var(--select-dropdown-max-height, 200px);
     overflow-y: auto;
@@ -438,19 +439,19 @@
 
   .select-option:hover,
   .select-option.highlighted {
-    background: var(--select-option-hover-background, transparent);
+    background: var(--select-option-hover-background, #f4f4f5);
     color: var(--select-option-hover-color, var(--select-option-color, currentColor));
   }
 
   .select-option.selected {
-    background: var(--select-option-selected-background, currentColor);
-    color: var(--select-option-selected-color, var(--select-option-color, currentColor));
+    background: var(--select-option-selected-background, #18181b);
+    color: var(--select-option-selected-color, #ffffff);
   }
 
   .select-option.selected.highlighted {
     background: var(
       --select-option-selected-hover-background,
-      var(--select-option-selected-background, currentColor)
+      var(--select-option-selected-background, #18181b)
     );
   }
 
@@ -462,10 +463,10 @@
   }
 
   .select-trigger :global(.pill) {
-    --pill-background: var(--select-pill-background, currentColor);
-    --pill-color: var(--select-pill-color, currentColor);
+    --pill-background: var(--select-pill-background, #18181b);
+    --pill-color: var(--select-pill-color, #ffffff);
     --pill-border-radius: var(--select-pill-border-radius, 999px);
     --pill-padding: var(--select-pill-padding, 2px 8px);
-    --pill-font-size: var(--select-pill-font-size, 13px);
+    --pill-font-size: var(--select-pill-font-size, 14px);
   }
 </style>

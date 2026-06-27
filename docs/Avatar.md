@@ -50,8 +50,8 @@ Override these custom properties to theme the component.
 | `--avatar-box-shadow`       | `none`    | box-shadow       | Shadow effect around the avatar container.                                     |
 | `--avatar-cursor`           | `default` | cursor           | Cursor style when hovering over the avatar.                                    |
 | `--avatar-object-fit`       | `cover`   | object-fit       | How the avatar image fills its container.                                      |
-| `--avatar-background`       | `transparent` | background-color | Background color shown behind initials when no image is displayed.         |
-| `--avatar-text-color`       | `currentColor` | color           | Text color of the initials.                                                  |
+| `--avatar-background`       | `#a1a1aa` | background-color | Background color shown behind initials when no image is displayed.         |
+| `--avatar-text-color`       | `#18181b` | color           | Text color of the initials.                                                  |
 | `--avatar-small-font-size`  | `12px`    | font-size        | Font size of initials when size is `'small'`.                                  |
 | `--avatar-medium-font-size` | `14px`    | font-size        | Font size of initials when size is `'medium'`.                                 |
 | `--avatar-large-font-size`  | `20px`    | font-size        | Font size of initials when size is `'large'`.                                  |

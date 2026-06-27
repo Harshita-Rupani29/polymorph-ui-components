@@ -62,7 +62,7 @@ Override these custom properties to theme the component.
 | `--modal-margin`                                         | `-`                | margin                          | Outer margin of the modal overlay.                                 |
 | `--modal-overlay-background-color`                                     | `#00000066`        | background-color                | Background color of the semi-transparent overlay behind the modal. |
 | `--modal-content-background-color`                       | `#ffffff`          | background-color                | Background color of the modal content panel.                       |
-| `--modal-border-radius`                                  | `0px`              | border-radius                   | Corner rounding of the modal content panel.                        |
+| `--modal-border-radius`                                  | `8px`              | border-radius                   | Corner rounding of the modal content panel.                        |
 | `--modal-content-overflow`                               | `auto`             | overflow                        | Overflow behavior of the modal content panel.                      |
 | `--modal-content-border-top`                             | `-`                | border-top                      | Top border of the modal content panel.                             |
 | `--modal-display`                                        | `flex`             | display                         | Display property of the scrollable content area.                   |
@@ -97,12 +97,12 @@ Override these custom properties to theme the component.
 | `--modal-footer-secondary-button-font-family`            | `-`                | --button-font-family            | Font family of the secondary footer button.                        |
 | `--modal-footer-secondary-button-font-weight`            | `500`              | --button-font-weight            | Font weight of the secondary footer button.                        |
 | `--modal-footer-secondary-button-font-size`              | `14px`             | --button-font-size              | Font size of the secondary footer button.                          |
-| `--modal-footer-secondary-button-color`                  | `#000000`          | --button-color                  | Background color of the secondary footer button.                   |
-| `--modal-footer-secondary-button-text-color`             | `white`            | --button-text-color             | Text color of the secondary footer button.                         |
+| `--modal-footer-secondary-button-color`                  | `#e4e4e7`          | --button-color                  | Background color of the secondary footer button.                   |
+| `--modal-footer-secondary-button-text-color`             | `#18181b`          | --button-text-color             | Text color of the secondary footer button.                         |
 | `--modal-footer-secondary-button-height`                 | `fit-content`      | --button-height                 | Height of the secondary footer button.                             |
 | `--modal-footer-secondary-button-padding`                | `16px`             | --button-padding                | Padding inside the secondary footer button.                        |
 | `--modal-footer-secondary-button-margin`                 | `-`                | --button-margin                 | Margin around the secondary footer button.                         |
-| `--modal-footer-secondary-button-border-radius`          | `0px`              | --button-border-radius          | Corner rounding of the secondary footer button.                    |
+| `--modal-footer-secondary-button-border-radius`          | `6px`              | --button-border-radius          | Corner rounding of the secondary footer button.                    |
 | `--modal-footer-secondary-button-width`                  | `fit-content`      | --button-width                  | Width of the secondary footer button.                              |
 | `--modal-footer-secondary-button-cursor`                 | `pointer`          | --button-cursor                        | Cursor style of the secondary footer button.                       |
 | `--modal-footer-secondary-button-opacity`                | `1`                | --button-opacity                       | Opacity of the secondary footer button.                            |
@@ -119,12 +119,12 @@ Override these custom properties to theme the component.
 | `--modal-footer-primary-button-font-family`              | `-`                | --button-font-family            | Font family of the primary footer button.                          |
 | `--modal-footer-primary-button-font-weight`              | `500`              | --button-font-weight            | Font weight of the primary footer button.                          |
 | `--modal-footer-primary-button-font-size`                | `14px`             | --button-font-size              | Font size of the primary footer button.                            |
-| `--modal-footer-primary-button-color`                    | `#000000`          | --button-color                  | Background color of the primary footer button.                     |
+| `--modal-footer-primary-button-color`                    | `#18181b`          | --button-color                  | Background color of the primary footer button.                     |
 | `--modal-footer-primary-button-text-color`               | `white`            | --button-text-color             | Text color of the primary footer button.                           |
 | `--modal-footer-primary-button-height`                   | `fit-content`      | --button-height                 | Height of the primary footer button.                               |
 | `--modal-footer-primary-button-padding`                  | `16px`             | --button-padding                | Padding inside the primary footer button.                          |
 | `--modal-footer-primary-button-margin`                   | `-`                | --button-margin                 | Margin around the primary footer button.                           |
-| `--modal-footer-primary-button-border-radius`            | `0px`              | --button-border-radius          | Corner rounding of the primary footer button.                      |
+| `--modal-footer-primary-button-border-radius`            | `6px`              | --button-border-radius          | Corner rounding of the primary footer button.                      |
 | `--modal-footer-primary-button-width`                    | `fit-content`      | --button-width                  | Width of the primary footer button.                                |
 | `--modal-footer-primary-button-cursor`                   | `pointer`          | --button-cursor                        | Cursor style of the primary footer button.                         |
 | `--modal-footer-primary-button-opacity`                  | `1`                | --button-opacity                       | Opacity of the primary footer button.                              |

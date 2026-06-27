@@ -81,9 +81,9 @@ Override these custom properties to theme the component.
 
 | Variable                     | Default                                   | CSS Property     | Description                                                               |
 | ---------------------------- | ----------------------------------------- | ---------------- | ------------------------------------------------------------------------- |
-| `--pill-background`          | `transparent`                             | background-color | Background color of the pill.                                             |
+| `--pill-background`          | `#e4e4e7`                                 | background-color | Background color of the pill.                                             |
 | `--pill-color`               | `currentColor`                            | color            | Text color of the pill label.                                             |
-| `--pill-font-size`           | `13px`                                    | font-size        | Font size of the pill text.                                               |
+| `--pill-font-size`           | `14px`                                    | font-size        | Font size of the pill text.                                               |
 | `--pill-font-weight`         | `500`                                     | font-weight      | Font weight of the pill text.                                             |
 | `--pill-font-family`         | `-`                                       | font-family      | Font family of the pill text.                                             |
 | `--pill-padding`             | `6px 10px`                                | padding          | Inner padding of the pill.                                                |
@@ -93,7 +93,7 @@ Override these custom properties to theme the component.
 | `--pill-cursor`              | `pointer`                                 | cursor           | Cursor style when hovering over the pill.                                 |
 | `--pill-max-width`           | `-`                                       | max-width        | Maximum width of the pill. Text is truncated with ellipsis when exceeded. |
 | `--pill-text-overflow`       | `ellipsis`                                | text-overflow    | How overflowing text is displayed (e.g., ellipsis or clip).               |
-| `--pill-hover-background`    | `var(--pill-background, transparent)`     | background-color | Background color when hovering over the pill.                             |
+| `--pill-hover-background`    | `var(--pill-background, #e4e4e7)`         | background-color | Background color when hovering over the pill.                             |
 | `--pill-hover-color`         | `var(--pill-color, currentColor)`         | color            | Text color when hovering over the pill.                                   |
 | `--pill-disabled-opacity`    | `0.4`                                     | opacity          | Opacity of the pill when disabled.                                        |
 | `--pill-disabled-cursor`     | `not-allowed`                             | cursor           | Cursor style when the pill is disabled.                                   |

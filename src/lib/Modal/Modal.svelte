@@ -201,7 +201,7 @@
     cursor: auto;
     display: flex;
     flex-direction: column;
-    border-radius: var(--modal-border-radius, 0px);
+    border-radius: var(--modal-border-radius, 8px);
     overflow: var(--modal-content-overflow, auto);
     border-top: var(--modal-content-border-top);
   }
@@ -280,12 +280,12 @@
     --button-font-family: var(--modal-footer-secondary-button-font-family);
     --button-font-weight: var(--modal-footer-secondary-button-font-weight, 500);
     --button-font-size: var(--modal-footer-secondary-button-font-size, 14px);
-    --button-color: var(--modal-footer-secondary-button-color, #000000);
-    --button-text-color: var(--modal-footer-secondary-button-text-color, white);
+    --button-color: var(--modal-footer-secondary-button-color, #e4e4e7);
+    --button-text-color: var(--modal-footer-secondary-button-text-color, #18181b);
     --button-height: var(--modal-footer-secondary-button-height, fit-content);
     --button-padding: var(--modal-footer-secondary-button-padding, 16px);
     --button-margin: var(--modal-footer-secondary-button-margin);
-    --button-border-radius: var(--modal-footer-secondary-button-border-radius, 0px);
+    --button-border-radius: var(--modal-footer-secondary-button-border-radius, 6px);
     --button-width: var(--modal-footer-secondary-button-width, fit-content);
     --button-cursor: var(--modal-footer-secondary-button-cursor, pointer);
     --button-opacity: var(--modal-footer-secondary-button-opacity, 1);
@@ -308,12 +308,12 @@
     --button-font-family: var(--modal-footer-primary-button-font-family);
     --button-font-weight: var(--modal-footer-primary-button-font-weight, 500);
     --button-font-size: var(--modal-footer-primary-button-font-size, 14px);
-    --button-color: var(--modal-footer-primary-button-color, #000000);
+    --button-color: var(--modal-footer-primary-button-color, #18181b);
     --button-text-color: var(--modal-footer-primary-button-text-color, white);
     --button-height: var(--modal-footer-primary-button-height, fit-content);
     --button-padding: var(--modal-footer-primary-button-padding, 16px);
     --button-margin: var(--modal-footer-primary-button-margin);
-    --button-border-radius: var(--modal-footer-primary-button-border-radius, 0px);
+    --button-border-radius: var(--modal-footer-primary-button-border-radius, 6px);
     --button-width: var(--modal-footer-primary-button-width, fit-content);
     --button-cursor: var(--modal-footer-primary-button-cursor, pointer);
     --button-opacity: var(--modal-footer-primary-button-opacity, 1);

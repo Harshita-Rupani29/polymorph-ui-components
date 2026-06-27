@@ -149,7 +149,7 @@
     font-family: var(--toast-font-family, inherit);
     font-weight: var(--toast-font-weight);
     height: var(--toast-height, fit-content);
-    border-radius: var(--toast-border-radius, 6px);
+    border-radius: var(--toast-border-radius, 8px);
     border: var(--toast-border, none);
     border-style: var(--toast-border-style);
     width: var(--toast-width, fit-content);
@@ -162,7 +162,7 @@
     top: var(--toast-top, 10px);
     left: var(--toast-left, 0);
     right: var(--toast-right, 0);
-    background-color: var(--toast-background-color, #000000);
+    background-color: var(--toast-background-color, #18181b);
     color: var(--toast-color, #fff);
     box-shadow: var(--toast-box-shadow, 0 4px 12px rgba(0, 0, 0, 0.15));
     opacity: var(--toast-opacity, 1);

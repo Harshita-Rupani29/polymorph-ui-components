@@ -62,7 +62,7 @@ Override these custom properties to theme the component.
 | `--shimmer-width`         | `100%`                     | width              | Width of the shimmer rectangle.                           |
 | `--shimmer-height`        | `16px`                     | height             | Height of the shimmer rectangle.                          |
 | `--shimmer-border-radius` | `4px`                      | border-radius      | Corner rounding of the shimmer rectangle.                 |
-| `--shimmer-background`    | `transparent`              | background-color   | Base background color of the shimmer.                     |
+| `--shimmer-background`    | `#e4e4e7`                  | background-color   | Base background color of the shimmer.                     |
 | `--shimmer-highlight`     | `rgba(255, 255, 255, 0.4)` | gradient color     | Color of the sweeping highlight in the shimmer animation. |
 | `--shimmer-duration`      | `1.5s`                     | animation-duration | Duration of one complete shimmer animation cycle.         |
 | `--shimmer-opacity`       | `1`                        | opacity            | Opacity of the shimmer element.                           |

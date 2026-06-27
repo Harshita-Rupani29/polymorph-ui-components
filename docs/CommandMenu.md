@@ -81,7 +81,7 @@ Override these custom properties to theme the component.
 | Variable                       | Default                          | CSS Property     | Description                                          |
 | ------------------------------ | -------------------------------- | ---------------- | ---------------------------------------------------- |
 | `--command-menu-background`    | `#ffffff`                        | background-color | Background color of the command menu dialog panel.   |
-| `--command-menu-border-radius` | `12px`                           | border-radius    | Corner rounding of the dialog panel.                 |
+| `--command-menu-border-radius` | `8px`                            | border-radius    | Corner rounding of the dialog panel.                 |
 | `--command-menu-box-shadow`    | `0 16px 70px rgba(0, 0, 0, 0.2)` | box-shadow       | Shadow of the dialog panel.                          |
 | `--command-menu-width`         | `560px`                          | width            | Width of the dialog panel.                           |
 | `--command-menu-max-width`     | `90vw`                           | max-width        | Maximum width of the dialog panel.                   |
@@ -108,7 +108,7 @@ Override these custom properties to theme the component.
 | Variable                          | Default   | CSS Property     | Description                                             |
 | --------------------------------- | --------- | ---------------- | ------------------------------------------------------- |
 | `--command-menu-separator-height` | `1px`     | height           | Height of the line between search input and items list. |
-| `--command-menu-separator-color`  | `currentColor` | background-color | Color of the separator line.                       |
+| `--command-menu-separator-color`  | `#e4e4e7`      | background-color | Color of the separator line.                       |
 
 ### Item List
 
@@ -142,11 +142,11 @@ Override these custom properties to theme the component.
 | Variable                                | Default     | CSS Property     | Description                                                  |
 | --------------------------------------- | ----------- | ---------------- | ------------------------------------------------------------ |
 | `--command-menu-item-padding`           | `10px 12px` | padding          | Padding inside each command item row.                        |
-| `--command-menu-item-border-radius`     | `8px`       | border-radius    | Corner rounding of each command item row.                    |
+| `--command-menu-item-border-radius`     | `6px`       | border-radius    | Corner rounding of each command item row.                    |
 | `--command-menu-item-gap`               | `10px`      | gap              | Gap between icon, label, and shortcut within an item.        |
 | `--command-menu-item-font-size`         | `14px`      | font-size        | Font size of command item labels.                            |
 | `--command-menu-item-color`             | `currentColor` | color         | Text color of command items in their default state.          |
-| `--command-menu-item-active-background` | `transparent` | background-color | Background color of the currently highlighted/active item.   |
+| `--command-menu-item-active-background` | `#f4f4f5`     | background-color | Background color of the currently highlighted/active item.   |
 | `--command-menu-item-active-color`      | `currentColor` | color         | Text color of the currently highlighted/active item.         |
 | `--command-menu-item-disabled-opacity`  | `0.4`       | opacity          | Opacity of disabled command items.                           |
 | `--command-menu-item-icon-size`         | `20px`      | width, height    | Size of item icon images (when using icon URL, not Snippet). |
@@ -163,7 +163,7 @@ Override these custom properties to theme the component.
 | `--command-menu-kbd-background`    | `transparent`       | background-color | Background color of keyboard shortcut badges.                           |
 | `--command-menu-kbd-border`        | `1px solid currentColor` | border      | Border of keyboard shortcut badges.                                     |
 | `--command-menu-kbd-color`         | `currentColor`      | color            | Text color of keyboard shortcut badges.                                 |
-| `--command-menu-kbd-font-size`     | `11px`              | font-size        | Font size of keyboard shortcut badge text.                              |
+| `--command-menu-kbd-font-size`     | `12px`              | font-size        | Font size of keyboard shortcut badge text.                              |
 | `--command-menu-kbd-font-family`   | `inherit`           | font-family      | Font family of keyboard shortcut badge text.                            |
 | `--command-menu-kbd-font-weight`   | `500`               | font-weight      | Font weight of keyboard shortcut badge text.                            |
 | `--command-menu-kbd-box-shadow`    | `0 1px 0 currentColor` | box-shadow    | Box shadow of keyboard shortcut badges (gives a raised key appearance). |

@@ -84,7 +84,7 @@
     width: var(--grid-item-body-width, 64px);
     background-color: var(--grid-item-background-color, transparent);
     border: var(--grid-item-border, 1px solid currentColor);
-    border-radius: var(--grid-item-border-radius, 4px);
+    border-radius: var(--grid-item-border-radius, 8px);
     margin: var(--grid-item-margin, 8px 0 0 0);
     display: flex;
     justify-content: center;
@@ -120,7 +120,7 @@
     position: absolute;
     inset: 0px;
     margin: var(--grid-item-margin, 8px 0 0 0);
-    border-radius: var(--grid-item-border-radius, 4px);
+    border-radius: var(--grid-item-border-radius, 8px);
     border: var(--grid-item-loader-border, 32px solid currentColor);
     animation: clipperAnimation var(--grid-item-loader-duration, 3s) infinite linear;
   }

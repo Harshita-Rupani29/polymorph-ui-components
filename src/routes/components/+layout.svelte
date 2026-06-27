@@ -1,8 +1,9 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { marked } from 'marked';
-  import type { Snippet } from 'svelte';
   import { componentNav } from './_nav';
+  import DocTabs from './DocTabs.svelte';
+  import type { Snippet } from 'svelte';
 
   let { children }: { children: Snippet } = $props();
 
@@ -25,31 +26,97 @@
     }
   }
 
+  // Each doc's `## ` sections are routed into one of these tabs.
+  const TAB_ORDER = ['Usage', 'Props', 'Events', 'Styling'];
+  const HEADING_TO_TAB: Record<string, string> = {
+    Usage: 'Usage',
+    'Web Component': 'Usage',
+    Import: 'Usage',
+    Props: 'Props',
+    Snippets: 'Props',
+    'Type Reference': 'Props',
+    'Internal Dependencies': 'Props',
+    Methods: 'Props',
+    Properties: 'Props',
+    Accessibility: 'Props',
+    'Keyboard Interactions': 'Props',
+    'Key Symbols': 'Props',
+    Events: 'Events',
+    'CSS Variables': 'Styling',
+    'CSS Custom Properties': 'Styling'
+  };
+
   function renderMarkdown(md: string): string {
     const result = marked.parse(md);
-    if (typeof result === 'string') {
-      return result;
+    return typeof result === 'string' ? result : '';
+  }
+
+  type DocTab = { label: string; html: string };
+  type ParsedDoc = { preamble: string; tabs: DocTab[] };
+
+  function parseDoc(md: string): ParsedDoc {
+    const withoutTitle = md.replace(/^# .+\n+/, '');
+    const lines = withoutTitle.split('\n');
+
+    const preambleLines: string[] = [];
+    const sections: { heading: string; body: string }[] = [];
+    let current: { heading: string; body: string } | null = null;
+
+    for (const line of lines) {
+      const match = line.match(/^## (.+)$/);
+      if (match !== null) {
+        if (current !== null) {
+          sections.push(current);
+        }
+        current = { heading: match[1].trim(), body: line + '\n' };
+      } else if (current !== null) {
+        current.body += line + '\n';
+      } else {
+        preambleLines.push(line);
+      }
     }
-    return '';
+    if (current !== null) {
+      sections.push(current);
+    }
+
+    const buckets: Record<string, string[]> = { Usage: [], Props: [], Events: [], Styling: [] };
+    for (const section of sections) {
+      const tab = HEADING_TO_TAB[section.heading] ?? 'Usage';
+      buckets[tab].push(section.body);
+    }
+
+    const tabs: DocTab[] = [];
+    for (const label of TAB_ORDER) {
+      const tabMarkdown = buckets[label].join('\n').trim();
+      if (tabMarkdown.length > 0) {
+        tabs.push({ label, html: renderMarkdown(tabMarkdown) });
+      }
+    }
+
+    return { preamble: renderMarkdown(preambleLines.join('\n').trim()), tabs };
   }
 
   let currentSlug = $derived($page.url.pathname.split('/').pop() ?? '');
   let docName = $derived(slugToName[currentSlug] ?? '');
   let rawMarkdown = $derived(docs[docName] ?? '');
-  let cleanMarkdown = $derived(rawMarkdown.replace(/^# .+\n+/, ''));
-  let renderedHtml = $derived(cleanMarkdown ? renderMarkdown(cleanMarkdown) : '');
+  let parsed = $derived(rawMarkdown.length > 0 ? parseDoc(rawMarkdown) : null);
 </script>
 
 {@render children()}
 
-{#if renderedHtml}
+{#if parsed !== null && parsed.tabs.length > 0}
   <section class="docs-section">
     <hr class="docs-divider" />
     <h2 class="docs-title">Documentation</h2>
-    <div class="markdown-body">
-      <!-- eslint-disable svelte/no-at-html-tags -->
-      {@html renderedHtml}
-    </div>
+    {#if parsed.preamble.length > 0}
+      <div class="markdown-body doc-preamble">
+        <!-- eslint-disable svelte/no-at-html-tags -->
+        {@html parsed.preamble}
+      </div>
+    {/if}
+    {#key currentSlug}
+      <DocTabs tabs={parsed.tabs} />
+    {/key}
   </section>
 {/if}
 
@@ -70,10 +137,14 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--doc-text-heading);
-    margin: 0 0 20px;
+    margin: 0 0 16px;
   }
 
-  .markdown-body :global(h2) {
+  .doc-preamble {
+    margin-bottom: 20px;
+  }
+
+  :global(.markdown-body h2) {
     font-family: var(--doc-font-heading);
     font-size: 1.2rem;
     font-weight: 600;
@@ -84,28 +155,28 @@
     border-bottom: 1px solid var(--doc-border-light);
   }
 
-  .markdown-body :global(h3) {
+  :global(.markdown-body h3) {
     font-size: 1rem;
     font-weight: 600;
     color: var(--doc-text-primary);
     margin: 20px 0 8px;
   }
 
-  .markdown-body :global(p) {
+  :global(.markdown-body p) {
     font-size: 14px;
     line-height: 1.6;
     color: var(--doc-text-primary);
     margin: 8px 0;
   }
 
-  .markdown-body :global(table) {
+  :global(.markdown-body table) {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
     margin: 12px 0;
   }
 
-  .markdown-body :global(th) {
+  :global(.markdown-body th) {
     text-align: left;
     padding: 8px 12px;
     background: var(--doc-table-header-bg);
@@ -114,18 +185,18 @@
     color: var(--doc-text-primary);
   }
 
-  .markdown-body :global(td) {
+  :global(.markdown-body td) {
     padding: 8px 12px;
     border: 1px solid var(--doc-border);
     color: var(--doc-text-secondary);
     vertical-align: top;
   }
 
-  .markdown-body :global(tr:hover td) {
+  :global(.markdown-body tr:hover td) {
     background: var(--doc-demo-bg);
   }
 
-  .markdown-body :global(code) {
+  :global(.markdown-body code) {
     font-family: var(--doc-font-mono);
     font-size: 12.5px;
     background: var(--doc-code-bg);
@@ -134,7 +205,7 @@
     color: var(--doc-code-color);
   }
 
-  .markdown-body :global(pre) {
+  :global(.markdown-body pre) {
     background: var(--doc-pre-bg);
     border: 1px solid var(--doc-border);
     border-radius: var(--doc-radius-lg);
@@ -144,7 +215,7 @@
     box-shadow: var(--doc-shadow);
   }
 
-  .markdown-body :global(pre code) {
+  :global(.markdown-body pre code) {
     background: none;
     color: var(--doc-pre-color);
     padding: 0;
@@ -153,20 +224,20 @@
     line-height: 1.6;
   }
 
-  .markdown-body :global(ul),
-  .markdown-body :global(ol) {
+  :global(.markdown-body ul),
+  :global(.markdown-body ol) {
     padding-left: 20px;
     margin: 8px 0;
   }
 
-  .markdown-body :global(li) {
+  :global(.markdown-body li) {
     font-size: 14px;
     color: var(--doc-text-primary);
     line-height: 1.6;
     margin: 4px 0;
   }
 
-  .markdown-body :global(hr) {
+  :global(.markdown-body hr) {
     border: none;
     border-top: 1px solid var(--doc-border);
     margin: 24px 0;

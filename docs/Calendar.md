@@ -76,9 +76,9 @@ Override these custom properties to theme the component.
 | `--calendar-header-margin-bottom`        | `12px`              | margin-bottom    | Space below the navigation header row.                                                  |
 | `--calendar-header-font-size`            | `16px`              | font-size        | Font size of the month/year label in the header.                                        |
 | `--calendar-header-font-weight`          | `600`               | font-weight      | Font weight of the month/year label.                                                    |
-| `--calendar-header-color`                | `#000000`           | color            | Text color of the month/year label.                                                     |
+| `--calendar-header-color`                | `#18181b`           | color            | Text color of the month/year label.                                                     |
 | `--calendar-nav-button-size`             | `32px`              | width, height    | Size of the previous/next navigation arrow buttons.                                     |
-| `--calendar-nav-button-border-radius`    | `4px`               | border-radius    | Corner rounding of the navigation arrow buttons.                                        |
+| `--calendar-nav-button-border-radius`    | `6px`               | border-radius    | Corner rounding of the navigation arrow buttons.                                        |
 | `--calendar-nav-button-color`            | `currentColor`           | color            | Color of the navigation arrow SVG icons.                                                |
 | `--calendar-nav-button-hover-background` | `transparent`           | background-color | Background color of the navigation arrows on hover.                                     |
 | `--calendar-day-name-font-size`          | `12px`              | font-size        | Font size of the day-of-week header labels (Sun, Mon, etc.).                            |
@@ -88,21 +88,22 @@ Override these custom properties to theme the component.
 | `--calendar-cell-size`                   | `36px`              | width, height    | Size of each day number cell in the grid.                                               |
 | `--calendar-cell-font-size`              | `14px`              | font-size        | Font size of the day numbers.                                                           |
 | `--calendar-cell-border-radius`          | `50%`               | border-radius    | Corner rounding of day cells. Use 50% for circles, a smaller value for rounded squares. |
-| `--calendar-cell-color`                  | `#000000`           | color            | Text color of selectable day numbers.                                                   |
+| `--calendar-cell-color`                  | `#18181b`           | color            | Text color of selectable day numbers.                                                   |
 | `--calendar-cell-hover-background`       | `transparent`           | background-color | Background color of day cells on hover.                                                 |
-| `--calendar-focus-ring-color`            | `#000000`           | outline-color    | Color of the focus ring shown on day cells when focused via keyboard.                   |
-| `--calendar-today-border`                | `1px solid #000000` | border           | Border applied to today's date cell to distinguish it.                                  |
+| `--calendar-focus-ring-color`            | `#18181b`           | outline-color    | Color of the focus ring shown on day cells when focused via keyboard.                   |
+| `--calendar-today-border`                | `1px solid #18181b` | border           | Border applied to today's date cell to distinguish it.                                  |
 | `--calendar-today-font-weight`           | `700`               | font-weight      | Font weight of today's date number.                                                     |
-| `--calendar-selected-background`         | `#000000`           | background-color | Background color of the selected date cell.                                             |
+| `--calendar-selected-background`         | `#18181b`           | background-color | Background color of the selected date cell.                                             |
 | `--calendar-selected-color`              | `#ffffff`           | color            | Text color of the selected date cell.                                                   |
-| `--calendar-range-background`            | `currentColor`           | background-color | Background color of cells between range start and end dates.                            |
-| `--calendar-range-start-background`      | `#000000`           | background-color | Background color of the range start date cell.                                          |
-| `--calendar-range-end-background`        | `#000000`           | background-color | Background color of the range end date cell.                                            |
+| `--calendar-range-background`            | `#f4f4f5`                | background-color | Background tint of cells between range start and end dates.                             |
+| `--calendar-range-color`                 | `#18181b`                | color            | Text color of cells between range start and end dates.                                  |
+| `--calendar-range-start-background`      | `#18181b`           | background-color | Background color of the range start date cell.                                          |
+| `--calendar-range-end-background`        | `#18181b`           | background-color | Background color of the range end date cell.                                            |
 | `--calendar-range-start-color`           | `#ffffff`           | color            | Text color of the range start date cell.                                                |
 | `--calendar-range-end-color`             | `#ffffff`           | color            | Text color of the range end date cell.                                                  |
-| `--calendar-disabled-color`              | `currentColor`           | color            | Text color of disabled and out-of-range day numbers.                                    |
+| `--calendar-disabled-color`              | `#a1a1aa`           | color            | Text color of disabled and out-of-range day numbers.                                    |
 | `--calendar-disabled-cursor`             | `not-allowed`       | cursor           | Cursor shown when hovering over disabled day cells.                                     |
-| `--calendar-outside-month-color`         | `currentColor`           | color            | Text color of day numbers that belong to the previous or next month.                    |
+| `--calendar-outside-month-color`         | `#a1a1aa`           | color            | Text color of day numbers that belong to the previous or next month.                    |
 
 ## Internal Dependencies
 

@@ -30,7 +30,7 @@ Override these custom properties to theme the component.
 | `--badge-wrap-margin`          | `0px 12px 10px 0px`     | margin           | Outer margin of the badge wrapper.                |
 | `--badge-wrap-padding`         | `8px 8px 8px 8px`       | padding          | Inner padding of the badge wrapper.               |
 | `--badge-color`                | `#fff`                  | color            | Text color inside the badge bubble.               |
-| `--badge-background`           | `currentColor`          | background-color | Background color of the badge bubble.             |
+| `--badge-background`           | `#18181b`          | background-color | Background color of the badge bubble.             |
 | `--badge-font-size`            | `12px`                  | font-size        | Font size of the badge text.                      |
 | `--badge-font-family`          | `inherit`               | font-family      | Font family of the badge text.                    |
 | `--badge-padding`              | `3px 8px`               | padding          | Padding inside the badge bubble.                  |

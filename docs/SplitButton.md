@@ -60,14 +60,14 @@ Override these custom properties to theme the component.
 
 | Variable                                  | Default                                      | CSS Property     | Description                                                              |
 | ----------------------------------------- | -------------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
-| `--split-button-primary-background`       | `#000000`                                    | background-color | Background color of the primary action button.                           |
+| `--split-button-primary-background`       | `#18181b`                                    | background-color | Background color of the primary action button.                           |
 | `--split-button-primary-color`            | `white`                                      | color            | Text color of the primary action button label.                           |
 | `--split-button-primary-padding`          | `8px 16px`                                   | padding          | Inner padding of the primary action button.                              |
 | `--split-button-primary-font-size`        | `14px`                                       | font-size        | Font size of the primary action button text.                             |
 | `--split-button-primary-font-weight`      | `500`                                        | font-weight      | Font weight of the primary action button text.                           |
 | `--split-button-primary-font-family`      | `-`                                          | font-family      | Font family of the primary action button text.                           |
 | `--split-button-primary-border`           | `none`                                       | border           | Border style of the primary action button.                               |
-| `--split-button-primary-border-radius`    | `4px 0 0 4px`                                | border-radius    | Corner rounding of the primary button (left corners rounded by default). |
+| `--split-button-primary-border-radius`    | `6px 0 0 6px`                                | border-radius    | Corner rounding of the primary button (left corners rounded by default). |
 | `--split-button-primary-hover-background` | inherits `--split-button-primary-background` | background-color | Background color of the primary button on hover.                         |
 | `--split-button-primary-hover-color`      | inherits `--split-button-primary-color`      | color            | Text color of the primary button on hover.                               |
 
@@ -75,11 +75,11 @@ Override these custom properties to theme the component.
 
 | Variable                                  | Default                                      | CSS Property     | Description                                                                               |
 | ----------------------------------------- | -------------------------------------------- | ---------------- | ----------------------------------------------------------------------------------------- |
-| `--split-button-trigger-background`       | `#000000`                                    | background-color | Background color of the dropdown trigger area.                                            |
+| `--split-button-trigger-background`       | `#18181b`                                    | background-color | Background color of the dropdown trigger area.                                            |
 | `--split-button-trigger-color`            | `white`                                      | color            | Color of the dropdown arrow icon.                                                         |
 | `--split-button-trigger-padding`          | `8px`                                        | padding          | Inner padding of the dropdown trigger (applied to `.menu-trigger` via `:global`).         |
 | `--split-button-trigger-separator`        | `1px solid rgba(255, 255, 255, 0.3)`         | border-left      | Left border acting as a visual separator between the primary button and dropdown trigger. |
-| `--split-button-trigger-border-radius`    | `0 4px 4px 0`                                | border-radius    | Corner rounding of the dropdown trigger (right corners rounded by default).               |
+| `--split-button-trigger-border-radius`    | `0 6px 6px 0`                                | border-radius    | Corner rounding of the dropdown trigger (right corners rounded by default).               |
 | `--split-button-trigger-hover-background` | inherits `--split-button-trigger-background` | background-color | Background color of the dropdown trigger on hover.                                        |
 | `--split-button-trigger-hover-color`      | inherits `--split-button-trigger-color`      | color            | Arrow color of the dropdown trigger on hover.                                             |
 
@@ -100,6 +100,19 @@ Override these custom properties to theme the component.
 ### Dropdown Menu
 
 The dropdown uses the Menu component internally. Style it with Menu's CSS variables (prefixed `--menu-*`). The SplitButton sets `--menu-container-position: static` so the dropdown positions relative to the `.split-button` container.
+
+Because the trigger area uses light-on-dark colors for the arrow, SplitButton provides its own opaque, legible defaults for the dropdown menu (the menu would otherwise inherit the trigger's `color`). Override these to theme the dropdown:
+
+| Variable                                            | Default             | CSS Property     | Description                                            |
+| --------------------------------------------------- | ------------------- | ---------------- | ------------------------------------------------------ |
+| `--split-button-menu-item-color`                    | `#18181b`           | color            | Text color of dropdown menu items.                     |
+| `--split-button-menu-item-danger-color`             | `#18181b`           | color            | Text color of danger menu items.                       |
+| `--split-button-menu-item-hover-background`         | `#f4f4f5`           | background-color | Background of a menu item on hover.                    |
+| `--split-button-menu-item-focus-background`         | `#f4f4f5`           | background-color | Background of a menu item on keyboard focus.           |
+| `--split-button-menu-item-danger-hover-background`  | `#f4f4f5`           | background-color | Background of a danger menu item on hover.             |
+| `--split-button-menu-item-danger-focus-background`  | `#f4f4f5`           | background-color | Background of a danger menu item on keyboard focus.    |
+| `--split-button-menu-border`                        | `1px solid #e4e4e7` | border           | Border of the dropdown menu surface.                   |
+| `--split-button-menu-separator-color`               | `#e4e4e7`           | background-color | Color of separators between menu items.               |
 
 ## Type Reference
 

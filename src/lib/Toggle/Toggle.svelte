@@ -54,8 +54,8 @@
     left: var(--toggle-slider-left, 0);
     right: var(--toggle-slider-right, 0);
     bottom: var(--toggle-slider-bottom, 0);
-    background-color: var(--toggle-slider-unchecked-color, transparent);
-    border: var(--toggle-slider-border, 1px solid currentColor);
+    background-color: var(--toggle-slider-unchecked-color, #e4e4e7);
+    border: var(--toggle-slider-border, none);
     box-sizing: border-box;
     -webkit-transition: var(--toggle-slider-transition, 0.4s);
     transition: var(--toggle-slider-transition, 0.4s);
@@ -76,7 +76,7 @@
   }
 
   .input-checkbox:checked + .slider {
-    background-color: var(--toggle-slider-checked-color, currentColor);
+    background-color: var(--toggle-slider-checked-color, #18181b);
   }
 
   .input-checkbox:focus + .slider {

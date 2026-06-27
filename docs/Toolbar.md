@@ -1,6 +1,6 @@
 # Toolbar
 
-A fixed-position header bar with a back button (left), center title text, and customizable left/center/right content areas via Snippet slots. The `additionalContent` snippet renders a second row below the main toolbar content. If `leftContent` snippet is provided, it replaces the default back button. If `centerContent` snippet is provided, it replaces the `text` prop.
+A sticky header bar with a back button (left), center title text, and customizable left/center/right content areas via Snippet slots. The `additionalContent` snippet renders a second row below the main toolbar content. If `leftContent` snippet is provided, it replaces the default back button. If `centerContent` snippet is provided, it replaces the `text` prop.
 
 ## Usage
 
@@ -48,13 +48,13 @@ Override these custom properties to theme the component.
 | ----------------------------------------- | ------------------------ | --------------- | ---------------------------------------------------- |
 | `--toolbar-padding`                       | `0px`                    | padding         | Inner padding of the toolbar container.              |
 | `--toolbar-height`                        | `fit-content`            | height          | Height of the toolbar.                               |
-| `--toolbar-width`                         | `100vw`                  | width           | Width of the toolbar.                                |
-| `--toolbar-position`                      | `fixed`                  | position        | CSS position (fixed by default, sticks to viewport). |
+| `--toolbar-width`                         | `100%`                   | width           | Width of the toolbar.                                |
+| `--toolbar-position`                      | `sticky`                 | position        | CSS position (sticky by default; pins to the top of its scroll container). Override with `fixed` to pin to the viewport. |
 | `--toolbar-top`                           | `0`                      | top             | Top position of the toolbar.                         |
 | `--toolbar-left`                          | `0`                      | left            | Left position of the toolbar.                        |
 | `--toolbar-right`                         | `0`                      | right           | Right position of the toolbar.                       |
 | `--toolbar-background`                    | `#ffffff`                | background      | Background color of the toolbar.                     |
-| `--toolbar-box-shadow`                    | `0px 2px 12px currentColor` | box-shadow      | Box shadow of the toolbar.                           |
+| `--toolbar-box-shadow`                    | `0px 2px 12px rgba(0, 0, 0, 0.1)` | box-shadow      | Box shadow of the toolbar.                           |
 | `--toolbar-z-index`                       | `10`                     | z-index         | Z-index stacking order of the toolbar.               |
 | `--toolbar-border-radius`                 | `0px`                    | border-radius   | Corner rounding of the toolbar.                      |
 | `--toolbar-content-padding`               | `0px`                    | padding         | Padding inside the main content row.                 |

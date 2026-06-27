@@ -57,7 +57,7 @@ Override these custom properties to theme the component.
 | -------------------------------------- | ------------------- | ---------------- | --------------------------------------------------------------------------------- |
 | `--keyboard-input-gap`                 | `4px`               | gap              | Spacing between key badges and separators.                                        |
 | `--keyboard-input-font-family`         | `inherit`           | font-family      | Font family for the entire component.                                             |
-| `--keyboard-input-font-size`           | `13px`              | font-size        | Font size of the entire component.                                                |
+| `--keyboard-input-font-size`           | `14px`              | font-size        | Font size of the entire component.                                                |
 | `--keyboard-input-cursor`              | `default`           | cursor           | Cursor style when hovering over the component.                                    |
 | `--keyboard-input-separator-color`     | `currentColor`      | color            | Text color of the separator character between keys.                               |
 | `--keyboard-input-separator-font-size` | `0.85em`            | font-size        | Font size of the separator character.                                             |
@@ -66,7 +66,7 @@ Override these custom properties to theme the component.
 | `--keyboard-input-key-color`           | `currentColor`      | color            | Text color inside key badges.                                                     |
 | `--keyboard-input-key-background`      | `transparent`       | background-color | Background color of key badges.                                                   |
 | `--keyboard-input-key-border`          | `1px solid currentColor` | border      | Border of key badges.                                                             |
-| `--keyboard-input-key-border-radius`   | `4px`               | border-radius    | Corner rounding of key badges.                                                    |
+| `--keyboard-input-key-border-radius`   | `6px`               | border-radius    | Corner rounding of key badges.                                                    |
 | `--keyboard-input-key-box-shadow`      | `0 1px 0 currentColor` | box-shadow    | Shadow below key badges giving a raised keyboard key effect.                      |
 | `--keyboard-input-key-min-width`       | `1.6em`             | min-width        | Minimum width of each key badge (ensures narrow keys like "K" are not too small). |
 | `--keyboard-input-key-padding`         | `2px 6px`           | padding          | Inner padding of key badges.                                                      |

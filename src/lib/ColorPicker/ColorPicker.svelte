@@ -319,7 +319,7 @@
   }
 
   .color-picker-label {
-    font-size: var(--color-picker-label-font-size, 13px);
+    font-size: var(--color-picker-label-font-size, 14px);
     font-weight: var(--color-picker-label-font-weight, 500);
     color: var(--color-picker-label-color, currentColor);
     letter-spacing: var(--color-picker-label-letter-spacing, 0.01em);
@@ -335,8 +335,8 @@
 
   .color-picker-swatch-btn {
     --button-color: var(--color-picker-swatch-btn-background, transparent);
-    --button-border: var(--color-picker-swatch-btn-border, 1px solid currentColor);
-    --button-border-radius: var(--color-picker-swatch-btn-border-radius, 10px 0 0 10px);
+    --button-border: var(--color-picker-swatch-btn-border, 1px solid #18181b);
+    --button-border-radius: var(--color-picker-swatch-btn-border-radius, 6px 0 0 6px);
     --button-hover-color: var(--color-picker-swatch-btn-hover-background, transparent);
     --button-padding: var(--color-picker-swatch-padding, 5px);
     --button-width: fit-content;
@@ -344,14 +344,14 @@
   }
 
   .color-picker-swatch-btn.standalone {
-    --button-border-radius: var(--color-picker-swatch-btn-border-radius, 10px);
+    --button-border-radius: var(--color-picker-swatch-btn-border-radius, 6px);
   }
 
   .color-picker-checkerboard {
     display: block;
     width: var(--color-picker-swatch-size, 26px);
     height: var(--color-picker-swatch-size, 26px);
-    border-radius: var(--color-picker-swatch-border-radius, 5px);
+    border-radius: var(--color-picker-swatch-border-radius, 6px);
     overflow: hidden;
     background-image:
       linear-gradient(45deg, #ccc 25%, transparent 25%),
@@ -382,10 +382,10 @@
 
   .color-picker-input-wrap :global(.color-picker-text-input) {
     --input-border: 1px solid currentColor;
-    --input-radius: 0 10px 10px 0;
+    --input-radius: 0 6px 6px 0;
     --input-margin: 0;
     --input-padding: 8px 12px;
-    --input-font-size: 13px;
+    --input-font-size: 14px;
     --input-font-weight: 500;
     --input-font-family: var(
       --color-picker-mono-font,
@@ -414,7 +414,7 @@
     padding: var(--color-picker-popover-padding, 12px);
     background: var(--color-picker-popover-background, #ffffff);
     border: var(--color-picker-popover-border, 1px solid currentColor);
-    border-radius: var(--color-picker-popover-border-radius, 12px);
+    border-radius: var(--color-picker-popover-border-radius, 8px);
     box-shadow: var(
       --color-picker-popover-shadow,
       0 4px 24px rgba(0, 0, 0, 0.12),
@@ -560,7 +560,7 @@
   }
 
   .cp-field-label {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--color-picker-field-label-color, currentColor);
     text-transform: uppercase;

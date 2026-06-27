@@ -98,7 +98,7 @@ Override these custom properties to theme the component.
 | `--select-dropdown-gap`           | `4px`                           | margin-top    | Gap between the trigger and the dropdown panel.  |
 | `--select-dropdown-background`    | `#ffffff`                       | background    | Background color of the dropdown panel.          |
 | `--select-dropdown-border`        | `1px solid currentColor`        | border        | Border of the dropdown panel.                    |
-| `--select-dropdown-border-radius` | `6px`                           | border-radius | Corner rounding of the dropdown panel.           |
+| `--select-dropdown-border-radius` | `8px`                           | border-radius | Corner rounding of the dropdown panel.           |
 | `--select-dropdown-shadow`        | `0 4px 12px rgba(0, 0, 0, 0.1)` | box-shadow    | Box shadow of the dropdown panel.                |
 | `--select-dropdown-max-height`    | `200px`                         | max-height    | Maximum height of the dropdown (scrolls beyond). |
 | `--select-dropdown-z-index`       | `10`                            | z-index       | Stack order of the dropdown panel.               |
@@ -110,10 +110,10 @@ Override these custom properties to theme the component.
 | `--select-option-padding`                   | `8px 12px`                                     | padding      | Padding inside each dropdown option.                  |
 | `--select-option-color`                     | `currentColor`                                 | color        | Text color of dropdown options.                       |
 | `--select-option-font-size`                 | `inherit`                                      | font-size    | Font size of dropdown options.                        |
-| `--select-option-hover-background`          | `transparent`                                  | background   | Background of options on hover or keyboard highlight. |
+| `--select-option-hover-background`          | `#f4f4f5`                                       | background   | Background of options on hover or keyboard highlight. |
 | `--select-option-hover-color`               | inherits `--select-option-color`               | color        | Text color of options on hover or keyboard highlight. |
-| `--select-option-selected-background`       | `currentColor`                                 | background   | Background of selected options.                       |
-| `--select-option-selected-color`            | inherits `--select-option-color`               | color        | Text color of selected options.                       |
+| `--select-option-selected-background`       | `#18181b`                                       | background   | Background of selected options.                       |
+| `--select-option-selected-color`            | `#ffffff`                                       | color        | Text color of selected options.                       |
 | `--select-option-selected-hover-background` | inherits `--select-option-selected-background` | background   | Background of selected options on hover.              |
 
 ### Empty State
@@ -131,11 +131,11 @@ These variables style the Pill components shown for selected items in multi-sele
 
 | Variable                      | Default   | CSS Property  | Description                              |
 | ----------------------------- | --------- | ------------- | ---------------------------------------- |
-| `--select-pill-background`    | `currentColor` | background    | Background color of selected item pills. |
-| `--select-pill-color`         | `currentColor` | color         | Text color of selected item pills.       |
+| `--select-pill-background`    | `#18181b`      | background    | Background color of selected item pills. |
+| `--select-pill-color`         | `#ffffff`      | color         | Text color of selected item pills.       |
 | `--select-pill-border-radius` | `999px`   | border-radius | Corner rounding of selected item pills.  |
 | `--select-pill-padding`       | `2px 8px` | padding       | Padding inside selected item pills.      |
-| `--select-pill-font-size`     | `13px`    | font-size     | Font size of selected item pills.        |
+| `--select-pill-font-size`     | `14px`    | font-size     | Font size of selected item pills.        |
 
 ## Type Reference
 

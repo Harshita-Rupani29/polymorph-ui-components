@@ -227,7 +227,7 @@
     z-index: var(--context-menu-z-index, 1000);
     background-color: var(--context-menu-background-color, #ffffff);
     border: var(--context-menu-border, 1px solid currentColor);
-    border-radius: var(--context-menu-border-radius, 6px);
+    border-radius: var(--context-menu-border-radius, 8px);
     box-shadow: var(--context-menu-box-shadow, 0px 4px 16px rgba(0, 0, 0, 0.12));
     min-width: var(--context-menu-min-width, 160px);
     max-height: var(--context-menu-max-height, 240px);
@@ -250,12 +250,12 @@
   }
 
   .context-menu-item:hover {
-    background-color: var(--context-menu-item-hover-background-color, transparent);
+    background-color: var(--context-menu-item-hover-background-color, #f4f4f5);
     color: var(--context-menu-item-hover-color, var(--context-menu-item-color, currentColor));
   }
 
   .context-menu-item:focus {
-    background-color: var(--context-menu-item-focus-background-color, transparent);
+    background-color: var(--context-menu-item-focus-background-color, #f4f4f5);
     outline: var(--context-menu-item-focus-outline, none);
   }
 
@@ -264,7 +264,7 @@
   }
 
   .context-menu-item-danger:hover {
-    background-color: var(--context-menu-item-danger-hover-background-color, transparent);
+    background-color: var(--context-menu-item-danger-hover-background-color, #f4f4f5);
     color: var(
       --context-menu-item-danger-hover-color,
       var(--context-menu-item-danger-color, currentColor)
@@ -272,7 +272,7 @@
   }
 
   .context-menu-item-danger:focus {
-    background-color: var(--context-menu-item-danger-focus-background-color, transparent);
+    background-color: var(--context-menu-item-danger-focus-background-color, #f4f4f5);
   }
 
   .context-menu-item-disabled {
@@ -283,7 +283,7 @@
 
   .context-menu-separator {
     height: var(--context-menu-separator-height, 1px);
-    background-color: var(--context-menu-separator-color, currentColor);
+    background-color: var(--context-menu-separator-color, #e4e4e7);
     margin: var(--context-menu-separator-margin, 4px 0);
   }
 

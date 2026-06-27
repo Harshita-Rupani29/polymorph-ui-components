@@ -52,7 +52,7 @@ Override these custom properties to theme the component.
 | `--pagination-button-color`         | `currentColor`           | color         | Text color of page buttons.        |
 | `--pagination-button-background`    | `transparent`       | background    | Background color of page buttons.  |
 | `--pagination-button-border`        | `1px solid currentColor` | border        | Border style of page buttons.      |
-| `--pagination-button-border-radius` | `4px`               | border-radius | Corner rounding of page buttons.   |
+| `--pagination-button-border-radius` | `6px`               | border-radius | Corner rounding of page buttons.   |
 | `--pagination-button-cursor`        | `pointer`           | cursor        | Cursor style on page buttons.      |
 | `--pagination-button-min-width`     | `36px`              | min-width     | Minimum width of each page button. |
 | `--pagination-button-height`        | `36px`              | height        | Height of each page button.        |
@@ -62,8 +62,8 @@ Override these custom properties to theme the component.
 | Variable                          | Default             | CSS Property | Description                                            |
 | --------------------------------- | ------------------- | ------------ | ------------------------------------------------------ |
 | `--pagination-active-color`       | `#ffffff`           | color        | Text color of the currently active page button.        |
-| `--pagination-active-background`  | `currentColor`           | background   | Background color of the currently active page button.  |
-| `--pagination-active-border`      | `1px solid currentColor` | border       | Border style of the currently active page button.      |
+| `--pagination-active-background`  | `#18181b`                | background   | Background color of the currently active page button.  |
+| `--pagination-active-border`      | `1px solid #18181b`      | border       | Border style of the currently active page button.      |
 | `--pagination-active-font-weight` | `600`               | font-weight  | Font weight of the currently active page button label. |
 
 ### Hover State

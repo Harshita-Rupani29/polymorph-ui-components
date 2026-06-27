@@ -279,8 +279,8 @@
     top: var(--menu-dropdown-top, 100%);
     left: var(--menu-dropdown-left, 0);
     background-color: var(--menu-background-color, #ffffff);
-    border: var(--menu-border, 1px solid currentColor);
-    border-radius: var(--menu-border-radius, 6px);
+    border: var(--menu-border, 1px solid #e4e4e7);
+    border-radius: var(--menu-border-radius, 8px);
     box-shadow: var(--menu-box-shadow, 0px 4px 16px rgba(0, 0, 0, 0.12));
     min-width: var(--menu-min-width, 160px);
     max-height: var(--menu-max-height, 240px);
@@ -302,12 +302,12 @@
   }
 
   .menu-item:hover {
-    background-color: var(--menu-item-hover-background-color, transparent);
+    background-color: var(--menu-item-hover-background-color, #f4f4f5);
     color: var(--menu-item-hover-color, var(--menu-item-color, currentColor));
   }
 
   .menu-item:focus {
-    background-color: var(--menu-item-focus-background-color, transparent);
+    background-color: var(--menu-item-focus-background-color, #f4f4f5);
     outline: var(--menu-item-focus-outline, none);
   }
 
@@ -316,12 +316,12 @@
   }
 
   .menu-item-danger:hover {
-    background-color: var(--menu-item-danger-hover-background-color, transparent);
+    background-color: var(--menu-item-danger-hover-background-color, #f4f4f5);
     color: var(--menu-item-danger-hover-color, var(--menu-item-danger-color, currentColor));
   }
 
   .menu-item-danger:focus {
-    background-color: var(--menu-item-danger-focus-background-color, transparent);
+    background-color: var(--menu-item-danger-focus-background-color, #f4f4f5);
   }
 
   .menu-item-disabled {
@@ -332,7 +332,7 @@
 
   .menu-separator {
     height: var(--menu-separator-height, 1px);
-    background-color: var(--menu-separator-color, currentColor);
+    background-color: var(--menu-separator-color, #e4e4e7);
     margin: var(--menu-separator-margin, 4px 0);
   }
 

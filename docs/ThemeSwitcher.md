@@ -59,7 +59,7 @@ Override these custom properties to theme the component.
 | Variable                               | Default       | CSS Property     | Description                                                        |
 | -------------------------------------- | ------------- | ---------------- | ------------------------------------------------------------------ |
 | `--theme-switcher-size`                | `36px`        | width, height    | Size of the toggle button.                                         |
-| `--theme-switcher-border-radius`       | `8px`         | border-radius    | Border radius of the toggle button (also used by segment control). |
+| `--theme-switcher-border-radius`       | `6px`         | border-radius    | Border radius of the toggle button (also used by segment control). |
 | `--theme-switcher-bg`                  | `transparent` | background-color | Background color of the toggle button.                             |
 | `--theme-switcher-bg-hover`            | `transparent` | background-color | Background color of the toggle button on hover.                    |
 | `--theme-switcher-icon-color`          | `currentColor` | color           | Color of the icons (also used by segment buttons).                 |

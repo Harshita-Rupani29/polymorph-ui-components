@@ -105,7 +105,7 @@
     color: var(--pagination-button-color, currentColor);
     background: var(--pagination-button-background, transparent);
     border: var(--pagination-button-border, 1px solid currentColor);
-    border-radius: var(--pagination-button-border-radius, 4px);
+    border-radius: var(--pagination-button-border-radius, 6px);
     cursor: var(--pagination-button-cursor, pointer);
     min-width: var(--pagination-button-min-width, 36px);
     height: var(--pagination-button-height, 36px);
@@ -122,8 +122,8 @@
 
   .page-button.active {
     color: var(--pagination-active-color, #ffffff);
-    background: var(--pagination-active-background, currentColor);
-    border: var(--pagination-active-border, 1px solid currentColor);
+    background: var(--pagination-active-background, #18181b);
+    border: var(--pagination-active-border, 1px solid #18181b);
     font-weight: var(--pagination-active-font-weight, 600);
   }
 

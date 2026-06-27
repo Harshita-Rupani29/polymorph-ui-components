@@ -32,7 +32,7 @@ Override these custom properties to theme the component.
 | `--progress-container-padding`      | `0`               | padding            | Padding around the progress container.                        |
 | `--progress-container-gap`          | `8px`             | gap                | Gap between the track and the percentage label.               |
 | `--progress-track-height`           | `8px`             | height             | Height of the background track.                               |
-| `--progress-track-background`       | `transparent`     | background         | Background color of the unfilled track.                       |
+| `--progress-track-background`       | `#e4e4e7`         | background         | Background color of the unfilled track.                       |
 | `--progress-track-border-radius`    | `4px`             | border-radius      | Corner rounding of the track.                                 |
 | `--progress-bar-background`         | `currentColor`    | background         | Background color of the filled bar.                           |
 | `--progress-bar-border-radius`      | `4px`             | border-radius      | Corner rounding of the filled bar.                            |

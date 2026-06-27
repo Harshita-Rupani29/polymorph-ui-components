@@ -27,7 +27,7 @@
     box-sizing: border-box;
     line-height: 1;
     color: var(--badge-color, #fff);
-    background-color: var(--badge-background, currentColor);
+    background-color: var(--badge-background, #18181b);
     font-size: var(--badge-font-size, 12px);
     font-family: var(--badge-font-family, inherit);
     padding: var(--badge-padding, 3px 8px);

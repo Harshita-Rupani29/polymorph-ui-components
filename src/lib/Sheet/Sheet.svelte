@@ -215,7 +215,7 @@
     align-items: center;
     padding: var(--sheet-header-padding, 16px 20px);
     background-color: var(--sheet-header-background, inherit);
-    border-bottom: var(--sheet-header-border-bottom, 1px solid currentColor);
+    border-bottom: var(--sheet-header-border-bottom, 1px solid #e4e4e7);
     flex-shrink: 0;
   }
 
@@ -232,7 +232,7 @@
     --button-width: var(--sheet-close-button-size, 32px);
     --button-height: var(--sheet-close-button-size, 32px);
     --button-border: none;
-    --button-border-radius: var(--sheet-close-button-border-radius, 4px);
+    --button-border-radius: var(--sheet-close-button-border-radius, 6px);
     --button-color: var(--sheet-close-button-background, transparent);
     --button-text-color: var(--sheet-close-button-color, currentColor);
     --button-font-size: var(--sheet-close-button-font-size, 16px);
@@ -258,7 +258,7 @@
   .sheet-footer {
     padding: var(--sheet-footer-padding, 16px 20px);
     background-color: var(--sheet-footer-background, inherit);
-    border-top: var(--sheet-footer-border-top, 1px solid currentColor);
+    border-top: var(--sheet-footer-border-top, 1px solid #e4e4e7);
     flex-shrink: 0;
   }
 </style>

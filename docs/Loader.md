@@ -30,15 +30,15 @@ Override these custom properties to theme the component.
 | `--loader-width`                | `20px`       | width         | Width of the spinner.                                |
 | `--loader-height`               | `20px`       | height        | Height of the spinner.                               |
 | `--loader-border-radius`        | `50%`        | border-radius | Corner rounding of the spinner (50% for circle).     |
-| `--loader-foreground`           | `-`          | background    | Gradient start color of the spinner ring.            |
-| `--loader-foreground-end`       | `-`          | background    | Gradient end color of the spinner ring.              |
+| `--loader-foreground`           | `currentColor` | background    | Gradient start color of the spinner ring.            |
+| `--loader-foreground-end`       | `transparent`  | background    | Gradient end color of the spinner ring.              |
 | `--loader-before-width`         | `10px`       | width         | Width of the ::before pseudo-element (top gradient). |
 | `--loader-before-height`        | `10px`       | height        | Height of the ::before pseudo-element.               |
 | `--loader-before-border-radius` | `100% 0 0 0` | border-radius | Corner rounding of the ::before element.             |
 | `--loader-before-position`      | `absolute`   | position      | CSS position of the ::before element.                |
 | `--loader-before-top`           | `0`          | top           | Top position of the ::before element.                |
 | `--loader-before-left`          | `0`          | left          | Left position of the ::before element.               |
-| `--loader-background`           | `-`          | background    | Color of the center cutout (creates the ring hole).  |
+| `--loader-background`           | `#ffffff`    | background    | Color of the center cutout (creates the ring hole).  |
 | `--loader-after-width`          | `15px`       | width         | Width of the center cutout circle.                   |
 | `--loader-after-height`         | `15px`       | height        | Height of the center cutout circle.                  |
 | `--loader-after-border-radius`  | `50%`        | border-radius | Corner rounding of the cutout (50% for circle).      |

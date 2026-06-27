@@ -4,6 +4,9 @@ on:
   push:
     branches: [release]
 
+env:
+  HUSKY: 0
+
 jobs:
   detect-changes:
     runs-on: ubuntu-latest
@@ -29,8 +32,15 @@ jobs:
           if [ -z "$BEFORE_SHA" ] \
             || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ] \
             || ! git cat-file -e "${BEFORE_SHA}^{commit}" 2>/dev/null; then
-            echo "No valid before SHA ($BEFORE_SHA); falling back to HEAD~1"
-            BEFORE_SHA=$(git rev-parse HEAD~1 2>/dev/null || git rev-parse HEAD)
+            if git rev-parse --verify --quiet "${AFTER_SHA}~1" >/dev/null; then
+              BEFORE_SHA=$(git rev-parse "${AFTER_SHA}~1")
+              echo "No valid before SHA; falling back to parent commit $BEFORE_SHA"
+            else
+              # Root commit (no parent) — diff against the empty tree so the
+              # initial commit's files are all detected as changes.
+              BEFORE_SHA=$(git hash-object -t tree /dev/null)
+              echo "Root commit detected; diffing against empty tree $BEFORE_SHA"
+            fi
           fi
 
           echo "Comparing $BEFORE_SHA..$AFTER_SHA"
@@ -49,8 +59,10 @@ jobs:
             echo "No root package changes detected"
           fi
 
-          # MCP package = anything under mcp/
-          MCP_CHANGES=$(echo "$CHANGED_FILES" | grep "^mcp/" || true)
+          # MCP package = anything under mcp/, OR docs/ — the MCP bundles docs/
+          # at build time (cp -r ../docs build/docs), so doc updates must
+          # trigger a republish to keep the published MCP docs in sync.
+          MCP_CHANGES=$(echo "$CHANGED_FILES" | grep -E "^mcp/|^docs/" || true)
           if [ -n "$MCP_CHANGES" ]; then
             echo "mcp_changed=true" >> "$GITHUB_OUTPUT"
             echo "MCP package has changes:"

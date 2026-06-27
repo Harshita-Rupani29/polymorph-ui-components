@@ -47,8 +47,8 @@ Override these custom properties to theme the component.
 | `--toggle-slider-left`                    | `0`               | left               | Left position of the slider track.                           |
 | `--toggle-slider-right`                   | `0`               | right              | Right position of the slider track.                          |
 | `--toggle-slider-bottom`                  | `0`               | bottom             | Bottom position of the slider track.                         |
-| `--toggle-slider-unchecked-color`                | `transparent`     | background-color   | Background color of the track when unchecked (off).          |
-| `--toggle-slider-border`                  | `1px solid currentColor` | border             | Border of the slider track.                                  |
+| `--toggle-slider-unchecked-color`                | `#e4e4e7`         | background-color   | Background color of the track when unchecked (off).          |
+| `--toggle-slider-border`                  | `none`            | border             | Border of the slider track.                                  |
 | `--toggle-slider-transition`              | `0.4s`            | -webkit-transition | Transition duration for the sliding animation.               |
 | `--toggle-ball-height`                    | `23px`            | height             | Height of the sliding ball/thumb.                            |
 | `--toggle-ball-width`                     | `23px`            | width              | Width of the sliding ball/thumb.                             |
@@ -56,7 +56,7 @@ Override these custom properties to theme the component.
 | `--toggle-slider-before-bottom`           | `1px`             | bottom             | Bottom position of the ball.                                 |
 | `--toggle-slider-before-top`              | `1px`             | top                | Top position of the ball.                                    |
 | `--toggle-slider-before-background-color` | `#ffffff`         | background-color   | Background color of the ball/thumb.                          |
-| `--toggle-slider-checked-color`                  | `currentColor`    | background-color   | Background color of the track when checked (on).             |
+| `--toggle-slider-checked-color`                  | `#18181b`         | background-color   | Background color of the track when checked (on).             |
 | `--toggle-slider-focus-shadow`                   | `0 0 1px currentColor` | box-shadow    | Focus ring shadow shown when the switch is focused.          |
 | `--toggle-slider-border-radius`                  | `23px`            | border-radius      | Corner rounding of the slider track.                         |
 | `--toggle-slider-border-radius-before`           | `50%`             | border-radius      | Corner rounding of the ball/thumb.                           |

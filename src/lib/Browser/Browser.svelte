@@ -57,7 +57,7 @@
   .browser {
     width: var(--browser-width, 100%);
     max-width: var(--browser-max-width);
-    border: var(--browser-border, 1px solid currentColor);
+    border: var(--browser-border, 1px solid #e4e4e7);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -84,7 +84,7 @@
 
   .addressbar {
     background-color: var(--browser-addressbar-bg, #ffffff);
-    border: var(--browser-addressbar-border, 1px solid currentColor);
+    border: var(--browser-addressbar-border, 1px solid #e4e4e7);
   }
 
   .chrome {
@@ -132,7 +132,7 @@
   .tab {
     padding: var(--browser-tab-padding, 6px 16px);
     border-radius: var(--browser-tab-border-radius, 8px 8px 0 0);
-    font-size: var(--browser-tab-font-size, 13px);
+    font-size: var(--browser-tab-font-size, 14px);
     font-family: var(--browser-tab-font-family, inherit);
     white-space: nowrap;
     overflow: hidden;
@@ -151,7 +151,7 @@
     padding: 0 12px;
     height: var(--browser-addressbar-height, 32px);
     border-radius: var(--browser-addressbar-border-radius, 6px);
-    font-size: var(--browser-addressbar-font-size, 13px);
+    font-size: var(--browser-addressbar-font-size, 14px);
     font-family: var(--browser-addressbar-font-family, inherit);
   }
 

@@ -74,10 +74,10 @@
       --slider-track,
       linear-gradient(
         to right,
-        var(--slider-track-active-color, currentColor) 0%,
-        var(--slider-track-active-color, currentColor) var(--slider-fill-percent, 0%),
-        var(--slider-track-background, transparent) var(--slider-fill-percent, 0%),
-        var(--slider-track-background, transparent) 100%
+        var(--slider-track-active-color, #18181b) 0%,
+        var(--slider-track-active-color, #18181b) var(--slider-fill-percent, 0%),
+        var(--slider-track-background, #e4e4e7) var(--slider-fill-percent, 0%),
+        var(--slider-track-background, #e4e4e7) 100%
       )
     );
     outline: none;

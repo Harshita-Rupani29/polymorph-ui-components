@@ -78,12 +78,12 @@
     font-family: var(--button-font-family);
     font-weight: var(--button-font-weight, 500);
     font-size: var(--button-font-size, 14px);
-    background-color: var(--button-color, #000000);
+    background-color: var(--button-color, #18181b);
     color: var(--button-text-color, #ffffff);
     height: var(--button-height, fit-content);
     padding: var(--button-padding, 16px);
     margin: var(--button-margin);
-    border-radius: var(--button-border-radius, 0px);
+    border-radius: var(--button-border-radius, 6px);
     width: var(--button-width, fit-content);
     cursor: var(--button-cursor, pointer);
     opacity: var(--button-opacity, 1);
@@ -104,7 +104,7 @@
     font-size: var(--button-disabled-font-size);
     font-weight: var(--button-disabled-font-weight);
     border: var(--button-disabled-border);
-    background: var(--button-disabled-background-color, var(--button-color, #000000));
+    background: var(--button-disabled-background-color, var(--button-color, #18181b));
   }
 
   .button-loader {
@@ -122,7 +122,7 @@
   }
 
   button:hover {
-    background: var(--button-hover-color, var(--button-color, #000000));
+    background: var(--button-hover-color, var(--button-color, #18181b));
     color: var(--button-hover-text-color, var(--button-text-color, #ffffff));
     border: var(--button-hover-border, var(--button-border, none));
     transform: var(--button-hover-transform);

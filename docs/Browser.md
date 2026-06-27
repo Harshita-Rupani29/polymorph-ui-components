@@ -46,7 +46,7 @@ Override these custom properties to theme the component.
 | `--browser-max-width`                | `-`                                                      | max-width        | Maximum width of the browser frame.                                    |
 | `--browser-border-radius`            | `12px`                                                   | border-radius    | Corner rounding of the browser frame (applied when `rounded` is true). |
 | `--browser-shadow`                   | `0 8px 32px rgba(0, 0, 0, 0.12)`                         | box-shadow       | Drop shadow of the browser frame (applied when `shadow` is true).      |
-| `--browser-border`                   | `1px solid currentColor`                                 | border           | Border of the browser frame.                                           |
+| `--browser-border`                   | `1px solid #e4e4e7`                                 | border           | Border of the browser frame.                                           |
 | `--browser-chrome-bg`                | `transparent`                     | background-color | Background color of the chrome area (title bar and address bar).       |
 | `--browser-chrome-color`             | `currentColor`                     | color            | Text color in the chrome area.                                         |
 | `--browser-titlebar-padding`         | `12px 16px`                                              | padding          | Padding of the title bar containing traffic light buttons.             |
@@ -57,15 +57,15 @@ Override these custom properties to theme the component.
 | `--browser-dot-maximize-bg`          | `#22c55e`                                                | background-color | Background color of the maximize (green) dot.                          |
 | `--browser-tab-bg`                   | `#ffffff`                     | background-color | Background color of the active tab.                                    |
 | `--browser-tab-color`                | `currentColor`                     | color            | Text color of the active tab.                                          |
-| `--browser-tab-font-size`            | `13px`                                                   | font-size        | Font size of the tab text.                                             |
+| `--browser-tab-font-size`            | `14px`                                                   | font-size        | Font size of the tab text.                                             |
 | `--browser-tab-font-family`          | `inherit`                                                | font-family      | Font family of the tab text.                                           |
 | `--browser-tab-padding`              | `6px 16px`                                               | padding          | Padding inside the tab.                                                |
 | `--browser-tab-border-radius`        | `8px 8px 0 0`                                            | border-radius    | Corner rounding of the tab (top corners only).                         |
 | `--browser-addressbar-padding`       | `8px 16px`                                               | padding          | Padding of the address bar row.                                        |
 | `--browser-addressbar-bg`            | `#ffffff`                     | background-color | Background color of the address bar input area.                        |
-| `--browser-addressbar-border`        | `1px solid currentColor` | border           | Border of the address bar input area.                                  |
+| `--browser-addressbar-border`        | `1px solid #e4e4e7` | border           | Border of the address bar input area.                                  |
 | `--browser-addressbar-border-radius` | `6px`                                                    | border-radius    | Corner rounding of the address bar input area.                         |
-| `--browser-addressbar-font-size`     | `13px`                                                   | font-size        | Font size of the URL text.                                             |
+| `--browser-addressbar-font-size`     | `14px`                                                   | font-size        | Font size of the URL text.                                             |
 | `--browser-addressbar-font-family`   | `inherit`                                                | font-family      | Font family of the URL text.                                           |
 | `--browser-addressbar-color`         | `currentColor`                                           | color            | Text color of the URL in the address bar.                              |
 | `--browser-addressbar-height`        | `32px`                                                   | height           | Height of the address bar input area.                                  |

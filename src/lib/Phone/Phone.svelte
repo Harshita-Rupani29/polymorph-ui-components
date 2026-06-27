@@ -82,7 +82,7 @@
     border-radius: var(--phone-frame-border-radius, 50px);
     padding: var(--phone-frame-padding, 12px);
     box-sizing: border-box;
-    background: var(--phone-frame-color, #000000);
+    background: var(--phone-frame-color, #18181b);
     box-shadow: var(
       --phone-frame-shadow,
       0 20px 60px rgba(0, 0, 0, 0.3),
@@ -93,7 +93,7 @@
   .phone-screen {
     position: relative;
     border-radius: var(--phone-screen-border-radius, 38px);
-    background: var(--phone-screen-background, #000);
+    background: var(--phone-screen-background, #18181b);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@
     align-items: center;
     height: var(--phone-status-bar-height, 44px);
     padding: 0 24px;
-    color: var(--phone-status-bar-color, currentColor);
+    color: var(--phone-status-bar-color, #ffffff);
     font-size: var(--phone-status-bar-font-size, 14px);
     background: var(--phone-status-bar-background, transparent);
     flex-shrink: 0;
@@ -156,7 +156,7 @@
   .notch {
     width: var(--phone-notch-width, 120px);
     height: var(--phone-notch-height, 32px);
-    background: var(--phone-notch-background, var(--phone-frame-color, #000000));
+    background: var(--phone-notch-background, var(--phone-frame-color, #18181b));
     border-radius: var(--phone-notch-border-radius, 20px);
     position: absolute;
     top: 10px;
@@ -217,7 +217,7 @@
   }
 
   .side-button {
-    background: var(--phone-side-button-color, var(--phone-frame-color, #000000));
+    background: var(--phone-side-button-color, var(--phone-frame-color, #18181b));
     border-radius: 2px;
   }
 

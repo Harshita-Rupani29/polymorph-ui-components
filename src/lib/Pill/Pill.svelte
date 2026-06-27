@@ -77,9 +77,9 @@
     display: inline-flex;
     align-items: center;
     gap: var(--pill-gap, 4px);
-    background-color: var(--pill-background, transparent);
+    background-color: var(--pill-background, #e4e4e7);
     color: var(--pill-color, currentColor);
-    font-size: var(--pill-font-size, 13px);
+    font-size: var(--pill-font-size, 14px);
     font-weight: var(--pill-font-weight, 500);
     font-family: var(--pill-font-family);
     padding: var(--pill-padding, 6px 10px);
@@ -87,11 +87,11 @@
     border: var(--pill-border, none);
     cursor: var(--pill-cursor, pointer);
     max-width: var(--pill-max-width);
-    line-height: 1;
+    line-height: var(--pill-line-height, 1.4);
   }
 
   .pill:hover:not(.disabled) {
-    background-color: var(--pill-hover-background, var(--pill-background, transparent));
+    background-color: var(--pill-hover-background, var(--pill-background, #e4e4e7));
     color: var(--pill-hover-color, var(--pill-color, currentColor));
   }
 

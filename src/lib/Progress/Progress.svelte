@@ -32,7 +32,7 @@
   .track {
     flex: 1;
     height: var(--progress-track-height, 8px);
-    background: var(--progress-track-background, transparent);
+    background: var(--progress-track-background, #e4e4e7);
     border-radius: var(--progress-track-border-radius, 4px);
     overflow: hidden;
   }

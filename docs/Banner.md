@@ -96,7 +96,7 @@ Override these custom properties to theme the component.
 | `--banner-icon-size`                | `18px`               | width, height    | Width and height of SVGs inside the icon snippet.                         |
 | `--banner-link-color`               | `currentColor`       | color            | Color of the inline link text.                                           |
 | `--banner-link-gap`                 | `4px`                | margin-left      | Space between the main text and the link text.                            |
-| `--banner-dismiss-border-radius`    | `4px`                | border-radius    | Border radius of the dismiss button.                                      |
+| `--banner-dismiss-border-radius`    | `6px`                | border-radius    | Border radius of the dismiss button.                                      |
 | `--banner-dismiss-color`            | `currentColor`       | color            | Color of the dismiss button icon.                                         |
 | `--banner-dismiss-hover-background` | `rgba(0, 0, 0, 0.1)` | background-color | Background color of the dismiss button on hover.                          |
 | `--banner-dismiss-size`             | `14px`               | width, height    | Width and height of the dismiss button icon SVG.                          |

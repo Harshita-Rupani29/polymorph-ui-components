@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { componentNav, resolveComponentPath } from './components/_nav';
+  import { componentNav, firstSlug, resolveComponentPath } from './components/_nav';
   import ThemeSwitcher from '$lib/ThemeSwitcher/ThemeSwitcher.svelte';
   import type { Snippet } from 'svelte';
   import './components/demo.css';
@@ -26,6 +26,7 @@
 </script>
 
 <svelte:head>
+  <title>Polymorph UI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link
@@ -34,15 +35,10 @@
   />
 </svelte:head>
 
-<div class="app-layout">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h1 class="site-title">Svelte UI</h1>
-      <div class="theme-switcher-slot">
-        <ThemeSwitcher mode="toggle" onchange={handleThemeChange} />
-      </div>
-    </div>
-    <div class="sidebar-search">
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href={resolveComponentPath(firstSlug)}>Polymorph UI</a>
+    <div class="topbar-search">
       <input
         type="text"
         placeholder="Search components..."
@@ -50,26 +46,34 @@
         class="search-input"
       />
     </div>
-    <nav class="sidebar-nav">
-      {#each filteredNav as group (group.category)}
-        <div class="nav-group">
-          <span class="nav-group-label">{group.category}</span>
-          {#each group.items as item (item.slug)}
-            <a
-              href={resolveComponentPath(item.slug)}
-              class="nav-link"
-              class:active={currentPath === resolveComponentPath(item.slug)}
-            >
-              {item.name}
-            </a>
-          {/each}
-        </div>
-      {/each}
-    </nav>
-  </aside>
-  <main class="content">
-    {@render children()}
-  </main>
+    <div class="topbar-actions">
+      <ThemeSwitcher mode="toggle" onchange={handleThemeChange} />
+    </div>
+  </header>
+
+  <div class="body">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        {#each filteredNav as group (group.category)}
+          <div class="nav-group">
+            <span class="nav-group-label">{group.category}</span>
+            {#each group.items as item (item.slug)}
+              <a
+                href={resolveComponentPath(item.slug)}
+                class="nav-link"
+                class:active={currentPath === resolveComponentPath(item.slug)}
+              >
+                {item.name}
+              </a>
+            {/each}
+          </div>
+        {/each}
+      </nav>
+    </aside>
+    <main class="content">
+      {@render children()}
+    </main>
+  </div>
 </div>
 
 <style>
@@ -84,58 +88,62 @@
       color 0.2s;
   }
 
-  .app-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
+  .app {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
-  .sidebar {
+  /* ── Top bar: brand (left) · search (center) · theme (right) ── */
+  .topbar {
     position: sticky;
     top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    border-right: 1px solid var(--doc-border);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--doc-border);
     background: var(--doc-sidebar-bg);
     transition:
       background 0.2s,
       border-color 0.2s;
   }
 
-  .sidebar-header {
-    padding: 20px 16px 12px;
-    border-bottom: 1px solid var(--doc-border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .site-title {
+  .brand {
+    width: 240px;
+    flex-shrink: 0;
     font-family: var(--doc-font-heading);
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin: 0;
     color: var(--doc-text-heading);
+    text-decoration: none;
     white-space: nowrap;
   }
 
-  .theme-switcher-slot {
-    flex-shrink: 0;
+  .topbar-search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
-  .sidebar-search {
-    padding: 12px 16px 0;
+  .topbar-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .search-input {
     width: 100%;
-    padding: 8px 12px;
-    font-size: 13px;
+    max-width: 460px;
+    padding: 8px 14px;
+    font-size: 14px;
     font-family: inherit;
     border: 1px solid var(--doc-border);
-    border-radius: var(--doc-radius);
+    border-radius: var(--doc-radius-pill);
     background: var(--doc-input-bg);
     color: var(--doc-text-primary);
     outline: none;
@@ -153,8 +161,29 @@
     color: var(--doc-text-faint);
   }
 
+  /* ── Body: sidebar + content ── */
+  .body {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 60px;
+    align-self: start;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    border-right: 1px solid var(--doc-border);
+    background: var(--doc-sidebar-bg);
+    transition:
+      background 0.2s,
+      border-color 0.2s;
+  }
+
   .sidebar-nav {
-    padding: 12px 0;
+    padding: 16px 0;
   }
 
   .nav-group {

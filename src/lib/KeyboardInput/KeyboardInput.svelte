@@ -62,7 +62,7 @@
     align-items: center;
     gap: var(--keyboard-input-gap, 4px);
     font-family: var(--keyboard-input-font-family, inherit);
-    font-size: var(--keyboard-input-font-size, 13px);
+    font-size: var(--keyboard-input-font-size, 14px);
     vertical-align: baseline;
     cursor: var(--keyboard-input-cursor, default);
   }
@@ -82,7 +82,7 @@
     color: var(--keyboard-input-key-color, currentColor);
     background-color: var(--keyboard-input-key-background, transparent);
     border: var(--keyboard-input-key-border, 1px solid currentColor);
-    border-radius: var(--keyboard-input-key-border-radius, 4px);
+    border-radius: var(--keyboard-input-key-border-radius, 6px);
     box-shadow: var(--keyboard-input-key-box-shadow, 0 1px 0 currentColor);
     min-width: var(--keyboard-input-key-min-width, 1.6em);
     padding: var(--keyboard-input-key-padding, 2px 6px);

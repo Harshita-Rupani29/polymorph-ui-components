@@ -369,7 +369,7 @@
     margin-top: var(--combobox-dropdown-gap, 4px);
     background: var(--combobox-dropdown-background, #ffffff);
     border: var(--combobox-dropdown-border, 1px solid currentColor);
-    border-radius: var(--combobox-dropdown-border-radius, 6px);
+    border-radius: var(--combobox-dropdown-border-radius, 8px);
     box-shadow: var(--combobox-dropdown-shadow, 0 4px 12px rgba(0, 0, 0, 0.1));
     max-height: var(--combobox-dropdown-max-height, 200px);
     overflow-y: auto;
@@ -388,7 +388,7 @@
 
   .combobox-option:hover,
   .combobox-option.highlighted {
-    background: var(--combobox-option-hover-background, transparent);
+    background: var(--combobox-option-hover-background, #f4f4f5);
     color: var(--combobox-option-hover-color, var(--combobox-option-color, currentColor));
   }
 
@@ -404,7 +404,7 @@
   .combobox-option.selected.highlighted {
     background: var(
       --combobox-option-selected-hover-background,
-      var(--combobox-option-selected-background, transparent)
+      var(--combobox-option-selected-background, #f4f4f5)
     );
   }
 

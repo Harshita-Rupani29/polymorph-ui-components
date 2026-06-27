@@ -207,7 +207,7 @@
   }
 
   .field-group-label {
-    font-size: var(--split-input-label-font-size, 10px);
+    font-size: var(--split-input-label-font-size, 12px);
     font-weight: var(--split-input-label-font-weight, 500);
     color: var(--split-input-label-color, currentColor);
     text-transform: uppercase;

@@ -180,7 +180,7 @@
     width: var(--book-width, 100%);
     background-color: var(--book-background, #ffffff);
     border-radius: var(--book-border-radius, 8px);
-    border: var(--book-border, 1px solid currentColor);
+    border: var(--book-border, 1px solid #e4e4e7);
     outline: none;
   }
 
@@ -268,7 +268,7 @@
     width: var(--book-dot-size, 8px);
     height: var(--book-dot-size, 8px);
     border-radius: var(--book-dot-border-radius, 50%);
-    background-color: var(--book-dot-color, currentColor);
+    background-color: var(--book-dot-color, #a1a1aa);
     border: none;
     padding: 0;
     cursor: pointer;

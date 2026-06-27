@@ -13,31 +13,31 @@
     width: var(--loader-width, 20px);
     height: var(--loader-height, 20px);
     border-radius: var(--loader-border-radius, 50%);
-    background: var(--loader-foreground);
+    background: var(--loader-foreground, currentColor);
     background: -moz-linear-gradient(
       left,
-      var(--loader-foreground) 10%,
-      var(--loader-foreground-end) 42%
+      var(--loader-foreground, currentColor) 10%,
+      var(--loader-foreground-end, transparent) 42%
     );
     background: -webkit-linear-gradient(
       left,
-      var(--loader-foreground) 10%,
-      var(--loader-foreground-end) 42%
+      var(--loader-foreground, currentColor) 10%,
+      var(--loader-foreground-end, transparent) 42%
     );
     background: -o-linear-gradient(
       left,
-      var(--loader-foreground) 10%,
-      var(--loader-foreground-end) 42%
+      var(--loader-foreground, currentColor) 10%,
+      var(--loader-foreground-end, transparent) 42%
     );
     background: -ms-linear-gradient(
       left,
-      var(--loader-foreground) 10%,
-      var(--loader-foreground-end) 42%
+      var(--loader-foreground, currentColor) 10%,
+      var(--loader-foreground-end, transparent) 42%
     );
     background: linear-gradient(
       to right,
-      var(--loader-foreground) 10%,
-      var(--loader-foreground-end) 42%
+      var(--loader-foreground, currentColor) 10%,
+      var(--loader-foreground-end, transparent) 42%
     );
     position: relative;
     -webkit-animation: load3 1.4s infinite linear;
@@ -49,7 +49,7 @@
   .loader:before {
     width: var(--loader-before-width, 10px);
     height: var(--loader-before-height, 10px);
-    background: var(--loader-foreground);
+    background: var(--loader-foreground, currentColor);
     border-radius: var(--loader-before-border-radius, 100% 0 0 0);
     position: var(--loader-before-position, absolute);
     top: var(--loader-before-top, 0);
@@ -57,7 +57,7 @@
     content: '';
   }
   .loader:after {
-    background: var(--loader-background);
+    background: var(--loader-background, #ffffff);
     width: var(--loader-after-width, 15px);
     height: var(--loader-after-height, 15px);
     border-radius: var(--loader-after-border-radius, 50%);

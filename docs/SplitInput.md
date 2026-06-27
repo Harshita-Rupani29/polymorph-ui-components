@@ -87,7 +87,7 @@ Override these custom properties to theme the component.
 | `--split-input-font-weight`         | `500`               | font-weight   | Font weight of input text within each field.                                                 |
 | `--split-input-font-family`         | (inherited)         | font-family   | Font family of input text within each field. Falls through to the Input component's default. |
 | `--split-input-input-padding`       | `0 6px`             | padding       | Padding inside each individual input field.                                                  |
-| `--split-input-label-font-size`     | `10px`              | font-size     | Font size of per-field labels displayed below each input.                                    |
+| `--split-input-label-font-size`     | `12px`              | font-size     | Font size of per-field labels displayed below each input.                                    |
 | `--split-input-label-font-weight`   | `500`               | font-weight   | Font weight of per-field labels.                                                             |
 | `--split-input-label-color`         | `currentColor`           | color         | Text color of per-field labels.                                                              |
 | `--split-input-separator-font-size` | `16px`              | font-size     | Font size of separator characters rendered between fields.                                   |

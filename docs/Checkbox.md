@@ -50,7 +50,7 @@ Override these custom properties to theme the component.
 | `--checkbox-container-cursor`         | `pointer`                           | cursor             | Cursor when hovering the checkbox container.                          |
 | `--checkbox-size`                     | `20px`                              | width, height      | Width and height of the checkbox box.                                 |
 | `--checkbox-border`                   | `2px solid currentColor`            | border             | Border of the checkbox box in its unchecked state.                    |
-| `--checkbox-border-radius`            | `3px`                               | border-radius      | Corner rounding of the checkbox box.                                  |
+| `--checkbox-border-radius`            | `6px`                               | border-radius      | Corner rounding of the checkbox box.                                  |
 | `--checkbox-background`               | `transparent`                       | background-color   | Background color of the checkbox box when unchecked.                  |
 | `--checkbox-checked-background`       | `currentColor`                      | background-color   | Background color of the checkbox box when checked.                    |
 | `--checkbox-checked-border`           | `2px solid currentColor`            | border             | Border of the checkbox box when checked.                              |

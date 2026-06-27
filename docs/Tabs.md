@@ -64,10 +64,10 @@ Override these custom properties to theme the component.
 
 | Variable                         | Default                                 | CSS Property     | Description                                               |
 | -------------------------------- | --------------------------------------- | ---------------- | --------------------------------------------------------- |
-| `--tabs-bar-background`          | `#ffffff`                               | background       | Background color of the tab bar container.                |
+| `--tabs-bar-background`          | `transparent`                           | background       | Background color of the tab bar container (transparent so it adapts to any surface). |
 | `--tabs-bar-padding`             | `0px`                                   | padding          | Padding inside the tab bar container.                     |
 | `--tabs-bar-gap`                 | `0px`                                   | gap              | Gap between individual tab items.                         |
-| `--tabs-bar-border-bottom`       | `1px solid currentColor`                | border-bottom    | Bottom border of the tab bar container.                   |
+| `--tabs-bar-border-bottom`       | `1px solid #e4e4e7`                     | border-bottom    | Bottom border of the tab bar container.                   |
 | `--tabs-bar-border-radius`       | `0`                                     | border-radius    | Corner rounding of the tab bar container.                 |
 | `--tabs-item-padding`            | `12px 16px`                             | padding          | Padding inside each tab item.                             |
 | `--tabs-item-font-size`          | `14px`                                  | font-size        | Font size of tab label text.                              |

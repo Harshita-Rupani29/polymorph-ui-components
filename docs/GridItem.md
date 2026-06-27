@@ -51,7 +51,7 @@ Override these custom properties to theme the component.
 | `--grid-item-body-width`             | `64px`                 | width            | Width of the main icon container.                            |
 | `--grid-item-background-color`       | `transparent`          | background-color | Background color of the grid cell body.                      |
 | `--grid-item-border`                 | `1px solid currentColor` | border         | Border of the grid cell body.                                |
-| `--grid-item-border-radius`          | `4px`                  | border-radius    | Corner rounding of the grid cell body.                       |
+| `--grid-item-border-radius`          | `8px`                  | border-radius    | Corner rounding of the grid cell body.                       |
 | `--grid-item-margin`                 | `8px 0 0 0`            | margin           | Margin of the grid cell body.                                |
 | `--grid-item-icon-height`            | `32px`                 | height           | Height of the main center icon.                              |
 | `--grid-item-icon-width`             | `fit-content`          | width            | Width of the main center icon.                               |

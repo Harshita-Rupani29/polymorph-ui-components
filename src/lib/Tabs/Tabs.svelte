@@ -181,8 +181,8 @@
     align-items: stretch;
     position: relative;
     max-width: 100%;
-    background: var(--tabs-bar-background, #ffffff);
-    border-bottom: var(--tabs-bar-border-bottom, 1px solid currentColor);
+    background: var(--tabs-bar-background, transparent);
+    border-bottom: var(--tabs-bar-border-bottom, 1px solid #e4e4e7);
     border-radius: var(--tabs-bar-border-radius, 0);
   }
 

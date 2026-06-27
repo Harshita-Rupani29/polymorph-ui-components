@@ -55,7 +55,7 @@ Override these custom properties to theme the component.
 | `--snippet-gap`                   | `8px`            | gap           | Gap between the code text and the copy button.                        |
 | `--snippet-background`            | `transparent`    | background    | Background color of the snippet container.                            |
 | `--snippet-border`                | `1px solid currentColor` | border | Border of the snippet container.                                     |
-| `--snippet-border-radius`         | `6px`            | border-radius | Corner rounding of the snippet container.                             |
+| `--snippet-border-radius`         | `8px`            | border-radius | Corner rounding of the snippet container.                             |
 | `--snippet-padding`               | `12px 16px`      | padding       | Inner padding of the snippet container.                               |
 | `--snippet-font-family`           | `monospace`      | font-family   | Font family for the overall snippet (prompt and text inherit this).   |
 | `--snippet-font-size`             | `14px`           | font-size     | Font size for the snippet text.                                       |
@@ -69,7 +69,7 @@ Override these custom properties to theme the component.
 | `--snippet-copy-color`            | `currentColor`   | color         | Icon/text color of the copy button.                                   |
 | `--snippet-copy-border`           | `none`           | border        | Border of the copy button.                                            |
 | `--snippet-copy-padding`          | `4px`            | padding       | Inner padding of the copy button.                                     |
-| `--snippet-copy-border-radius`    | `4px`            | border-radius | Corner rounding of the copy button.                                   |
+| `--snippet-copy-border-radius`    | `6px`            | border-radius | Corner rounding of the copy button.                                   |
 | `--snippet-copy-cursor`           | `pointer`        | cursor        | Cursor style when hovering the copy button.                           |
 | `--snippet-copy-hover-background` | `transparent`    | background    | Background color of the copy button on hover.                         |
 | `--snippet-copy-size`             | `16px`           | width, height | Width and height of the copy icon SVG.                                |

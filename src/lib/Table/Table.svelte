@@ -239,7 +239,7 @@
       --table-header-background,
       var(--table-header-border-bgcolor, transparent)
     );
-    font-size: var(--table-header-font-size, 13px);
+    font-size: var(--table-header-font-size, 14px);
     font-family: var(--table-header-font-family);
     font-weight: var(--table-header-font-weight, 600);
     letter-spacing: var(--table-header-letter-spacing, 0.02em);
@@ -267,7 +267,7 @@
   }
 
   .table-row {
-    border-bottom: var(--table-row-border, 1px solid currentColor);
+    border-bottom: var(--table-row-border, 1px solid #e4e4e7);
     background-color: var(--table-row-background);
   }
 

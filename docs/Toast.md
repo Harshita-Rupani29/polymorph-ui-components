@@ -58,7 +58,7 @@ Override these custom properties to theme the component.
 | `--toast-font-family`                  | `inherit`                               | font-family      | Font family of the toast text.                                          |
 | `--toast-font-weight`                  | `-`                                     | font-weight      | Font weight of the toast text.                                          |
 | `--toast-height`                       | `fit-content`                           | height           | Height of the toast container.                                          |
-| `--toast-border-radius`                | `6px`                                   | border-radius    | Corner rounding of the toast.                                           |
+| `--toast-border-radius`                | `8px`                                   | border-radius    | Corner rounding of the toast.                                           |
 | `--toast-border`                       | `none`                                  | border           | Border of the toast.                                                    |
 | `--toast-border-style`                 | `-`                                     | border-style     |                                                                         |
 | `--toast-width`                        | `fit-content`                           | width            | Width of the toast container.                                           |
@@ -71,7 +71,7 @@ Override these custom properties to theme the component.
 | `--toast-top`                          | `10px`                                  | top              | Top position of the toast.                                              |
 | `--toast-left`                         | `0`                                     | left             | Left position of the toast.                                             |
 | `--toast-right`                        | `0`                                     | right            | Right position of the toast.                                            |
-| `--toast-background-color`             | `#000000`                               | background-color | Background color of the toast.                                          |
+| `--toast-background-color`             | `#18181b`                               | background-color | Background color of the toast.                                          |
 | `--toast-color`                        | `#fff`                                  | color            | Text color of the toast.                                               |
 | `--toast-box-shadow`                   | `0 4px 12px rgba(0, 0, 0, 0.15)`        | box-shadow       | Drop shadow of the toast.                                              |
 | `--toast-opacity`                      | `1`                                     | opacity          | Opacity of the toast.                                                   |

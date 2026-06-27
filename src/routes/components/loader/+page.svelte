@@ -8,9 +8,5 @@
 </div>
 
 <div class="demo-row" style="align-items: center;">
-  <div
-    style="--loader-foreground: #4f46e5; --loader-foreground-end: transparent; --loader-background: white;"
-  >
-    <Loader />
-  </div>
+  <Loader />
 </div>

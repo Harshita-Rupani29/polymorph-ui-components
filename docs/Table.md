@@ -167,7 +167,7 @@ Override these custom properties to theme the component.
 | Variable                     | Default             | CSS Property  | Description                                                                                                |
 | ---------------------------- | ------------------- | ------------- | ---------------------------------------------------------------------------------------------------------- |
 | `--table-inner-border`       | `none`              | border        | Border of individual table cells. Set to `1px solid #ccc` for full grid.                                   |
-| `--table-row-border`         | `1px solid currentColor` | border-bottom | Border on the bottom of each data row. Subtle row separators.                                              |
+| `--table-row-border`         | `1px solid #e4e4e7` | border-bottom | Border on the bottom of each data row. Subtle row separators.                                              |
 | `--table-row-last-border`    | `none`              | border-bottom | Border on the last data row. Set to match `--table-row-border` if needed.                                  |
 | `--table-padding`            | `12px 16px`         | padding       | Padding inside table cells.                                                                                |
 | `--table-text-align`         | `left`              | text-align    | Text alignment inside table cells.                                                                         |
@@ -179,7 +179,7 @@ Override these custom properties to theme the component.
 | Variable                        | Default   | CSS Property     | Description                                                                      |
 | ------------------------------- | --------- | ---------------- | -------------------------------------------------------------------------------- |
 | `--table-header-background`     | `transparent` | background-color | Background color of header cells. Falls back to `--table-header-border-bgcolor`. |
-| `--table-header-font-size`      | `13px`    | font-size        | Font size of header cells.                                                       |
+| `--table-header-font-size`      | `14px`    | font-size        | Font size of header cells.                                                       |
 | `--table-header-font-family`    | `-`       | font-family      | Font family of header cells.                                                     |
 | `--table-header-font-weight`    | `600`     | font-weight      | Font weight of header cells.                                                     |
 | `--table-header-letter-spacing` | `0.02em`  | letter-spacing   | Letter spacing of header text.                                                   |

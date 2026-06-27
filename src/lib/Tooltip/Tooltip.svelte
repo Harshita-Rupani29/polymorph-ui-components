@@ -60,13 +60,13 @@
     position: absolute;
     z-index: var(--tooltip-z-index, 1000);
     max-width: var(--tooltip-max-width, 200px);
-    background: var(--tooltip-background, #000000);
+    background: var(--tooltip-background, #18181b);
     color: var(--tooltip-color, #ffffff);
     font-size: var(--tooltip-font-size, 12px);
     font-weight: var(--tooltip-font-weight, 400);
     font-family: var(--tooltip-font-family);
     padding: var(--tooltip-padding, 6px 10px);
-    border-radius: var(--tooltip-border-radius, 4px);
+    border-radius: var(--tooltip-border-radius, 8px);
     border: var(--tooltip-border, none);
     box-shadow: var(--tooltip-box-shadow, 0 2px 6px rgba(0, 0, 0, 0.15));
     white-space: normal;
@@ -96,7 +96,7 @@
     transform: translateX(-50%);
     border-width: var(--tooltip-arrow-size, 5px) var(--tooltip-arrow-size, 5px) 0
       var(--tooltip-arrow-size, 5px);
-    border-color: var(--tooltip-arrow-color, var(--tooltip-background, #000000)) transparent
+    border-color: var(--tooltip-arrow-color, var(--tooltip-background, #18181b)) transparent
       transparent transparent;
   }
 
@@ -114,7 +114,7 @@
     border-width: 0 var(--tooltip-arrow-size, 5px) var(--tooltip-arrow-size, 5px)
       var(--tooltip-arrow-size, 5px);
     border-color: transparent transparent
-      var(--tooltip-arrow-color, var(--tooltip-background, #000000)) transparent;
+      var(--tooltip-arrow-color, var(--tooltip-background, #18181b)) transparent;
   }
 
   /* Left position */
@@ -131,7 +131,7 @@
     border-width: var(--tooltip-arrow-size, 5px) 0 var(--tooltip-arrow-size, 5px)
       var(--tooltip-arrow-size, 5px);
     border-color: transparent transparent transparent
-      var(--tooltip-arrow-color, var(--tooltip-background, #000000));
+      var(--tooltip-arrow-color, var(--tooltip-background, #18181b));
   }
 
   /* Right position */
@@ -147,7 +147,7 @@
     transform: translateY(-50%);
     border-width: var(--tooltip-arrow-size, 5px) var(--tooltip-arrow-size, 5px)
       var(--tooltip-arrow-size, 5px) 0;
-    border-color: transparent var(--tooltip-arrow-color, var(--tooltip-background, #000000))
+    border-color: transparent var(--tooltip-arrow-color, var(--tooltip-background, #18181b))
       transparent transparent;
   }
 </style>

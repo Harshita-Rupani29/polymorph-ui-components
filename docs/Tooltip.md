@@ -45,19 +45,19 @@ Override these custom properties to theme the component.
 | `--tooltip-container-display` | `inline-flex`                        | display             | Display mode of the wrapper element around the trigger and tooltip.         |
 | `--tooltip-z-index`           | `1000`                               | z-index             | Stacking order of the tooltip bubble.                                       |
 | `--tooltip-max-width`         | `200px`                              | max-width           | Maximum width of the tooltip bubble before text wraps.                      |
-| `--tooltip-background`        | `#000000`                            | background          | Background color of the tooltip bubble.                                     |
+| `--tooltip-background`        | `#18181b`                            | background          | Background color of the tooltip bubble.                                     |
 | `--tooltip-color`             | `#ffffff`                            | color               | Text color inside the tooltip bubble.                                       |
 | `--tooltip-font-size`         | `12px`                               | font-size           | Font size of the tooltip text.                                              |
 | `--tooltip-font-weight`       | `400`                                | font-weight         | Font weight of the tooltip text.                                            |
 | `--tooltip-font-family`       | `-`                                  | font-family         | Font family of the tooltip text.                                            |
 | `--tooltip-padding`           | `6px 10px`                           | padding             | Inner padding of the tooltip bubble.                                        |
-| `--tooltip-border-radius`     | `4px`                                | border-radius       | Corner rounding of the tooltip bubble.                                      |
+| `--tooltip-border-radius`     | `8px`                                | border-radius       | Corner rounding of the tooltip bubble.                                      |
 | `--tooltip-border`            | `none`                               | border              | Border of the tooltip bubble.                                               |
 | `--tooltip-box-shadow`        | `0 2px 6px rgba(0, 0, 0, 0.15)`      | box-shadow          | Shadow effect around the tooltip bubble.                                    |
 | `--tooltip-opacity-duration`  | `0.15s`                              | transition duration | Duration of the tooltip opacity fade transition.                            |
 | `--tooltip-offset`            | `8px`                                | calc offset         | Distance between the tooltip bubble and the trigger element.                |
 | `--tooltip-arrow-size`        | `5px`                                | border-width        | Size of the directional arrow pointing from the tooltip toward the trigger. |
-| `--tooltip-arrow-color`       | `var(--tooltip-background, #000000)` | border-color        | Color of the directional arrow. Defaults to match the tooltip background.   |
+| `--tooltip-arrow-color`       | `var(--tooltip-background, #18181b)` | border-color        | Color of the directional arrow. Defaults to match the tooltip background.   |
 
 ## Type Reference
 

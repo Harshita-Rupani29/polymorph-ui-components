@@ -273,9 +273,9 @@
     background-color: var(--input-background, transparent);
     font-size: var(--input-font-size, 16px) !important;
     font-family: var(--input-font-family, inherit);
-    border-radius: var(--input-radius, 4px);
+    border-radius: var(--input-radius, 6px);
     outline: none;
-    padding: var(--input-padding, 16px);
+    padding: var(--input-padding, 10px 12px);
     font-weight: var(--input-font-weight, 500);
     width: var(--input-width, fit-content);
     margin: var(--input-margin, 0px 0px 12px 0px);
@@ -306,7 +306,7 @@
   }
 
   .action-input {
-    border-radius: var(--input-radius, 4px 0px 0px 4px);
+    border-radius: var(--input-radius, 6px 0px 0px 6px);
     box-shadow: var(--input-box-shadow, none);
     margin-bottom: 0;
   }
@@ -344,6 +344,6 @@
   }
 
   ::placeholder {
-    color: var(--input-placeholder-color);
+    color: var(--input-placeholder-color, #a1a1aa);
   }
 </style>

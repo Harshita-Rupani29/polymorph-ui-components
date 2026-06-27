@@ -298,7 +298,7 @@
 
   .command-menu-dialog {
     background-color: var(--command-menu-background, #ffffff);
-    border-radius: var(--command-menu-border-radius, 12px);
+    border-radius: var(--command-menu-border-radius, 8px);
     box-shadow: var(--command-menu-box-shadow, 0 16px 70px rgba(0, 0, 0, 0.2));
     width: var(--command-menu-width, 560px);
     max-width: var(--command-menu-max-width, 90vw);
@@ -349,7 +349,7 @@
 
   .command-menu-separator {
     height: var(--command-menu-separator-height, 1px);
-    background-color: var(--command-menu-separator-color, currentColor);
+    background-color: var(--command-menu-separator-color, #e4e4e7);
     flex-shrink: 0;
   }
 
@@ -380,7 +380,7 @@
     display: flex;
     align-items: center;
     padding: var(--command-menu-item-padding, 10px 12px);
-    border-radius: var(--command-menu-item-border-radius, 8px);
+    border-radius: var(--command-menu-item-border-radius, 6px);
     cursor: pointer;
     gap: var(--command-menu-item-gap, 10px);
     font-size: var(--command-menu-item-font-size, 14px);
@@ -394,7 +394,7 @@
   }
 
   .command-menu-item.active {
-    background-color: var(--command-menu-item-active-background, transparent);
+    background-color: var(--command-menu-item-active-background, #f4f4f5);
     color: var(--command-menu-item-active-color, currentColor);
   }
 
@@ -444,7 +444,7 @@
     background-color: var(--command-menu-kbd-background, transparent);
     border: var(--command-menu-kbd-border, 1px solid currentColor);
     color: var(--command-menu-kbd-color, currentColor);
-    font-size: var(--command-menu-kbd-font-size, 11px);
+    font-size: var(--command-menu-kbd-font-size, 12px);
     font-family: var(--command-menu-kbd-font-family, inherit);
     font-weight: var(--command-menu-kbd-font-weight, 500);
     box-shadow: var(--command-menu-kbd-box-shadow, 0 1px 0 currentColor);

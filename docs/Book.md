@@ -55,7 +55,7 @@ Override these custom properties to theme the component.
 | `--book-height`               | `400px`               | height              | Height of the page content area.                          |
 | `--book-background`           | `#ffffff`             | background-color    | Background color of the book container.                   |
 | `--book-border-radius`        | `8px`                 | border-radius       | Corner rounding of the book container.                    |
-| `--book-border`               | `1px solid currentColor` | border           | Border of the book container.                             |
+| `--book-border`               | `1px solid #e4e4e7` | border           | Border of the book container.                             |
 | `--book-overflow`             | `hidden`              | overflow            | Overflow behavior of the page content area.               |
 | `--book-transition-duration`  | `0.3s`                | transition-duration | Duration of the page transition animation.                |
 | `--book-nav-size`             | `36px`                | width/height        | Size of the navigation arrow buttons.                     |
@@ -66,7 +66,7 @@ Override these custom properties to theme the component.
 | `--book-nav-disabled-opacity` | `0.3`                 | opacity             | Opacity of navigation arrows when at the first/last page. |
 | `--book-dot-size`             | `8px`                 | width/height        | Size of each page indicator dot.                          |
 | `--book-dot-gap`              | `8px`                 | gap                 | Gap between page indicator dots.                          |
-| `--book-dot-color`            | `currentColor`        | background-color    | Color of inactive page indicator dots.                    |
+| `--book-dot-color`            | `#a1a1aa`        | background-color    | Color of inactive page indicator dots.                    |
 | `--book-dot-active-color`     | `currentColor`        | background-color    | Color of the active page indicator dot.                   |
 | `--book-dot-border-radius`    | `50%`                 | border-radius       | Corner rounding of page indicator dots.                   |
 | `--book-indicator-padding`    | `12px 0`              | padding             | Padding around the page indicator dots container.         |

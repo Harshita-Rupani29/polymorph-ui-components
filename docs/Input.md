@@ -79,8 +79,8 @@ Override these custom properties to theme the component.
 | `--input-background`            | `transparent`                                          | background-color | Background color of the input.                          |
 | `--input-font-size`             | `16px`                                                 | font-size        | Font size of the input text.                            |
 | `--input-font-family`           | `inherit`                                              | font-family      | Font family of the input text.                          |
-| `--input-radius`                | `4px`                                                  | border-radius    | Corner rounding of the input.                           |
-| `--input-padding`               | `16px`                                                 | padding          | Inner padding of the input.                             |
+| `--input-radius`                | `6px`                                                  | border-radius    | Corner rounding of the input.                           |
+| `--input-padding`               | `10px 12px`                                            | padding          | Inner padding of the input.                             |
 | `--input-font-weight`           | `500`                                                  | font-weight      | Font weight of the input text.                          |
 | `--input-width`                 | `fit-content`                                          | width            | Width of the input element.                             |
 | `--input-margin`                | `0px 0px 12px 0px`                                     | margin           | Outer margin of the input element.                      |
@@ -108,7 +108,7 @@ Override these custom properties to theme the component.
 | `--input-info-msg-text-color`   | `currentColor`                                         | color            | Color of the info message text.                         |
 | `--input-info-msg-margin`       | `-`                                                    | margin           | Margin around the info message.                         |
 | `--input-info-msg-padding`      | `-`                                                    | padding          | Padding inside the info message.                        |
-| `--input-placeholder-color`     | `-`                                                    | color            | Color of placeholder text.                              |
+| `--input-placeholder-color`     | `#a1a1aa`                                              | color            | Color of placeholder text.                              |
 | `--input-error-border`          | `1px solid var(--input-error-msg-text-color, currentColor)` | border      | Border of the input when in error state.                |
 
 ## Type Reference

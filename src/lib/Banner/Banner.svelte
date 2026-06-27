@@ -142,7 +142,7 @@
     --button-color: transparent;
     --button-border: none;
     --button-padding: 2px;
-    --button-border-radius: var(--banner-dismiss-border-radius, 4px);
+    --button-border-radius: var(--banner-dismiss-border-radius, 6px);
     --button-text-color: var(--banner-dismiss-color, currentColor);
     --button-hover-color: var(--banner-dismiss-hover-background, rgba(0, 0, 0, 0.1));
     --button-cursor: inherit;

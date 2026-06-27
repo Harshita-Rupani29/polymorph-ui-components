@@ -64,8 +64,8 @@ Override these custom properties to theme the component.
 | `--menu-trigger-focus-outline`              | `none`                                   | outline          | Focus outline style for the trigger element.                           |
 | `--menu-z-index`                            | `10`                                     | z-index          | Stack order of the dropdown panel.                                     |
 | `--menu-background-color`                   | `#ffffff`                                | background-color | Background color of the dropdown panel.                                |
-| `--menu-border`                             | `1px solid currentColor`                 | border           | Border around the dropdown panel.                                      |
-| `--menu-border-radius`                      | `6px`                                    | border-radius    | Corner rounding of the dropdown panel.                                 |
+| `--menu-border`                             | `1px solid #e4e4e7`                      | border           | Border around the dropdown panel.                                      |
+| `--menu-border-radius`                      | `8px`                                    | border-radius    | Corner rounding of the dropdown panel.                                 |
 | `--menu-box-shadow`                         | `0px 4px 16px rgba(0, 0, 0, 0.12)`       | box-shadow       | Shadow of the dropdown panel.                                          |
 | `--menu-min-width`                          | `160px`                                  | min-width        | Minimum width of the dropdown panel.                                   |
 | `--menu-max-height`                         | `240px`                                  | max-height       | Maximum height of the dropdown before it scrolls.                      |
@@ -89,7 +89,7 @@ Override these custom properties to theme the component.
 | `--menu-item-disabled-opacity`              | `0.4`                                    | opacity          | Opacity of disabled menu items.                                        |
 | `--menu-item-disabled-cursor`               | `not-allowed`                            | cursor           | Cursor shown when hovering disabled items.                             |
 | `--menu-separator-height`                   | `1px`                                    | height           | Height of the separator line between item groups.                      |
-| `--menu-separator-color`                    | `currentColor`                           | background-color | Color of the separator line.                                           |
+| `--menu-separator-color`                    | `#e4e4e7`                                | background-color | Color of the separator line.                                           |
 | `--menu-separator-margin`                   | `4px 0`                                  | margin           | Vertical spacing around the separator line.                            |
 | `--menu-item-icon-height`                   | `16px`                                   | height           | Height of per-item icons.                                              |
 | `--menu-item-icon-width`                    | `16px`                                   | width            | Width of per-item icons.                                               |

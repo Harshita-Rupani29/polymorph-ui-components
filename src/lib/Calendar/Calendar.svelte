@@ -368,7 +368,7 @@
   .header-label {
     font-size: var(--calendar-header-font-size, 16px);
     font-weight: var(--calendar-header-font-weight, 600);
-    color: var(--calendar-header-color, #000000);
+    color: var(--calendar-header-color, #18181b);
     text-transform: capitalize;
   }
 
@@ -381,7 +381,7 @@
     --button-height: var(--calendar-nav-button-size, 32px);
     --button-border: none;
     --button-color: transparent;
-    --button-border-radius: var(--calendar-nav-button-border-radius, 4px);
+    --button-border-radius: var(--calendar-nav-button-border-radius, 6px);
     --button-text-color: var(--calendar-nav-button-color, currentColor);
     --button-padding: 0;
     --button-hover-color: var(--calendar-nav-button-hover-background, transparent);
@@ -416,7 +416,7 @@
     font-family: inherit;
     font-size: var(--calendar-cell-font-size, 14px);
     border-radius: var(--calendar-cell-border-radius, 50%);
-    color: var(--calendar-cell-color, #000000);
+    color: var(--calendar-cell-color, #18181b);
     border: none;
     background: none;
     cursor: pointer;
@@ -429,28 +429,28 @@
   }
 
   .cell:focus-visible {
-    outline: 2px solid var(--calendar-focus-ring-color, #000000);
+    outline: 2px solid var(--calendar-focus-ring-color, #18181b);
     outline-offset: -2px;
   }
 
   .today {
-    border: var(--calendar-today-border, 1px solid #000000);
+    border: var(--calendar-today-border, 1px solid #18181b);
     font-weight: var(--calendar-today-font-weight, 700);
   }
 
   .selected {
-    background-color: var(--calendar-selected-background, #000000);
+    background-color: var(--calendar-selected-background, #18181b);
     color: var(--calendar-selected-color, #ffffff);
   }
 
   .range-start {
-    background-color: var(--calendar-range-start-background, #000000);
+    background-color: var(--calendar-range-start-background, #18181b);
     color: var(--calendar-range-start-color, #ffffff);
     border-radius: 50% 0 0 50%;
   }
 
   .range-end {
-    background-color: var(--calendar-range-end-background, #000000);
+    background-color: var(--calendar-range-end-background, #18181b);
     color: var(--calendar-range-end-color, #ffffff);
     border-radius: 0 50% 50% 0;
   }
@@ -460,17 +460,18 @@
   }
 
   .in-range {
-    background-color: var(--calendar-range-background, currentColor);
+    background-color: var(--calendar-range-background, #f4f4f5);
+    color: var(--calendar-range-color, #18181b);
     border-radius: 0;
   }
 
   .disabled {
-    color: var(--calendar-disabled-color, currentColor);
+    color: var(--calendar-disabled-color, #a1a1aa);
     cursor: var(--calendar-disabled-cursor, not-allowed);
   }
 
   .outside-month {
-    color: var(--calendar-outside-month-color, currentColor);
+    color: var(--calendar-outside-month-color, #a1a1aa);
     cursor: default;
   }
 </style>

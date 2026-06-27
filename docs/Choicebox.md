@@ -46,7 +46,7 @@ Override these custom properties to theme the component.
 | `--choicebox-align-items`           | `center`                               | align-items   | Vertical alignment of the choicebox contents.                |
 | `--choicebox-padding`               | `16px`                                 | padding       | Inner padding of the choicebox card.                         |
 | `--choicebox-border`                | `2px solid currentColor`               | border        | Border of the choicebox in its default unselected state.     |
-| `--choicebox-border-radius`         | `12px`                                 | border-radius | Corner rounding of the choicebox card.                       |
+| `--choicebox-border-radius`         | `6px`                                 | border-radius | Corner rounding of the choicebox card.                       |
 | `--choicebox-background`            | `#ffffff`                              | background    | Background color of the choicebox in its default state.      |
 | `--choicebox-gap`                   | `12px`                                 | gap           | Gap between child elements inside the choicebox.             |
 | `--choicebox-cursor`                | `pointer`                              | cursor        | Cursor when hovering the choicebox.                          |

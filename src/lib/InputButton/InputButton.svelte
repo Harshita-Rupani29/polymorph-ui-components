@@ -132,7 +132,7 @@
     font-size: var(--input-font-size, 16px) !important;
     font-weight: 500;
     margin: var(--input-button-margin);
-    border-radius: var(--input-button-radius, 4px);
+    border-radius: var(--input-button-radius, 6px);
     border: var(--input-button-container-border);
     background: var(--input-button-container-background);
     padding: var(--input-button-container-padding);
@@ -140,11 +140,12 @@
 
   .input-button {
     display: flex;
-    align-items: center;
-    border-radius: var(--input-button-radius, 4px);
-    border: var(--input-button-border);
-    box-shadow: var(--input-button-box-shadow, 0px 1px 8px currentColor);
+    align-items: stretch;
+    border-radius: var(--input-button-radius, 6px);
+    border: var(--input-button-border, 1px solid currentColor);
+    box-shadow: var(--input-button-box-shadow, none);
     background: var(--input-button-background);
+    overflow: hidden;
   }
   .input-button-container:focus-within {
     border: var(--input-button-focus-border);
@@ -200,8 +201,8 @@
     --button-font-family: var(--input-button-left-font-family);
     --button-font-weight: var(--input-button-left-font-weight);
     --button-font-size: var(--input-button-left-font-size);
-    --button-height: var(--input-button-left-height, 54px);
-    --button-padding: var(--input-button-left-padding);
+    --button-height: var(--input-button-left-height, 100%);
+    --button-padding: var(--input-button-left-padding, 0px 16px);
     --button-border-radius: var(--input-button-left-border-radius);
     --button-width: var(--input-button-left-width);
     --button-cursor: var(--input-button-left-cursor);
@@ -209,7 +210,7 @@
     --button-border: var(--input-button-left-border);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: row;
     --button-content-gap: var(--input-button-left-content-gap);
     --button-content-flex-direction: var(--input-button-left-content-flex-direction, row);
@@ -224,7 +225,7 @@
     flex: var(--input-button-right-flex, 1);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: row;
     min-width: var(--input-button-right-min-width, 0px);
     --button-color: var(--input-button-right-color);
@@ -232,9 +233,9 @@
     --button-font-family: var(--input-button-right-font-family);
     --button-font-weight: var(--input-button-right-font-weight);
     --button-font-size: var(--input-button-right-font-size);
-    --button-height: var(--input-button-right-height, 54px);
-    --button-padding: var(--input-button-right-padding);
-    --button-border-radius: var(--input-button-right-border-radius, 0px 4px 4px 0px);
+    --button-height: var(--input-button-right-height, 100%);
+    --button-padding: var(--input-button-right-padding, 0px 16px);
+    --button-border-radius: var(--input-button-right-border-radius, 0px 6px 6px 0px);
     --button-width: var(--input-button-right-width, 100%);
     --button-cursor: var(--input-button-right-cursor);
     --button-opacity: var(--input-button-right-opacity);

@@ -76,13 +76,13 @@
     flex-direction: column;
     padding: var(--toolbar-padding, 0px);
     height: var(--toolbar-height, fit-content);
-    width: var(--toolbar-width, 100vw);
-    position: var(--toolbar-position, fixed);
+    width: var(--toolbar-width, 100%);
+    position: var(--toolbar-position, sticky);
     top: var(--toolbar-top, 0);
     left: var(--toolbar-left, 0);
     right: var(--toolbar-right, 0);
     background: var(--toolbar-background, #ffffff);
-    box-shadow: var(--toolbar-box-shadow, 0px 2px 12px currentColor);
+    box-shadow: var(--toolbar-box-shadow, 0px 2px 12px rgba(0, 0, 0, 0.1));
     z-index: var(--toolbar-z-index, 10);
     border-radius: var(--toolbar-border-radius, 0px);
   }
@@ -133,7 +133,7 @@
 
   .text {
     font-size: var(--toolbar-text-font-size, inherit);
-    font-weight: var(--toolbar-text-font-weight, normal);
+    font-weight: var(--toolbar-text-font-weight, 400);
     padding: var(--toolbar-text-padding, 0px);
     margin: var(--toolbar-text-margin, 0px);
     color: var(--toolbar-text-color);

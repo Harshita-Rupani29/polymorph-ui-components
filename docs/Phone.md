@@ -45,24 +45,24 @@ Override these custom properties to theme the component.
 | `--phone-frame-padding`            | `12px`                                                   | padding       | Thickness of the bezel (space between frame edge and screen).                   |
 | `--phone-frame-shadow`             | `0 20px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.1)` | box-shadow    | Drop shadow around the device frame.                                            |
 | `--phone-screen-border-radius`     | `38px`                                                   | border-radius | Corner rounding of the inner screen area.                                       |
-| `--phone-screen-background`        | `#000`                                                   | background    | Background color of the screen area (visible when no content fills the screen). |
+| `--phone-screen-background`        | `#18181b`                                                   | background    | Background color of the screen area (visible when no content fills the screen). |
 | `--phone-screen-aspect-ratio`      | `9/19.5` (modern) or `9/16` (classic)                    | aspect-ratio  | Aspect ratio of the screen area. Defaults depend on the variant.                |
 | `--phone-status-bar-height`        | `44px`                                                   | height        | Height of the status bar at the top of the screen.                              |
-| `--phone-status-bar-color`         | `currentColor`                                           | color         | Text/icon color used in the status bar.                                         |
+| `--phone-status-bar-color`         | `#ffffff`                                                | color         | Text/icon color used in the status bar.                                         |
 | `--phone-status-bar-font-size`     | `14px`                                                   | font-size     | Font size of status bar text (time display).                                    |
 | `--phone-status-bar-background`    | `transparent`                                            | background    | Background color of the status bar.                                             |
 | `--phone-notch-width`              | `120px`                                                  | width         | Width of the notch/dynamic island element (modern variant only).                |
 | `--phone-notch-height`             | `32px`                                                   | height        | Height of the notch/dynamic island element (modern variant only).               |
 | `--phone-notch-border-radius`      | `20px`                                                   | border-radius | Corner rounding of the notch/dynamic island (modern variant only).              |
-| `--phone-notch-background`         | `var(--phone-frame-color, #000000)`                      | background    | Background color of the notch/dynamic island (modern variant only).             |
+| `--phone-notch-background`         | `var(--phone-frame-color, #18181b)`                      | background    | Background color of the notch/dynamic island (modern variant only).             |
 | `--phone-home-bar-width`           | `134px`                                                  | width         | Width of the bottom home indicator bar (modern variant only).                   |
 | `--phone-home-bar-height`          | `5px`                                                    | height        | Height of the bottom home indicator bar (modern variant only).                  |
 | `--phone-home-bar-color`           | `currentColor`                                           | background    | Color of the home indicator bar (modern variant only).                          |
 | `--phone-home-bar-radius`          | `3px`                                                    | border-radius | Corner rounding of the home indicator bar (modern variant only).                |
 | `--phone-home-button-size`         | `50px`                                                   | width, height | Diameter of the classic home button circle (classic variant only).              |
 | `--phone-home-button-border-color` | `currentColor`                                           | border-color  | Border color of the classic home button circle (classic variant only).          |
-| `--phone-side-button-color`        | `var(--phone-frame-color, #000000)`                      | background    | Color of the decorative side buttons (volume and power).                        |
-| `--phone-frame-color`              | `#000000`                                                | background    | Background color of the phone frame/bezel.                                      |
+| `--phone-side-button-color`        | `var(--phone-frame-color, #18181b)`                      | background    | Color of the decorative side buttons (volume and power).                        |
+| `--phone-frame-color`              | `#18181b`                                                | background    | Background color of the phone frame/bezel.                                      |
 | `--phone-content-overflow`         | `hidden`                                                 | overflow      | Overflow behavior of the content area inside the screen.                        |
 
 ## Web Component

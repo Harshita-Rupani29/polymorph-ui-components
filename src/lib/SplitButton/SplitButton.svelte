@@ -62,17 +62,17 @@
   }
 
   .split-button-primary {
-    --button-color: var(--split-button-primary-background, #000000);
+    --button-color: var(--split-button-primary-background, #18181b);
     --button-text-color: var(--split-button-primary-color, white);
     --button-padding: var(--split-button-primary-padding, 8px 16px);
     --button-font-size: var(--split-button-primary-font-size, 14px);
     --button-font-weight: var(--split-button-primary-font-weight, 500);
     --button-font-family: var(--split-button-primary-font-family);
     --button-border: var(--split-button-primary-border, none);
-    --button-border-radius: var(--split-button-primary-border-radius, 4px 0 0 4px);
+    --button-border-radius: var(--split-button-primary-border-radius, 6px 0 0 6px);
     --button-hover-color: var(
       --split-button-primary-hover-background,
-      var(--split-button-primary-background, #000000)
+      var(--split-button-primary-background, #18181b)
     );
     --button-hover-text-color: var(
       --split-button-primary-hover-color,
@@ -89,11 +89,25 @@
     --menu-trigger-focus-outline: none;
     --menu-dropdown-left: 0;
     --menu-min-width: 100%;
+    --menu-item-color: var(--split-button-menu-item-color, #18181b);
+    --menu-item-danger-color: var(--split-button-menu-item-danger-color, #18181b);
+    --menu-item-hover-background-color: var(--split-button-menu-item-hover-background, #f4f4f5);
+    --menu-item-focus-background-color: var(--split-button-menu-item-focus-background, #f4f4f5);
+    --menu-item-danger-hover-background-color: var(
+      --split-button-menu-item-danger-hover-background,
+      #f4f4f5
+    );
+    --menu-item-danger-focus-background-color: var(
+      --split-button-menu-item-danger-focus-background,
+      #f4f4f5
+    );
+    --menu-border: var(--split-button-menu-border, 1px solid #e4e4e7);
+    --menu-separator-color: var(--split-button-menu-separator-color, #e4e4e7);
     border-left: var(--split-button-trigger-separator, 1px solid rgba(255, 255, 255, 0.3));
     display: flex;
     align-items: stretch;
-    background-color: var(--split-button-trigger-background, #000000);
-    border-radius: var(--split-button-trigger-border-radius, 0 4px 4px 0);
+    background-color: var(--split-button-trigger-background, #18181b);
+    border-radius: var(--split-button-trigger-border-radius, 0 6px 6px 0);
     color: var(--split-button-trigger-color, white);
     cursor: pointer;
   }
@@ -106,7 +120,7 @@
   .split-button-trigger:hover {
     background-color: var(
       --split-button-trigger-hover-background,
-      var(--split-button-trigger-background, #000000)
+      var(--split-button-trigger-background, #18181b)
     );
     color: var(--split-button-trigger-hover-color, var(--split-button-trigger-color, white));
   }

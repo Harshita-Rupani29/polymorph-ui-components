@@ -29,7 +29,7 @@ Override these custom properties to theme the component.
 | ----------------------------- | --------- | ------------------- | -------------------------------------------------------------- |
 | `--gauge-size`                | `120px`   | width, height       | Diameter of the gauge container.                               |
 | `--gauge-stroke-width`        | `8`       | stroke-width        | Width of the circular track and fill arc.                      |
-| `--gauge-track-color`         | `currentColor` | stroke              | Color of the background ring (unfilled portion of the circle). |
+| `--gauge-track-color`         | `#a1a1aa` | stroke              | Color of the background ring (unfilled portion of the circle). |
 | `--gauge-bar-color`           | `currentColor` | stroke              | Color of the filled arc that represents the current value.     |
 | `--gauge-transition-duration` | `0.3s`    | transition-duration | Duration of the animation when the filled arc changes.         |
 | `--gauge-label-font-size`     | `24px`    | font-size           | Font size of the centered percentage label.                    |

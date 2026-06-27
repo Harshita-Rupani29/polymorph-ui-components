@@ -162,7 +162,7 @@
     height: var(--theme-switcher-size, 36px);
     padding: 0;
     border: none;
-    border-radius: var(--theme-switcher-border-radius, 8px);
+    border-radius: var(--theme-switcher-border-radius, 6px);
     background-color: var(--theme-switcher-bg, transparent);
     cursor: pointer;
     color: var(--theme-switcher-icon-color, currentColor);
@@ -211,7 +211,7 @@
     gap: var(--theme-switcher-segment-gap, 2px);
     padding: var(--theme-switcher-segment-padding, 4px);
     background-color: var(--theme-switcher-segment-bg, transparent);
-    border-radius: var(--theme-switcher-border-radius, 8px);
+    border-radius: var(--theme-switcher-border-radius, 6px);
   }
 
   .segment-indicator {

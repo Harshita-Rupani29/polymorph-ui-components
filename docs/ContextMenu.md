@@ -63,7 +63,7 @@ Override these custom properties to theme the component.
 | `--context-menu-z-index`                            | `1000`                                           | z-index          | Stacking order of the context menu dropdown.                    |
 | `--context-menu-background-color`                   | `#ffffff`                                        | background-color | Background color of the dropdown panel.                         |
 | `--context-menu-border`                             | `1px solid currentColor`                         | border           | Border around the dropdown panel.                               |
-| `--context-menu-border-radius`                      | `6px`                                            | border-radius    | Corner rounding of the dropdown panel.                          |
+| `--context-menu-border-radius`                      | `8px`                                            | border-radius    | Corner rounding of the dropdown panel.                          |
 | `--context-menu-box-shadow`                         | `0px 4px 16px rgba(0, 0, 0, 0.12)`               | box-shadow       | Shadow of the dropdown panel.                                   |
 | `--context-menu-min-width`                          | `160px`                                          | min-width        | Minimum width of the dropdown panel.                            |
 | `--context-menu-padding`                            | `4px 0`                                          | padding          | Inner padding of the dropdown panel.                            |
@@ -74,18 +74,18 @@ Override these custom properties to theme the component.
 | `--context-menu-item-background-color`              | `transparent`                                    | background-color | Background color of menu items in their default state.          |
 | `--context-menu-item-gap`                           | `8px`                                            | gap              | Gap between icon and label within a menu item.                  |
 | `--context-menu-item-white-space`                   | `nowrap`                                         | white-space      | White-space behavior for menu item text.                        |
-| `--context-menu-item-hover-background-color`        | `transparent`                                    | background-color | Background color of a menu item on hover.                       |
+| `--context-menu-item-hover-background-color`        | `#f4f4f5`                                        | background-color | Background color of a menu item on hover.                       |
 | `--context-menu-item-hover-color`                   | `var(--context-menu-item-color, currentColor)`   | color            | Text color of a menu item on hover.                             |
-| `--context-menu-item-focus-background-color`        | `transparent`                                    | background-color | Background color of a menu item when focused via keyboard.      |
+| `--context-menu-item-focus-background-color`        | `#f4f4f5`                                        | background-color | Background color of a menu item when focused via keyboard.      |
 | `--context-menu-item-focus-outline`                 | `none`                                           | outline          | Focus outline of a menu item when focused via keyboard.         |
 | `--context-menu-item-danger-color`                  | `currentColor`                                   | color            | Text color for danger-flagged items (destructive actions).      |
-| `--context-menu-item-danger-hover-background-color` | `transparent`                                    | background-color | Background color for danger items on hover.                     |
+| `--context-menu-item-danger-hover-background-color` | `#f4f4f5`                                        | background-color | Background color for danger items on hover.                     |
 | `--context-menu-item-danger-hover-color`            | `var(--context-menu-item-danger-color, currentColor)` | color            | Text color for danger items on hover.                           |
-| `--context-menu-item-danger-focus-background-color` | `transparent`                                    | background-color | Background color for danger items when focused via keyboard.    |
+| `--context-menu-item-danger-focus-background-color` | `#f4f4f5`                                        | background-color | Background color for danger items when focused via keyboard.    |
 | `--context-menu-item-disabled-opacity`              | `0.4`                                            | opacity          | Opacity of disabled menu items.                                 |
 | `--context-menu-item-disabled-cursor`               | `not-allowed`                                    | cursor           | Cursor shown when hovering disabled items.                      |
 | `--context-menu-separator-height`                   | `1px`                                            | height           | Height of the separator line between item groups.               |
-| `--context-menu-separator-color`                    | `currentColor`                                   | background-color | Color of the separator line.                                    |
+| `--context-menu-separator-color`                    | `#e4e4e7`                                        | background-color | Color of the separator line.                                    |
 | `--context-menu-separator-margin`                   | `4px 0`                                          | margin           | Vertical spacing around the separator line.                     |
 | `--context-menu-item-icon-height`                   | `16px`                                           | height           | Height of per-item icons.                                       |
 | `--context-menu-item-icon-width`                    | `16px`                                           | width            | Width of per-item icons.                                        |
