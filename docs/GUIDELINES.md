@@ -378,3 +378,70 @@ The `classes` prop is the recommended way to implement theme variants (primary, 
 ```
 
 This approach keeps components free from hardcoded design presets while giving consumers full control over theming. Multiple variant systems can coexist, and variants compose naturally with space-separated class names.
+
+---
+
+## 10. No Inline SVG — Import Assets and Expose Icon Overrides
+
+Do not hardcode `<svg>…</svg>` markup inside a component template. Inline SVG bloats the template, can't be themed or swapped by consumers, and duplicates markup across states.
+
+Instead, follow the two-part icon pattern used across the library (`Tabs`, `Checkbox`, `Pill`, `ThemeSwitcher`, …):
+
+### 1. Default icon — import an asset as a raw string and render it
+
+Add the icon under `src/lib/assets/<name>.svg` (use `stroke="currentColor"` / `fill="currentColor"` so it inherits color via CSS), import it with the `?raw` suffix, and render it with `{@html}`.
+
+```svelte
+<!-- Bad — inline SVG in the template -->
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+
+<!-- Good — asset imported as a raw string -->
+<script lang="ts">
+  import playSvg from '$lib/assets/play.svg?raw';
+</script>
+
+<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+{@html playSvg}
+```
+
+### 2. Override — expose a `Snippet` prop and prefer it when provided
+
+Let consumers replace the icon by passing a snippet. Type the prop as `Snippet` in `properties.ts`, and render the snippet when present, falling back to the default asset otherwise.
+
+```svelte
+<script lang="ts">
+  import playSvg from '$lib/assets/play.svg?raw';
+  let { playIcon /* ?: Snippet */ } = $props();
+</script>
+
+{#if typeof playIcon === 'function'}
+  {@render playIcon()}
+{:else}
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html playSvg}
+{/if}
+```
+
+```ts
+// properties.ts
+import type { Snippet } from 'svelte';
+
+export type OptionalProperties = {
+  /** Snippet rendering a custom play icon. Falls back to the built-in asset when omitted. */
+  playIcon?: Snippet;
+};
+```
+
+### Sizing
+
+Because `{@html}` content and snippet content are not scoped by Svelte, size icons with a `:global()` selector scoped under the icon's container, exposing a CSS variable so consumers can resize:
+
+```css
+.control :global(svg),
+.control :global(img) {
+  height: var(--component-control-icon-size, 100%);
+  width: var(--component-control-icon-size, 100%);
+}
+```
+
+In the web-component wrapper, declare icon props as `{ type: 'Object' }` (snippets are not attribute-serializable); custom-element consumers fall back to the built-in asset defaults.

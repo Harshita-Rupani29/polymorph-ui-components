@@ -108,6 +108,14 @@
     "description": "Animated dot sequence for inline loading indication. Renders a configurable number of dots (default 3) that animate in a staggered sequence using either a bounce or pulse animation. Size and duration are controlled via CSS variables."
   },
   {
+    "name": "MediaPlayer",
+    "description": "An image or video player with a hover-revealed control overlay. For videos it shows a centered play/pause control and a bottom-aligned mute/unmute control, with built-in icons (imported from assets) that can be replaced via snippet props. The `playing` and `muted` states are bindable, and click/keyboard toggling is wired up. Control buttons reuse the Button component. Unstyled by default — sizing, overlay color, and control appearance are driven by CSS variables. Set `controls` to use the browser's native video controls instead."
+  },
+  {
+    "name": "MediaUpload",
+    "description": "A polished file upload field with a drag-and-drop drop zone, image thumbnail previews, and file cards (icon + name + size) for non-image files. Validates dropped/selected files against `accept` and `maxFileSize`, enforces a `maxLength` cap, and surfaces an inline error with customizable messages. Shows a label, attached/limit counter, helper description, and per-card hover remove buttons that reuse the Button component. Exposes the bindable `files` array plus `onchange`, `onremove`, and `onerror` callbacks. Built-in icons (imported from assets) are replaceable via snippet props, and every dimension, color, border, and state is themeable through CSS variables."
+  },
+  {
     "name": "Menu",
     "description": "A dropdown action menu with full keyboard navigation (ArrowUp/Down, Enter/Space, Escape, Home/End), typeahead search, click-outside dismiss, separator lines, danger-styled items, disabled items, optional icons, and configurable position. Focus is managed automatically."
   },

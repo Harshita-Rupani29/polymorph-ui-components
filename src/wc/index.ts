@@ -49,3 +49,5 @@ import './components/Table.wc.svelte';
 import './components/Toast.wc.svelte';
 import './components/Toolbar.wc.svelte';
 import './components/Tooltip.wc.svelte';
+import './components/MediaPlayer.wc.svelte';
+import './components/MediaUpload.wc.svelte';
