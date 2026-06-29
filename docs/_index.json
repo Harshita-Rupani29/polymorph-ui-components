@@ -36,6 +36,38 @@
     "description": "An auto-playing slideshow that renders Svelte components as slides. Supports touch swipe and mouse drag for navigation. Shows optional dot indicators below the slides for direct navigation."
   },
   {
+    "name": "Chat",
+    "description": "A full chat surface composing ChatHeader, ChatMessageList, ChatSuggestions, ChatToolStatus, and ChatComposer. Fully controlled (pass `messages`, handle `onsend`) with no baked-in transport. Opt-in features: header image, stop-generation, voice mic, file attachments, prompt suggestions, smart autoscroll, and per-message copy/retry/feedback. Pair with the decoupled `ChatController` runes class — message state, streaming, typewriter reveal, retry, and session threading — which delegates the network call to a pluggable `ChatTransport` (adapt SSE, WebSocket, or polling). Markdown is not bundled — pass pre-sanitized HTML on a message's `html` field."
+  },
+  {
+    "name": "ChatBubble",
+    "description": "A floating launcher button (FAB) pinned to a viewport corner that toggles a floating panel (role=dialog). Drop a Chat (or anything) inside via the children snippet — ChatBubble owns only the launcher, corner positioning, bindable `open` state, focus management (focus into panel on open, Escape to close and return focus), and reuses the Button component for the launcher. Optionally `draggable` (grab the launcher to reposition the whole widget, with click-vs-drag detection and viewport clamping; bindable `dragX`/`dragY`). `dragMode` controls drag style: `'snap'` (default) anchors to the nearest left/right screen edge on release like a mobile chat head (panel re-opens toward center), `'free'` stays where dropped. Optionally `resizable` (resize the open panel; bindable `panelWidth`/`panelHeight`, handles derived from the corner via the Resizable component). Decoupled from its contents; fully themeable via CSS variables."
+  },
+  {
+    "name": "ChatComposer",
+    "description": "An auto-growing message input with a send button (the Button component). Enter submits, Shift+Enter inserts a newline (IME-safe); clears on submit. Opt-in controls light up when you wire a callback: `onattach` adds a file picker with removable attachment chips (bindable `attachments`), `onvoice` adds a mic button (with `recording` state), and `streaming` + `onstop` morph send into a stop button. Every icon is snippet-overridable."
+  },
+  {
+    "name": "ChatHeader",
+    "description": "A header bar for a chat surface: an optional brand image (via the Img component) or avatar snippet, title and subtitle, extra actions snippet, and a close button (the Button component) shown when `onclose` is provided. Close icon falls back to a built-in asset and is overridable via snippet."
+  },
+  {
+    "name": "ChatMessage",
+    "description": "A single chat bubble. The primitive is the two-party `role`: `sender` (right, accent bubble) or `responder` (left). `user`/`assistant`/`system` and any custom string are recognized extensions that map onto a party (sender/user → sender; everything else → responder), so LLM message arrays drop in unchanged; the exported `partyOf(role)` resolves a role to its party. Renders pre-sanitized `html` (e.g. rendered markdown) or plain `content`, shows a typing indicator (LoadingDots) while streaming with no content, and accepts avatar, header, and attachments snippets. Opt-in hover actions on responder messages: built-in copy (with checkmark feedback), retry (onretry), and 👍/👎 (onfeedback). Basic markdown elements are styled via :global."
+  },
+  {
+    "name": "ChatMessageList",
+    "description": "A scrollable conversation container with smart auto-scroll: it sticks to the bottom only while you're already near it, and shows a jump-to-latest button when you've scrolled up. Renders each message with ChatMessage by default or a custom `message` snippet, shows an `empty` snippet when there are no messages, and forwards opt-in message actions (allowCopy, onretry, onfeedback). Uses a Svelte action (no effects), respecting reduced-motion."
+  },
+  {
+    "name": "ChatSuggestions",
+    "description": "A row of tappable prompt chips (the Pill component), typically shown on an empty conversation. Each item is a string or `{ label, value }`; selecting a chip fires `onselect` with the value and index."
+  },
+  {
+    "name": "ChatToolStatus",
+    "description": "A compact status pill pairing a spinner (the Loader component) with a label to show what the assistant is doing (searching, calling a tool, thinking). The leading indicator is overridable via snippet."
+  },
+  {
     "name": "Checkbox",
     "description": "A styled checkbox input with a custom SVG checkmark. Supports checked state binding, disabled state, and configurable size and colors via CSS variables."
   },
@@ -62,6 +94,10 @@
   {
     "name": "ContextMenu",
     "description": "A right-click context menu with a flat list of items supporting separators, disabled items, danger styling, optional icons, and shortcut labels. Has keyboard navigation, positions itself at the click point, and adjusts to stay within the viewport."
+  },
+  {
+    "name": "Draggable",
+    "description": "A wrapper that lets the user drag its content to reposition it via `transform: translate(x, y)` (never affecting flow). Bindable `x`/`y` make the position observable/persistable; supports a `handle` selector, single-`axis` constraint, viewport `bounds`, and keyboard arrow-key movement by `step`, plus drag events. Layout-agnostic — layers on top of the element's existing positioning. Pair with a `fixed` element for a draggable floating panel."
   },
   {
     "name": "Gauge",
@@ -154,6 +190,10 @@
   {
     "name": "RelativeTime",
     "description": "Displays a human-readable relative time string (e.g., '5 minutes ago') that auto-updates at a configurable interval. Uses Intl.RelativeTimeFormat for locale-aware formatting. Renders a semantic <time> element. Optionally wraps in a Tooltip showing the full date."
+  },
+  {
+    "name": "Resizable",
+    "description": "A wrapper that makes its content user-resizable via drag handles on chosen edges/corners (`handles`). Dragging updates the bindable `width`/`height` (clamped to min/max) so size is observable and persistable; `onresize`/`onresizestart`/`onresizeend` fire too. Each handle is a focusable WAI-ARIA splitter — arrow keys resize by `step`, with role=separator and aria-valuenow/min/max. Resize changes size only (not position), so pick handle edges that match how the element is anchored. Layout-agnostic: wrap a Chat panel, Modal, image, or card."
   },
   {
     "name": "Scroller",

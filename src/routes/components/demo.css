@@ -180,3 +180,56 @@
   font-weight: 600;
   color: var(--doc-accent-text);
 }
+
+.chat-theme {
+  --chat-background: var(--doc-demo-bg);
+
+  --chat-header-border-bottom: 1px solid var(--doc-border-light);
+  --chat-header-title-color: var(--doc-text-heading);
+  --chat-header-subtitle-color: var(--doc-text-muted);
+  --chat-header-close-color: var(--doc-text-secondary);
+  --chat-header-close-hover-background-color: var(--doc-btn-hover-bg);
+
+  --chat-message-color: var(--doc-text-primary);
+  --chat-message-responder-color: var(--doc-text-primary);
+  --chat-message-sender-background: var(--doc-accent);
+  --chat-message-sender-color: #ffffff;
+  --chat-message-link-color: var(--doc-accent-text);
+  --chat-message-code-background: var(--doc-code-bg);
+  --chat-message-pre-background: var(--doc-code-bg);
+  --chat-message-action-color: var(--doc-text-muted);
+  --chat-message-action-hover-background-color: var(--doc-btn-hover-bg);
+
+  --chat-message-list-jump-background-color: var(--doc-btn-bg);
+  --chat-message-list-jump-color: var(--doc-text-secondary);
+  --chat-message-list-jump-border: 1px solid var(--doc-border);
+
+  --chat-footer-border-top: 1px solid var(--doc-border-light);
+  --chat-composer-background: var(--doc-input-bg);
+  --chat-composer-border: 1px solid var(--doc-border);
+  --chat-composer-color: var(--doc-text-primary);
+  --chat-composer-placeholder-color: var(--doc-text-faint);
+  --chat-composer-send-background-color: var(--doc-accent);
+  --chat-composer-send-color: #ffffff;
+  --chat-composer-send-hover-background-color: var(--doc-accent-text);
+  --chat-composer-stop-background-color: var(--doc-accent);
+  --chat-composer-action-color: var(--doc-text-secondary);
+  --chat-composer-action-hover-background-color: var(--doc-btn-hover-bg);
+
+  --chat-tool-status-background: var(--doc-btn-bg);
+  --chat-tool-status-border: 1px solid var(--doc-border);
+  --chat-tool-status-color: var(--doc-text-secondary);
+
+  --pill-background: var(--doc-btn-bg);
+  --pill-color: var(--doc-text-secondary);
+  --pill-border: 1px solid var(--doc-border);
+  --pill-hover-background: var(--doc-btn-hover-bg);
+  --pill-hover-color: var(--doc-text-primary);
+}
+
+.chat-card {
+  border: 1px solid var(--doc-border);
+  border-radius: var(--doc-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--doc-shadow);
+}

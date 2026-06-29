@@ -1,0 +1,47 @@
+# ChatToolStatus
+
+A compact status pill that shows what the assistant is doing — "Searching the catalog…", "Calling a tool…", "Thinking…". It pairs a spinner (the `Loader` component) with a label, and the leading indicator can be replaced with a snippet. Render it above the composer or floating over the conversation while `toolStatus` is non-null.
+
+## Usage
+
+```svelte
+<script>
+  import { ChatToolStatus } from 'polymorph-ui-components';
+</script>
+
+<ChatToolStatus label="Searching the catalog…" />
+```
+
+## Props
+
+| Prop    | Type      | Required | Default | Description                                                  |
+| ------- | --------- | -------- | ------- | ----------------------------------------------------------- |
+| label   | `string`  | Yes      | `-`     | Status text.                                                |
+| icon    | `Snippet` | No       | `-`     | Leading indicator. Falls back to the built-in spinner.      |
+| testId  | `string`  | No       | `-`     | `data-pw` on the root element.                              |
+| classes | `string`  | No       | `-`     | Class string on the root element.                          |
+
+## CSS Variables
+
+| Variable                              | Default                    | CSS Property   | Description                  |
+| ------------------------------------- | -------------------------- | -------------- | ---------------------------- |
+| `--chat-tool-status-gap`              | `8px`                      | gap            | Gap between spinner and label.|
+| `--chat-tool-status-padding`          | `8px 14px`                 | padding        | Pill padding.                |
+| `--chat-tool-status-background`       | `#ffffff`                  | background     | Pill background.             |
+| `--chat-tool-status-border`           | `1px solid #e4e4e7`        | border         | Pill border.                 |
+| `--chat-tool-status-border-radius`    | `999px`                    | border-radius  | Pill corner rounding.        |
+| `--chat-tool-status-box-shadow`       | `0 6px 20px rgba(0,0,0,0.08)` | box-shadow  | Pill shadow.                 |
+| `--chat-tool-status-color`            | `#52525b`                  | color          | Label color.                 |
+| `--chat-tool-status-font-size`        | `0.85rem`                  | font-size      | Label font size.             |
+| `--chat-tool-status-font-weight`      | `500`                      | font-weight    | Label weight.                |
+| `--chat-tool-status-max-width`        | `100%`                     | max-width      | Max pill width.              |
+| `--chat-tool-status-indicator-color`  | `currentColor`             | color          | Spinner color.               |
+| `--chat-tool-status-spinner-size`     | `14px`                     | height/width   | Spinner size.                |
+
+## Web Component
+
+Tag: `<pui-chat-tool-status>`
+
+```html
+<pui-chat-tool-status label="Searching…"></pui-chat-tool-status>
+```
