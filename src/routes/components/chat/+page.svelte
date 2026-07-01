@@ -1,5 +1,6 @@
 <script lang="ts">
   import Chat from '$lib/Chat/Chat.svelte';
+  import Button from '$lib/Button/Button.svelte';
   import Resizable from '$lib/Resizable/Resizable.svelte';
   import { ChatController } from '$lib/Chat/controller.svelte';
   import type { ChatTransport } from '$lib/Chat/types';
@@ -33,6 +34,26 @@
   let recording = $state(false);
   let panelWidth = $state(420);
   let panelHeight = $state(600);
+
+  // Expand toggle: swap to a larger preset (animated by Resizable's transition),
+  // restoring the prior size on collapse.
+  let expanded = $state(false);
+  const expandedWidth = 640;
+  const expandedHeight = 760;
+  let liveWidth = $derived(expanded ? expandedWidth : panelWidth);
+  let liveHeight = $derived(expanded ? expandedHeight : panelHeight);
+
+  function setLiveWidth(value: number): void {
+    if (!expanded) {
+      panelWidth = value;
+    }
+  }
+
+  function setLiveHeight(value: number): void {
+    if (!expanded) {
+      panelHeight = value;
+    }
+  }
 </script>
 
 <div class="page-header">
@@ -40,50 +61,81 @@
   <h1>Chat</h1>
 </div>
 
-<Resizable
-  bind:width={panelWidth}
-  bind:height={panelHeight}
-  minWidth={340}
-  maxWidth={640}
-  minHeight={420}
-  maxHeight={760}
-  handles={['right', 'bottom', 'bottom-right']}
-  classes="chat-theme chat-card"
->
-  <Chat
-    messages={chat.messages}
-    bind:value
-    bind:attachments
-    image="https://picsum.photos/64?random=7"
-    title="Shopping Assistant"
-    subtitle="Online"
-    placeholder="Ask anything…"
-    streaming={chat.isStreaming}
-    {recording}
-    toolStatus={chat.toolStatus}
-    suggestions={['Recommend a gift', 'Track my order', 'Return policy?']}
-    accept="image/*"
-    multiple
-    allowCopy
-    onsend={(text) => chat.send(text)}
-    onstop={() => chat.stop()}
-    onretry={() => chat.retry()}
-    onvoice={() => (recording = !recording)}
-    onattach={() => {}}
-    onfeedback={() => {}}
-    onclose={() => {}}
+<div class="expand-control">
+  <Button
+    text={expanded ? 'Collapse panel' : 'Expand panel'}
+    onclick={() => (expanded = !expanded)}
+  />
+</div>
+
+<div class="chat-stage">
+  <Resizable
+    bind:width={() => liveWidth, setLiveWidth}
+    bind:height={() => liveHeight, setLiveHeight}
+    minWidth={340}
+    maxWidth={640}
+    minHeight={420}
+    maxHeight={760}
+    handles={['right', 'bottom', 'bottom-right']}
+    classes="chat-theme chat-card"
   >
-    {#snippet headerContent()}
-      <div class="header-note">Powered by your own transport — fully decoupled</div>
-    {/snippet}
-  </Chat>
-</Resizable>
+    <Chat
+      messages={chat.messages}
+      bind:value
+      bind:attachments
+      image="https://picsum.photos/64?random=7"
+      title="Shopping Assistant"
+      subtitle="Online"
+      placeholder="Ask anything…"
+      streaming={chat.isStreaming}
+      {recording}
+      toolStatus={chat.toolStatus}
+      suggestions={['Recommend a gift', 'Track my order', 'Return policy?']}
+      accept="image/*"
+      multiple
+      allowCopy
+      onsend={(text) => chat.send(text)}
+      onstop={() => chat.stop()}
+      onretry={() => chat.retry()}
+      onvoice={() => (recording = !recording)}
+      onattach={() => {}}
+      onfeedback={() => {}}
+      onclose={() => {}}
+    >
+      {#snippet headerContent()}
+        <div class="header-note">Powered by your own transport — fully decoupled</div>
+      {/snippet}
+    </Chat>
+  </Resizable>
+</div>
 
 <p class="demo-note">
-  Drag the right / bottom edge or corner to resize. {panelWidth} × {panelHeight}
+  Drag the right / bottom edge or corner to resize, or use the button above to expand the panel with
+  an animated scale-up. {liveWidth} × {liveHeight}
 </p>
 
 <style>
+  /* Cascades into the child Resizable, which animates width/height on expand
+     (and disables it while drag-resizing / under reduced motion). */
+  .chat-stage {
+    --resizable-transition:
+      width 0.32s cubic-bezier(0.22, 1, 0.36, 1), height 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Theme the reused Button to match the site's controls (vars inherit into it). */
+  .expand-control {
+    margin-bottom: 16px;
+    --button-color: var(--doc-btn-bg);
+    --button-text-color: var(--doc-text-primary);
+    --button-hover-color: var(--doc-btn-hover-bg);
+    --button-hover-text-color: var(--doc-text-primary);
+    --button-border: 1px solid var(--doc-btn-border);
+    --button-hover-border: 1px solid var(--doc-btn-border);
+    --button-padding: 8px 16px;
+    --button-font-size: 14px;
+    --button-border-radius: var(--doc-radius);
+  }
+
   .header-note {
     font-size: 11px;
     color: var(--doc-text-muted, #71717a);

@@ -210,10 +210,18 @@
     box-sizing: border-box;
     max-width: var(--resizable-max-width, none);
     max-height: var(--resizable-max-height, none);
+    transition: var(--resizable-transition, none);
   }
 
   .resizable.resizing {
     user-select: none;
+    transition: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .resizable {
+      transition: none;
+    }
   }
 
   .handle {

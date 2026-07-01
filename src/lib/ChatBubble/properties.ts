@@ -35,6 +35,9 @@ export type OptionalChatBubbleProperties = {
   panelHeight?: number;
   minPanelWidth?: number;
   minPanelHeight?: number;
+  expanded?: boolean;
+  expandedPanelWidth?: number;
+  expandedPanelHeight?: number;
   testId?: string;
   classes?: string;
 };

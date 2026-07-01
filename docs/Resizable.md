@@ -74,6 +74,7 @@ type ResizeSize = { width: number; height: number };
 | ----------------------------------------- | -------------------- | ------------ | ---------------------------------------- |
 | `--resizable-max-width`                   | `none`               | max-width    | Caps the rendered width (e.g. to fit a container/viewport); the bound `width` is clamped to it visually. |
 | `--resizable-max-height`                  | `none`               | max-height   | Caps the rendered height regardless of `height`. |
+| `--resizable-transition`                  | `none`               | transition   | Transition for programmatic size changes (e.g. an expand/collapse animation). Automatically suppressed while the user is actively drag-resizing and under `prefers-reduced-motion: reduce`. |
 | `--resizable-edge-size`                   | `8px`                | width/height | Hit-area thickness of edge handles.      |
 | `--resizable-corner-size`                 | `14px`               | width/height | Hit-area size of corner handles.         |
 | `--resizable-handle-color`                | `transparent`        | background   | Handle fill (set to make handles visible).|

@@ -24,6 +24,9 @@
     panelHeight = $bindable(600),
     minPanelWidth = 280,
     minPanelHeight = 360,
+    expanded = $bindable(false),
+    expandedPanelWidth = $bindable(600),
+    expandedPanelHeight = $bindable(760),
     onopen,
     onclose,
     ontoggle,
@@ -60,6 +63,25 @@
     flipVertical ?? (position.startsWith('top') ? 'top' : 'bottom')
   );
   let resizeHandles = $derived(handlesFor(verticalSide, effectiveSide));
+
+  let liveWidth = $derived(expanded ? expandedPanelWidth : panelWidth);
+  let liveHeight = $derived(expanded ? expandedPanelHeight : panelHeight);
+
+  function setLiveWidth(value: number): void {
+    if (expanded) {
+      expandedPanelWidth = value;
+    } else {
+      panelWidth = value;
+    }
+  }
+
+  function setLiveHeight(value: number): void {
+    if (expanded) {
+      expandedPanelHeight = value;
+    } else {
+      panelHeight = value;
+    }
+  }
 
   function snapMargin(): number {
     if (root === null) {
@@ -235,6 +257,7 @@
   data-position={position}
   data-effective-side={effectiveSide}
   data-effective-vertical={verticalSide}
+  data-expanded={expanded}
   data-pw={testId}
   bind:this={root}
   style:transform={draggable ? `translate(${dragX}px, ${dragY}px)` : null}
@@ -247,8 +270,8 @@
     >
       <Resizable
         disabled={!resizable}
-        bind:width={panelWidth}
-        bind:height={panelHeight}
+        bind:width={() => liveWidth, setLiveWidth}
+        bind:height={() => liveHeight, setLiveHeight}
         minWidth={minPanelWidth}
         minHeight={minPanelHeight}
         maxWidth={availWidth ?? Number.POSITIVE_INFINITY}
@@ -325,6 +348,11 @@
   .panel-anchor {
     position: absolute;
     --resizable-handle-color: var(--chat-bubble-resize-handle-color, transparent);
+    --resizable-transition: var(
+      --chat-bubble-expand-transition,
+      width 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+      height 0.32s cubic-bezier(0.22, 1, 0.36, 1)
+    );
   }
 
   .chat-bubble[data-effective-vertical='bottom'] .panel-anchor {

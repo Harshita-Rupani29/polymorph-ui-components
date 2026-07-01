@@ -9,6 +9,16 @@ Set **`draggable`** to let the user grab the launcher and reposition the whole w
 
 The offset is the bindable `dragX`/`dragY`. Set **`resizable`** to let the user resize the panel from the edges nearest the screen center (via the `Resizable` component); the size is the bindable `panelWidth`/`panelHeight`. Both `draggable` and `resizable` are off by default.
 
+**Expand / collapse.** Bind **`expanded`** to grow the panel to a larger preset (**`expandedPanelWidth`**/**`expandedPanelHeight`**) and toggle it back to the previous size — the panel size animates the change (a scale-up grow), so flipping `expanded` from anywhere in your app smoothly resizes the widget. The normal and expanded sizes are tracked independently, so collapsing restores the pre-expand size and the expanded size is capped to the available viewport space just like a manual resize (resizing while expanded updates `expandedPanelWidth`/`expandedPanelHeight`). The animation is suppressed while the user is actively drag-resizing and under `prefers-reduced-motion: reduce`.
+
+```svelte
+<button onclick={() => (expanded = !expanded)}>Toggle size</button>
+
+<ChatBubble bind:open bind:expanded expandedPanelWidth={680} expandedPanelHeight={820}>
+  <Chat {messages} bind:value {onsend} onclose={() => (open = false)} />
+</ChatBubble>
+```
+
 **Adaptive placement.** However the launcher ends up positioned — by `position`, dragging, or snapping — the panel opens toward the side with the most room: it **drops down** when the bubble is in the top half of the viewport and opens upward when it's in the bottom half (and likewise left/right), so the panel never opens off-screen. The resize handles follow the chosen direction. The panel is also **capped to the available space** in that direction, so on small/short viewports it shrinks to fit (the conversation scrolls inside) rather than spilling past the screen edge.
 
 ## Usage
@@ -141,6 +151,9 @@ Both launcher icons are snippets; provide your own for closed (`icon`) and open 
 | panelHeight    | `number`                                                | No       | `600`           | Bindable. Panel height in px.                               |
 | minPanelWidth  | `number`                                                | No       | `280`           | Minimum panel width when resizing.                         |
 | minPanelHeight | `number`                                                | No       | `360`           | Minimum panel height when resizing.                        |
+| expanded       | `boolean`                                                | No       | `false`         | Bindable. Toggle to grow the panel to the expanded preset (animated); restores the prior size on collapse. |
+| expandedPanelWidth  | `number`                                            | No       | `600`           | Bindable. Panel width (px) when `expanded` (capped to available space). |
+| expandedPanelHeight | `number`                                            | No       | `760`           | Bindable. Panel height (px) when `expanded` (capped to available space).|
 | testId         | `string`                                                | No       | `-`             | `data-pw` on the root element.                              |
 | classes        | `string`                                                | No       | `-`             | Class string on the root element.                          |
 
@@ -178,6 +191,7 @@ Reuses `Button` (the launcher) and `Resizable` (panel resizing). Its content is 
 | `--chat-bubble-hover-background-color`| `#27272a`                                     | background    | Launcher hover background.        |
 | `--chat-bubble-box-shadow`            | `0 8px 24px rgba(0,0,0,0.25)`                 | box-shadow    | Launcher shadow.                  |
 | `--chat-bubble-snap-transition`       | `transform 0.28s cubic-bezier(0.22,1,0.36,1)` | transition    | Snap/reposition animation (disabled while dragging and under reduced-motion). |
+| `--chat-bubble-expand-transition`     | `width/height 0.32s cubic-bezier(0.22,1,0.36,1)` | transition | Expand/collapse size animation, applied via the panel's `Resizable` (`--resizable-transition`); disabled while drag-resizing and under reduced-motion. |
 | `--chat-bubble-panel-gap`             | `16px`                                        | bottom/top    | Gap between launcher and panel.   |
 | `--chat-bubble-panel-max-width`       | `calc(100vw - 32px)`                          | max-width     | Panel max width.                  |
 | `--chat-bubble-panel-max-height`      | `calc(100dvh - 120px)`                        | max-height    | Panel max height.                 |
@@ -196,4 +210,4 @@ Tag: `<pui-chat-bubble>`
 <pui-chat-bubble label="Open chat" draggable resizable></pui-chat-bubble>
 ```
 
-Put panel content in the default slot, and set object props (`icon`, `openIcon`, `onopen`, …) via JavaScript. Boolean/number/string props map to attributes: `draggable`, `resizable`, `drag-mode`, `drag-x`, `drag-y`, `panel-width`, `panel-height`, `min-panel-width`, `min-panel-height`, `position`, `label`, `close-label`.
+Put panel content in the default slot, and set object props (`icon`, `openIcon`, `onopen`, …) via JavaScript. Boolean/number/string props map to attributes: `draggable`, `resizable`, `drag-mode`, `drag-x`, `drag-y`, `panel-width`, `panel-height`, `min-panel-width`, `min-panel-height`, `expanded`, `expanded-panel-width`, `expanded-panel-height`, `position`, `label`, `close-label`.
