@@ -120,6 +120,7 @@ export const componentNav: NavGroup[] = [
       { name: 'Avatar', slug: 'avatar' },
       { name: 'Icon', slug: 'icon' },
       { name: 'Img', slug: 'img' },
+      { name: 'Gallery', slug: 'gallery' },
       { name: 'MediaPlayer', slug: 'media-player' },
       { name: 'MediaUpload', slug: 'media-upload' }
     ]

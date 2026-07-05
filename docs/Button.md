@@ -59,6 +59,14 @@ Svelte 5 Snippet props — pass content blocks to the component.
 | icon     | `Snippet` | A Svelte 5 Snippet for rendering custom icon content (e.g., an SVG) next to the button text. Rendered inside a flex container with configurable order.       |
 | children | `Snippet` | A Svelte 5 Snippet for rendering arbitrary content inside the button. Use this instead of `text` when you need full control over the button's inner content. |
 
+## Methods
+
+Exported methods that can be called via `bind:this` on the component instance.
+
+| Method           | Signature                        | Description                                                                                                                   |
+| ---------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `getButtonRef()` | `() => HTMLButtonElement \| null` | Returns a reference to the underlying native `<button>` element. Use for custom focus management (e.g., focus traps) without querying the DOM. |
+
 ## Events
 
 | Event   | Type                             | Description                                                                                                                     |

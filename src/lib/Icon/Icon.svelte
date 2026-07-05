@@ -2,14 +2,28 @@
   import type { IconProperties } from './properties';
 
   let { icon, svg, text, onclick, onkeydown, testId, classes }: IconProperties = $props();
+
+  let interactive = $derived(typeof onclick === 'function');
+
+  function handleKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (event.currentTarget instanceof HTMLElement) {
+        event.currentTarget.click();
+      }
+    }
+    onkeydown?.(event);
+  }
 </script>
 
+<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <div
   class="icon-container {classes ?? ''}"
-  {onclick}
-  {onkeydown}
-  role="button"
-  tabindex="0"
+  class:interactive
+  onclick={interactive ? onclick : null}
+  onkeydown={interactive ? handleKeydown : onkeydown}
+  role={interactive ? 'button' : null}
+  tabindex={interactive ? 0 : null}
   data-pw={testId}
 >
   {#if typeof svg === 'string' && svg.length > 0}
@@ -29,8 +43,12 @@
     padding: var(--icon-container-padding, 4px);
     flex-direction: var(--icon-container-direction, column);
     align-items: center;
-    cursor: pointer;
   }
+
+  .icon-container.interactive {
+    cursor: var(--icon-cursor, pointer);
+  }
+
   .icon-container img {
     height: var(--icon-height, 20px);
     width: var(--icon-width, 20px);

@@ -239,6 +239,7 @@ When replacing `<button>` with `<Button>`, wrap `<Button>` in a `<div>` with the
 - `onclick` / `onkeyup` — Event handlers
 - `type` — Button type (`'button'` / `'submit'` / `'reset'`)
 - `testId` — Maps to `data-pw` for test automation
+- `getButtonRef()` — Exported method (call via `bind:this` on the instance) returning the native `<button>`, for focus management instead of DOM queries
 
 ---
 

@@ -42,6 +42,7 @@
 | 25 | Snippet | :white_check_mark: | Copyable command-line code snippet |
 | 26 | Keyboard Input | :white_check_mark: | Renders keyboard shortcut badges (e.g. `Ctrl+K`) |
 | 27 | Relative Time Card | :white_check_mark: | Popover showing a date in the user's local timezone |
+| 57 | Gallery | :white_check_mark: | Image gallery with grid/list views, lightbox viewer, keyboard navigation, focus management, and optional per-item edit/delete actions |
 
 ---
 
@@ -127,8 +128,8 @@
 
 | Metric | Count |
 | --- | --- |
-| **Total Components** | 56 |
-| **Available** | 44 |
+| **Total Components** | 57 |
+| **Available** | 45 |
 | **To Build** | 12 |
 
 ---

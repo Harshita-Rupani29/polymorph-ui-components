@@ -35,6 +35,7 @@ Override these custom properties to theme the component.
 | `--image-border-radius`    | `0px`                     | border-radius | Corner rounding of the image.                                  |
 | `--image-margin`           | `0px`                     | margin        | Margin around the image.                                       |
 | `--image-filter`           | `none`                    | filter        | CSS filter applied to the image (e.g., grayscale, brightness). |
+| `--image-flex-shrink`      | `-`                       | flex-shrink   | Flex shrink factor when the image is a flex item.              |
 | `--image-background`       | `-`                       | background    | Background behind the image.                                   |
 | `--image-border`           | `-`                       | border        | Border of the image.                                           |
 | `--image-transition`       | `-`                       | transition    | Transition animation for hover effects.                        |

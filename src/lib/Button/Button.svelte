@@ -22,6 +22,12 @@
     classes
   }: ButtonProperties = $props();
 
+  export function getButtonRef(): HTMLButtonElement | null {
+    return buttonElement;
+  }
+
+  let buttonElement: HTMLButtonElement | null = $state(null);
+
   let isDisabled = $derived(!enable || disabled || showLoader);
 
   function handleButtonClick(event: MouseEvent): void {
@@ -40,6 +46,7 @@
     <div class="button-progress-bar"></div>
   {/if}
   <button
+    bind:this={buttonElement}
     class:disabled={isDisabled}
     onclick={handleButtonClick}
     {onkeyup}

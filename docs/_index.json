@@ -100,6 +100,10 @@
     "description": "A wrapper that lets the user drag its content to reposition it via `transform: translate(x, y)` (never affecting flow). Bindable `x`/`y` make the position observable/persistable; supports a `handle` selector, single-`axis` constraint, viewport `bounds`, and keyboard arrow-key movement by `step`, plus drag events. Layout-agnostic — layers on top of the element's existing positioning. Pair with a `fixed` element for a draggable floating panel."
   },
   {
+    "name": "Gallery",
+    "description": "An image gallery with grid and list views and a built-in lightbox viewer. Items open a full-screen modal lightbox with previous/next navigation, keyboard support (Escape, ArrowLeft/ArrowRight, Home/End), a focus trap, fade transition, focus return to the originating item, and body scroll lock tied exactly to the lightbox lifecycle. Bindable open/activeIndex props allow observing or programmatically controlling the lightbox. The view prop switches between a grid of tiles and a list of rows (thumbnail + alt title + caption subtitle). Providing oneditclick / ondeleteclick handlers renders per-item edit / delete buttons that fire without opening the lightbox (frosted-glass scrim over grid tiles, transparent inline on list rows). Supports thumbnails, error fallbacks, and captions per image. Every visual property is themeable via --gallery-* CSS variables."
+  },
+  {
     "name": "Gauge",
     "description": "A full-circle ring gauge that displays a `value` clamped to 0-100 as a single SVG arc. Has an animated stroke-dashoffset transition and an optional centered percentage label. Uses SVG stroke-dasharray for the arc rendering."
   },
@@ -109,7 +113,7 @@
   },
   {
     "name": "Icon",
-    "description": "A clickable icon component that displays an image with an optional text label below. The entire container is a button for accessibility."
+    "description": "An icon component that displays an image (via icon URL) or inline SVG markup (via svg prop, rendered with {@html}) with an optional text label. Interactivity is per-state: the container only becomes a focusable role=\"button\" with Enter/Space activation and pointer cursor when an onclick handler is provided; otherwise it renders as a plain element. Icon/text layout direction and sizing are themeable via --icon-* CSS variables."
   },
   {
     "name": "IconStack",

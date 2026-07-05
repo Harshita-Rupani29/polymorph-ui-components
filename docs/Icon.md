@@ -1,6 +1,6 @@
 # Icon
 
-A clickable icon component that displays an image or inline SVG with an optional text label. The entire container is a button for accessibility. Layout direction (row or column) is controlled via CSS variable `--icon-container-direction`. Supports two rendering modes: image URL via `icon` prop, or raw SVG markup via `svg` prop.
+An icon component that displays an image or inline SVG with an optional text label. Interactivity is per-state: the container only becomes a focusable `role="button"` with Enter/Space activation and a pointer cursor when an `onclick` handler is provided; otherwise it renders as a plain element. Layout direction (row or column) is controlled via CSS variable `--icon-container-direction`. Supports two rendering modes: image URL via `icon` prop, or raw SVG markup via `svg` prop.
 
 ## Usage
 
@@ -34,7 +34,7 @@ A clickable icon component that displays an image or inline SVG with an optional
 
 | Event     | Type                             | Description                                                     |
 | --------- | -------------------------------- | --------------------------------------------------------------- |
-| onclick   | `(event: MouseEvent) => void`    | Fires when the icon container is clicked.                       |
+| onclick   | `(event: MouseEvent) => void`    | Fires when the icon container is clicked. Providing this handler is what makes the container a focusable `role="button"` with Enter/Space activation. |
 | onkeydown | `(event: KeyboardEvent) => void` | Fires when a key is pressed while the icon container has focus. |
 
 ## CSS Variables
@@ -45,6 +45,7 @@ Override these custom properties to theme the component.
 | ---------------------------- | -------------- | -------------- | -------------------------------------------------------------------------- |
 | `--icon-container-padding`   | `4px`          | padding        | Inner padding of the icon container.                                       |
 | `--icon-container-direction` | `column`       | flex-direction | Layout direction of icon + text (column for vertical, row for horizontal). |
+| `--icon-cursor`              | `pointer`      | cursor         | Cursor over the container when interactive (an `onclick` is provided).     |
 | `--icon-height`              | `20px`         | height         | Height of the icon image or SVG container.                                 |
 | `--icon-width`               | `20px`         | width          | Width of the icon image or SVG container.                                  |
 | `--icon-padding`             | `4px`          | padding        | Padding around the icon image or SVG container.                            |

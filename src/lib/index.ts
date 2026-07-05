@@ -64,6 +64,7 @@ export { default as ChatSuggestions } from './ChatSuggestions/ChatSuggestions.sv
 export { default as Resizable } from './Resizable/Resizable.svelte';
 export { default as Draggable } from './Draggable/Draggable.svelte';
 export { default as ChatBubble } from './ChatBubble/ChatBubble.svelte';
+export { default as Gallery } from './Gallery/Gallery.svelte';
 export { ChatController } from './Chat/controller.svelte';
 export { partyOf } from './Chat/roles';
 
@@ -128,5 +129,6 @@ export type * from './ChatSuggestions/properties';
 export type * from './Resizable/properties';
 export type * from './Draggable/properties';
 export type * from './ChatBubble/properties';
+export type * from './Gallery/properties';
 
 export { validateInput } from './utils';

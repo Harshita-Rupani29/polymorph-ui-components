@@ -25,6 +25,7 @@
     border-radius: var(--image-border-radius, 0px);
     margin: var(--image-margin, 0px);
     filter: var(--image-filter, none);
+    flex-shrink: var(--image-flex-shrink);
     background: var(--image-background);
     border: var(--image-border);
     transition: var(--image-transition);
