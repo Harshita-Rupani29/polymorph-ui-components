@@ -3,6 +3,16 @@
   "version": "0.3.0",
   "description": "MCP server for polymorph-ui-components - provides structured access to component props, CSS variables, and usage patterns",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinha-sahil/polymorph-ui-components.git",
+    "directory": "mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/sinha-sahil/polymorph-ui-components/issues"
+  },
+  "homepage": "https://github.com/sinha-sahil/polymorph-ui-components/tree/release/mcp#readme",
+  "author": "Sahil Sinha",
   "main": "build/index.js",
   "bin": {
     "polymorph-ui-components-mcp": "./build/index.js"
