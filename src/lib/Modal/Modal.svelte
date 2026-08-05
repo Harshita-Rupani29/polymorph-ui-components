@@ -8,11 +8,14 @@
 
   let overlayDiv: HTMLDivElement | null = $state(null);
   let backPressed = false;
+  let dismissTimer: ReturnType<typeof setTimeout> | null = null;
 
   let {
     size = 'fit-content',
     align = 'center',
     showOverlay = true,
+    lockScroll = true,
+    autoDismissAfter = null,
     supportHardwareBackPress = false,
     enableTransition = true,
     transitionType = 'ALL',
@@ -75,7 +78,12 @@
   }
 
   onMount(() => {
-    document.body.style.overflow = 'hidden';
+    if (lockScroll) {
+      document.body.style.overflow = 'hidden';
+    }
+    if (typeof autoDismissAfter === 'number') {
+      dismissTimer = setTimeout(() => onclose?.(), autoDismissAfter);
+    }
     if (supportHardwareBackPress) {
       history.pushState(null, '', window.location.href);
       window.addEventListener('popstate', handlePopstate);
@@ -83,8 +91,13 @@
   });
 
   onDestroy(() => {
+    if (dismissTimer !== null) {
+      clearTimeout(dismissTimer);
+    }
     if (typeof window !== 'undefined') {
-      document.body.style.overflow = '';
+      if (lockScroll) {
+        document.body.style.overflow = '';
+      }
       if (supportHardwareBackPress) {
         if (!backPressed) {
           history.back();
@@ -172,7 +185,7 @@
 
 <style>
   .modal {
-    position: fixed;
+    position: var(--modal-position, fixed);
     top: 0;
     bottom: 0;
     left: 0;

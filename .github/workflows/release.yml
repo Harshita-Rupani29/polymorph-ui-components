@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -82,24 +82,25 @@ jobs:
       contents: write
       packages: write
       pull-requests: write
+      id-token: write
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
-          version: 10.18.3
+          version: 10.28.2
 
       - name: Install dependencies
         run: pnpm install
@@ -284,7 +285,7 @@ jobs:
           fi
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         id: create_release
         with:
           tag_name: ${{ steps.version-bump.outputs.new_version }}
@@ -300,18 +301,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to NPM
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          # Create .npmrc file for authentication
-          cat > ~/.npmrc << EOF
-          //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-          registry=https://registry.npmjs.org/
-          always-auth=true
-          EOF
-
-          # Check if this version already exists on NPM
           PACKAGE_NAME=$(node -p "require('./package.json').name")
           NEW_VERSION="${{ steps.version-bump.outputs.new_version }}"
 
@@ -321,7 +311,6 @@ jobs:
             exit 0
           fi
 
-          # Publish to NPM (with organization scope support)
           echo "Publishing $PACKAGE_NAME@$NEW_VERSION to NPM..."
           npm publish --access public
           echo "Successfully published $PACKAGE_NAME@$NEW_VERSION to NPM"
@@ -341,18 +330,19 @@ jobs:
       contents: write
       packages: write
       pull-requests: write
+      id-token: write
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Configure Git
@@ -444,18 +434,8 @@ jobs:
 
       - name: Publish MCP to NPM
         id: npm-publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         working-directory: mcp
         run: |
-          # Create .npmrc file for authentication
-          cat > ~/.npmrc << EOF
-          //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-          registry=https://registry.npmjs.org/
-          always-auth=true
-          EOF
-
           PACKAGE_NAME=$(node -p "require('./package.json').name")
           NEW_VERSION="${{ steps.version-bump.outputs.new_version }}"
 
@@ -465,7 +445,6 @@ jobs:
             exit 0
           fi
 
-          # Scoped package -> publish publicly
           echo "Publishing $PACKAGE_NAME@$NEW_VERSION to NPM..."
           npm publish --access public
           echo "Successfully published $PACKAGE_NAME@$NEW_VERSION to NPM"

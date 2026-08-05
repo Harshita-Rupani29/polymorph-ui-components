@@ -21,6 +21,7 @@ A large-target selection card used for prominent single or multi-choice selectio
 | selected | `boolean`               | No       | `false`     | The current selection state of the choicebox. Bindable.                                                                                                                |
 | mode     | `'radio' \| 'checkbox'` | No       | `'radio'`   | Sets the element's ARIA role and selection behavior. In `radio` mode a selected card cannot be deselected by clicking it again; `checkbox` mode toggles freely.        |
 | disabled | `boolean`               | No       | `false`     | When true, the choicebox is non-interactive and visually dimmed.                                                                                                       |
+| showIndicator | `boolean`          | No       | `false`     | Draw the radio dot / checkbox tick inside the card. Off by default so cards that supply their own selected affordance are unaffected.                                   |
 | testId   | `string`                | No       | `undefined` | Value for the `data-pw` attribute used in Playwright test selectors.                                                                                                   |
 | classes  | `string`                | No       | `-`         | CSS class string applied to the component's top-level element. Useful for theming — define classes with CSS variable overrides and pass them to create variant styles. |
 
@@ -69,3 +70,36 @@ Tag: `<pui-choicebox>`
   <span>Option A</span>
 </pui-choicebox>
 ```
+
+### Indicator
+
+Set `showIndicator` to render a selection mark inside the card — a dot in `radio` mode, a tick in
+`checkbox` mode. The mark is decorative: the card itself carries `role` and `aria-checked`, so the
+indicator is `aria-hidden` and assistive tech reports one control, not two.
+
+The slot content is wrapped in a growing element, so the indicator always sits at the card's
+trailing edge whatever the slot contains. The wrapper's alignment and gap fall through to the
+card's own values, so theming the card is enough — you only set these to make the inside of the
+card differ from the card itself.
+
+| Variable                       | Default                          | Description                                                     |
+| ------------------------------ | -------------------------------- | --------------------------------------------------------------- |
+| `--choicebox-body-flex`        | `1`                              | Flex of the slot wrapper. `1` makes it fill, pushing the mark out. |
+| `--choicebox-body-min-width`   | `0`                              | Allows long slot content to ellipsis rather than overflow.       |
+| `--choicebox-body-display`     | `flex`                           | Layout of the slot wrapper.                                      |
+| `--choicebox-body-align-items` | `var(--choicebox-align-items)`   | Cross-axis alignment inside the wrapper.                         |
+| `--choicebox-body-gap`         | `var(--choicebox-gap)`           | Gap between slot children.                                       |
+
+| Variable                                    | Default              | Description                                          |
+| ------------------------------------------- | -------------------- | ---------------------------------------------------- |
+| `--choicebox-indicator-size`                | `20px`               | Width and height of the indicator.                   |
+| `--choicebox-indicator-border`              | `2px solid #757575`  | Border when unselected.                              |
+| `--choicebox-indicator-background`          | `transparent`        | Fill when unselected.                                |
+| `--choicebox-indicator-selected-border`     | `2px solid #2196f3`  | Border when selected.                                |
+| `--choicebox-indicator-selected-background` | `#2196f3`            | Fill when selected.                                  |
+| `--choicebox-indicator-border-radius`       | `var(--radius, 4px)` | Corner rounding in `checkbox` mode.                  |
+| `--choicebox-indicator-dot-inset`           | `4px`                | Ring thickness that forms the dot in `radio` mode.   |
+| `--choicebox-indicator-dot-color`           | `#ffffff`            | Colour of the ring that punches out the dot. Set this to the card's real background when the choicebox itself is transparent. |
+| `--choicebox-indicator-icon-size`           | `14px`               | Size of the tick in `checkbox` mode.                 |
+| `--choicebox-indicator-icon-color`          | `#ffffff`            | Colour of the tick.                                  |
+| `--choicebox-indicator-transition`          | `background 0.2s, border-color 0.2s` | Transition for selection changes.    |

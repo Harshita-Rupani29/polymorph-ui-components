@@ -9,6 +9,8 @@ export type ModalProperties = ModalEventProperties & {
   size?: ModalSize;
   align?: ModalAlign;
   showOverlay?: boolean;
+  lockScroll?: boolean;
+  autoDismissAfter?: number | null;
   supportHardwareBackPress?: boolean;
   enableTransition?: boolean;
   transitionType?: ModalTransition;

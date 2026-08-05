@@ -102,6 +102,8 @@
     gap: var(--button-content-gap, 16px);
     visibility: var(--button-visibility, visible);
     box-shadow: var(--button-box-shadow, none);
+    text-decoration: var(--button-text-decoration, none);
+    line-height: var(--button-line-height, normal);
   }
 
   .disabled {
@@ -112,6 +114,7 @@
     font-weight: var(--button-disabled-font-weight);
     border: var(--button-disabled-border);
     background: var(--button-disabled-background-color, var(--button-color, #18181b));
+    text-decoration: var(--button-disabled-text-decoration, var(--button-text-decoration, none));
   }
 
   .button-loader {
@@ -133,6 +136,7 @@
     color: var(--button-hover-text-color, var(--button-text-color, #ffffff));
     border: var(--button-hover-border, var(--button-border, none));
     transform: var(--button-hover-transform);
+    opacity: var(--button-hover-opacity, var(--button-opacity, 1));
   }
 
   button:active {
