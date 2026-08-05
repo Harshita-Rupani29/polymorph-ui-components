@@ -2,9 +2,11 @@
 based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/sinha-sahil/polymorph-ui-components/compare/0.5.0...HEAD)
+## [Unreleased](https://github.com/sinha-sahil/polymorph-ui-components/compare/0.6.0...HEAD)
 
-- enhance Button, Choicebox, and Modal components with new properties and styles
+- Added repo url to run oidc
+
+## [0.6.0](https://github.com/sinha-sahil/polymorph-ui-components/compare/0.5.0...0.6.0) - 5 August 2026
 
 ## [0.5.0](https://github.com/sinha-sahil/polymorph-ui-components/compare/0.4.0...0.5.0) - 5 July 2026
 
