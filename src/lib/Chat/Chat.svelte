@@ -30,6 +30,7 @@
     headerActions,
     headerContent,
     message,
+    messageAttachments,
     empty,
     composerLeading,
     sendIcon,
@@ -83,7 +84,16 @@
     />
   {/if}
 
-  <ChatMessageList {messages} {autoscroll} {message} {empty} {allowCopy} {onretry} {onfeedback} />
+  <ChatMessageList
+    {messages}
+    {autoscroll}
+    {message}
+    {messageAttachments}
+    {empty}
+    {allowCopy}
+    {onretry}
+    {onfeedback}
+  />
 
   <div class="footer">
     {#if showSuggestions}

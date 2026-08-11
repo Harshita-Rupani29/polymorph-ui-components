@@ -29,7 +29,7 @@ A single chat bubble. The primitive is the **party** — every message is from o
 | status      | `'sending' \| 'sent' \| 'error'`      | No       | `-`     | `error` tints the bubble with the error color.                  |
 | avatar      | `Snippet`                             | No       | `-`     | Avatar shown beside the bubble.                                 |
 | header      | `Snippet`                             | No       | `-`     | Header row above the bubble (author name, timestamp, etc.).     |
-| attachments | `Snippet`                             | No       | `-`     | Content rendered below the bubble.                              |
+| attachments | `Snippet \| null`                     | No       | `-`     | Content rendered below the bubble. Collapses to no layout when it renders nothing. |
 | allowCopy   | `boolean`                             | No       | `false` | Show a built-in copy button in the hover actions row.          |
 | actions     | `Snippet`                             | No       | `-`     | Extra custom actions appended to the actions row.              |
 | copyLabel / retryLabel / feedbackUpLabel / feedbackDownLabel | `string` | No | `…` | Aria-labels for the action buttons.                       |

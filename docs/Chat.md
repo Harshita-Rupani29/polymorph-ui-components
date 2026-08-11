@@ -77,6 +77,24 @@ Markdown is intentionally not bundled: pass pre-sanitized HTML on a message's `h
 
 **Roles.** Messages use the two-party primitive `role` — `sender` / `responder` (see `ChatMessage`). The controller emits those, and `partyOf(role)` resolves any role (including the `user`/`assistant`/`system` extensions) to its party. Map the primitive to your provider's roles inside the transport, where the API-specific terms belong: `history.map((m) => ({ role: partyOf(m.role) === 'sender' ? 'user' : 'assistant', content: m.content }))`.
 
+## Your own UI inside a message
+
+Two snippets, and the difference matters. `message` replaces the whole message — you own the bubble, alignment, streaming indicator, and you lose the built-in copy / retry / feedback wiring. `messageAttachments` renders **below** the bubble and keeps all of that, so reach for it first.
+
+It receives the whole `ChatMessageData`, so render on whatever field you like — a custom field of your own, or `attachments`, which `ChatController` fills from a transport's `handlers.onAttachment(...)`:
+
+```svelte
+<Chat {messages} bind:value allowCopy onretry={() => chat.retry()} {onsend}>
+  {#snippet messageAttachments(msg)}
+    {#each msg.attachments ?? [] as item, index (index)}
+      <YourComponent data={item} />
+    {/each}
+  {/snippet}
+</Chat>
+```
+
+The snippet is invoked for every message, so branch inside it to target specific ones. Rendering nothing costs no layout — the container collapses when empty.
+
 ## Layout — fullscreen & floating
 
 `Chat` is position- and size-agnostic: its root fills its container (`--chat-height` / `--chat-width` default to `100%`), with the message list on `flex: 1` and the composer pinned to the bottom. The only requirement is a **bounded-height parent** — the flexing list needs something to fill. Positioning (fixed, floating, modal) is the consumer's job; the component never assumes a layout context.
@@ -163,7 +181,8 @@ The fixed-height `.chat-panel` gives `Chat` its bounds; add a slide/scale transi
 | headerAvatar    | `Snippet`                     | No       | `-`     | Brand/avatar mark in the header (takes precedence over `image`).            |
 | headerActions   | `Snippet`                     | No       | `-`     | Extra inline header actions.                                                |
 | headerContent   | `Snippet`                     | No       | `-`     | Extra content as a full-width second row in the header (toolbar, status…).  |
-| message         | `Snippet<[ChatMessageData]>`  | No       | `-`     | Custom per-message rendering.                                               |
+| message         | `Snippet<[ChatMessageData]>`  | No       | `-`     | Custom per-message rendering. Replaces the default bubble entirely.        |
+| messageAttachments | `Snippet<[ChatMessageData]>` | No     | `-`     | Your own UI rendered below each bubble, keeping the default bubble and its actions. |
 | empty           | `Snippet`                     | No       | `-`     | Empty-state content.                                                        |
 | composerLeading | `Snippet`                     | No       | `-`     | Content before the composer input.                                         |
 | sendIcon / stopIcon / voiceIcon / attachIcon | `Snippet`        | No       | `-`     | Custom composer icons; each falls back to a built-in asset.                 |

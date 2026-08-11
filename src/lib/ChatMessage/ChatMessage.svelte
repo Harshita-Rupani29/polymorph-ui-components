@@ -252,6 +252,10 @@
     margin: var(--chat-message-attachments-margin, 4px 0 0 0);
   }
 
+  .message-attachments:empty {
+    display: none;
+  }
+
   .actions {
     display: flex;
     align-items: center;

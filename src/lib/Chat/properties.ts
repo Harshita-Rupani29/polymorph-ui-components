@@ -32,6 +32,7 @@ export type OptionalChatProperties = {
   headerActions?: Snippet;
   headerContent?: Snippet;
   message?: Snippet<[ChatMessageData]>;
+  messageAttachments?: Snippet<[ChatMessageData]>;
   empty?: Snippet;
   composerLeading?: Snippet;
   sendIcon?: Snippet;

@@ -18,7 +18,7 @@ export type OptionalChatMessageProperties = {
   status?: ChatMessageStatus;
   avatar?: Snippet;
   header?: Snippet;
-  attachments?: Snippet;
+  attachments?: Snippet | null;
   allowCopy?: boolean;
   actions?: Snippet;
   copyLabel?: string;

@@ -6,6 +6,7 @@
       messages: { type: 'Object' },
       autoscroll: { type: 'Boolean', reflect: true },
       message: { type: 'Object' },
+      messageAttachments: { type: 'Object' },
       empty: { type: 'Object' },
       jumpLabel: { type: 'String', attribute: 'jump-label' },
       jumpIcon: { type: 'Object' },

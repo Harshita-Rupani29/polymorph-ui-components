@@ -14,6 +14,7 @@
     messages,
     autoscroll = true,
     message,
+    messageAttachments,
     empty,
     jumpLabel = 'Jump to latest',
     jumpIcon,
@@ -105,6 +106,9 @@
     {#if typeof message === 'function'}
       {@render message(msg)}
     {:else}
+      {#snippet attachmentsFor()}
+        {@render messageAttachments?.(msg)}
+      {/snippet}
       <ChatMessage
         role={msg.role}
         content={msg.content}
@@ -112,6 +116,7 @@
         streaming={msg.streaming}
         status={msg.status}
         allowCopy={allowCopy && partyOf(msg.role) === 'responder'}
+        attachments={typeof messageAttachments === 'function' ? attachmentsFor : null}
         onretry={retryFor(msg)}
         onfeedback={feedbackFor(msg)}
       />

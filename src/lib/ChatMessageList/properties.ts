@@ -13,6 +13,7 @@ export type MandatoryChatMessageListProperties = {
 export type OptionalChatMessageListProperties = {
   autoscroll?: boolean;
   message?: Snippet<[ChatMessageData]>;
+  messageAttachments?: Snippet<[ChatMessageData]>;
   empty?: Snippet;
   jumpLabel?: string;
   jumpIcon?: Snippet;

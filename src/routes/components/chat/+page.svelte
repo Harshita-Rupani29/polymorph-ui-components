@@ -5,6 +5,21 @@
   import { ChatController } from '$lib/Chat/controller.svelte';
   import type { ChatTransport } from '$lib/Chat/types';
 
+  type ChatOption = { label: string };
+
+  function optionsOf(items: unknown[]): ChatOption[] {
+    const options: ChatOption[] = [];
+    for (const item of items) {
+      if (typeof item === 'object' && item !== null && 'label' in item) {
+        const { label } = item;
+        if (typeof label === 'string') {
+          options.push({ label });
+        }
+      }
+    }
+    return options;
+  }
+
   function delay(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
@@ -25,6 +40,9 @@
       handlers.onText(`${word} `);
       await delay(45);
     }
+
+    handlers.onAttachment?.({ label: 'Show similar' });
+    handlers.onAttachment?.({ label: 'Something else' });
     handlers.onDone?.();
   };
 
@@ -105,6 +123,17 @@
       {#snippet headerContent()}
         <div class="header-note">Powered by your own transport — fully decoupled</div>
       {/snippet}
+
+      {#snippet messageAttachments(msg)}
+        {@const options = optionsOf(msg.attachments ?? [])}
+        {#if options.length > 0}
+          <div class="message-options">
+            {#each options as option (option.label)}
+              <Button text={option.label} onclick={() => chat.send(option.label)} />
+            {/each}
+          </div>
+        {/if}
+      {/snippet}
     </Chat>
   </Resizable>
 </div>
@@ -134,6 +163,20 @@
     --button-padding: 8px 16px;
     --button-font-size: 14px;
     --button-border-radius: var(--doc-radius);
+  }
+
+  .message-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    --button-color: transparent;
+    --button-text-color: var(--doc-text-primary, #18181b);
+    --button-hover-color: var(--doc-btn-hover-bg, #f4f4f5);
+    --button-border: 1px solid var(--doc-btn-border, #e4e4e7);
+    --button-hover-border: 1px solid var(--doc-btn-border, #e4e4e7);
+    --button-padding: 5px 12px;
+    --button-font-size: 12px;
+    --button-border-radius: 999px;
   }
 
   .header-note {
