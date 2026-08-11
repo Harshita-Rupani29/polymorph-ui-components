@@ -1,6 +1,6 @@
 {
   "name": "polymorph-ui-components",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A themeable Svelte 5 UI component library with CSS custom property driven styling",
   "keywords": [
     "svelte",
