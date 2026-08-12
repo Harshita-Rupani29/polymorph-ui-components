@@ -135,7 +135,8 @@ export const componentNav: NavGroup[] = [
       { name: 'ChatHeader', slug: 'chat-header' },
       { name: 'ChatToolStatus', slug: 'chat-tool-status' },
       { name: 'ChatSuggestions', slug: 'chat-suggestions' },
-      { name: 'ChatBubble', slug: 'chat-bubble' }
+      { name: 'ChatBubble', slug: 'chat-bubble' },
+      { name: 'ChatBar', slug: 'chat-bar' }
     ]
   },
   {

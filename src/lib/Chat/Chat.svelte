@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition';
   import ChatHeader from '../ChatHeader/ChatHeader.svelte';
   import ChatMessageList from '../ChatMessageList/ChatMessageList.svelte';
   import ChatComposer from '../ChatComposer/ChatComposer.svelte';
@@ -26,11 +27,21 @@
     allowCopy = false,
     closeLabel = 'Close',
     showClose,
+    showComposer = true,
+    toolStatusPlacement = 'inline',
+    background,
     headerAvatar,
     headerActions,
     headerContent,
     message,
+    messageAvatar,
+    avatarParty = 'both',
+    groupAvatars = false,
+    messageTyping,
     messageAttachments,
+    renderHtml,
+    pinned,
+    pinnedAfter,
     empty,
     composerLeading,
     sendIcon,
@@ -58,6 +69,11 @@
       typeof headerActions === 'function'
   );
   let showSuggestions = $derived(suggestions.length > 0 && messages.length === 0);
+  let floatingStatus = $derived(toolStatus !== null && toolStatusPlacement === 'floating');
+  let inlineStatus = $derived(toolStatus !== null && toolStatusPlacement === 'inline');
+  // A floating status is absolutely positioned, so it does not by itself give the footer height.
+  // Without this, `showComposer={false}` would leave the footer's padding as unexplained space.
+  let footerHasContent = $derived(showComposer || showSuggestions || inlineStatus);
 
   function handleSuggestion(suggestionValue: string, index: number): void {
     if (typeof onsuggestion === 'function') {
@@ -68,7 +84,17 @@
   }
 </script>
 
-<section class="chat {classes ?? ''}" data-pw={testId}>
+<section
+  class="chat {classes ?? ''}"
+  class:has-background={typeof background === 'function'}
+  data-pw={testId}
+>
+  {#if typeof background === 'function'}
+    <!-- `inert` as well as aria-hidden: aria-hidden alone hides it from assistive technology but
+         still lets any focusable element inside receive keyboard focus. -->
+    <div class="background" aria-hidden="true" inert>{@render background()}</div>
+  {/if}
+
   {#if showHeader}
     <ChatHeader
       {title}
@@ -88,39 +114,53 @@
     {messages}
     {autoscroll}
     {message}
-    {messageAttachments}
     {empty}
     {allowCopy}
+    {avatarParty}
+    {groupAvatars}
+    {messageAttachments}
+    {renderHtml}
+    {pinned}
+    {pinnedAfter}
+    avatar={messageAvatar}
+    typing={messageTyping}
     {onretry}
     {onfeedback}
   />
 
-  <div class="footer">
+  <div class="footer" class:empty={!footerHasContent}>
+    {#if floatingStatus && toolStatus !== null}
+      <div class="tool-status floating" transition:fade={{ duration: 200 }}>
+        <ChatToolStatus label={toolStatus.label} />
+      </div>
+    {/if}
     {#if showSuggestions}
       <ChatSuggestions items={suggestions} {disabled} onselect={handleSuggestion} />
     {/if}
-    {#if toolStatus !== null}
+    {#if inlineStatus && toolStatus !== null}
       <div class="tool-status"><ChatToolStatus label={toolStatus.label} /></div>
     {/if}
-    <ChatComposer
-      bind:value
-      bind:attachments
-      {placeholder}
-      {disabled}
-      {streaming}
-      {recording}
-      {accept}
-      {multiple}
-      onsubmit={onsend}
-      {onstop}
-      {onvoice}
-      {onattach}
-      leading={composerLeading}
-      {sendIcon}
-      {stopIcon}
-      {voiceIcon}
-      {attachIcon}
-    />
+    {#if showComposer}
+      <ChatComposer
+        bind:value
+        bind:attachments
+        {placeholder}
+        {disabled}
+        {streaming}
+        {recording}
+        {accept}
+        {multiple}
+        onsubmit={onsend}
+        {onstop}
+        {onvoice}
+        {onattach}
+        leading={composerLeading}
+        {sendIcon}
+        {stopIcon}
+        {voiceIcon}
+        {attachIcon}
+      />
+    {/if}
   </div>
 </section>
 
@@ -137,7 +177,27 @@
     overflow: hidden;
   }
 
+  /* Only a chat that was actually given a background becomes a positioning context, so
+     consumers without one see byte-identical layout to before. */
+  .chat.has-background {
+    position: relative;
+  }
+
+  .background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .chat.has-background > :not(.background) {
+    position: relative;
+    z-index: 1;
+  }
+
   .footer {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -147,8 +207,25 @@
     border-top: var(--chat-footer-border-top, none);
   }
 
+  /* Still rendered, because a floating tool status is positioned against it. */
+  .footer.empty {
+    padding: 0;
+    border-top: none;
+  }
+
   .tool-status {
     display: flex;
     justify-content: var(--chat-tool-status-justify, center);
+  }
+
+  /* Floating placement lifts the status out of the footer flow so it hovers over the
+     message list instead of displacing the composer as it appears and disappears. */
+  .tool-status.floating {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: var(--chat-tool-status-floating-bottom, 100%);
+    margin-bottom: var(--chat-tool-status-floating-offset, 8px);
+    pointer-events: none;
   }
 </style>

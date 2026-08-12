@@ -16,6 +16,8 @@
     streaming = false,
     status,
     avatar,
+    reserveAvatar = false,
+    typing,
     header,
     attachments,
     allowCopy = false,
@@ -82,6 +84,8 @@
   <div class="row">
     {#if typeof avatar === 'function'}
       <div class="avatar">{@render avatar()}</div>
+    {:else if reserveAvatar}
+      <div class="avatar reserved" aria-hidden="true"></div>
     {/if}
 
     <div class="content">
@@ -98,7 +102,16 @@
         {/if}
 
         {#if showTyping}
-          <span class="typing"><LoadingDots /></span>
+          <!-- A div, not a span: `typing` is an arbitrary snippet and may render block content
+               or a component with a block root, which would be invalid inside a span. It keeps
+               inline-flex layout, so the default indicator is unaffected. -->
+          <div class="typing">
+            {#if typeof typing === 'function'}
+              {@render typing()}
+            {:else}
+              <LoadingDots />
+            {/if}
+          </div>
         {/if}
       </div>
 
@@ -187,6 +200,10 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
+  }
+
+  .avatar.reserved {
+    width: var(--chat-message-avatar-size, 28px);
   }
 
   .content {

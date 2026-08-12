@@ -28,6 +28,8 @@ A single chat bubble. The primitive is the **party** — every message is from o
 | streaming   | `boolean`                             | No       | `false` | Shows a typing indicator when there is no content yet.          |
 | status      | `'sending' \| 'sent' \| 'error'`      | No       | `-`     | `error` tints the bubble with the error color.                  |
 | avatar      | `Snippet`                             | No       | `-`     | Avatar shown beside the bubble.                                 |
+| reserveAvatar | `boolean`                           | No       | `false` | Hold avatar-width space when no `avatar` is given, so grouped messages stay aligned. Sized by `--chat-message-avatar-size`. |
+| typing      | `Snippet`                             | No       | `-`     | Replaces the built-in dots shown while streaming with no content yet. |
 | header      | `Snippet`                             | No       | `-`     | Header row above the bubble (author name, timestamp, etc.).     |
 | attachments | `Snippet \| null`                     | No       | `-`     | Content rendered below the bubble. Collapses to no layout when it renders nothing. |
 | allowCopy   | `boolean`                             | No       | `false` | Show a built-in copy button in the hover actions row.          |
@@ -66,6 +68,7 @@ partyOf(role: ChatRole): ChatParty; // 'sender' | 'user' → 'sender'; everythin
 | `--chat-message-max-width`            | `82%`         | max-width      | Max width of the message.                    |
 | `--chat-message-margin`               | `0`           | margin         | Margin around the message.                   |
 | `--chat-message-gap`                  | `10px`        | gap            | Gap between avatar and bubble.               |
+| `--chat-message-avatar-size`          | `28px`        | width          | Width of the reserved avatar spacer. Set this to match your avatar so grouped messages align. |
 | `--chat-message-content-gap`          | `6px`         | gap            | Gap between header, bubble, attachments.     |
 | `--chat-message-header-font-size`     | `0.75rem`     | font-size      | Header row font size.                        |
 | `--chat-message-header-color`         | `#71717a`     | color          | Header row color.                            |

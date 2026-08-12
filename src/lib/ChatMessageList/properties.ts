@@ -1,5 +1,5 @@
 import type { Snippet } from 'svelte';
-import type { ChatMessageData } from '../Chat/types';
+import type { ChatMessageData, ChatParty } from '../Chat/types';
 import type { ChatMessageFeedback } from '../ChatMessage/properties';
 
 export type ChatMessageListProperties = OptionalChatMessageListProperties &
@@ -13,11 +13,18 @@ export type MandatoryChatMessageListProperties = {
 export type OptionalChatMessageListProperties = {
   autoscroll?: boolean;
   message?: Snippet<[ChatMessageData]>;
-  messageAttachments?: Snippet<[ChatMessageData]>;
   empty?: Snippet;
   jumpLabel?: string;
   jumpIcon?: Snippet;
   allowCopy?: boolean;
+  avatar?: Snippet<[ChatMessageData]>;
+  avatarParty?: ChatParty | 'both';
+  groupAvatars?: boolean;
+  typing?: Snippet;
+  messageAttachments?: Snippet<[ChatMessageData]>;
+  renderHtml?: (message: ChatMessageData) => string;
+  pinned?: Snippet;
+  pinnedAfter?: (message: ChatMessageData, index: number) => boolean;
   testId?: string;
   classes?: string;
 };

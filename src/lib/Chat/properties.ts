@@ -1,5 +1,5 @@
 import type { Snippet } from 'svelte';
-import type { ChatMessageData, ChatToolStatus } from './types';
+import type { ChatMessageData, ChatParty, ChatToolStatus } from './types';
 import type { ChatMessageFeedback } from '../ChatMessage/properties';
 import type { ChatSuggestion } from '../ChatSuggestions/properties';
 
@@ -28,11 +28,21 @@ export type OptionalChatProperties = {
   allowCopy?: boolean;
   closeLabel?: string;
   showClose?: boolean;
+  showComposer?: boolean;
+  toolStatusPlacement?: 'inline' | 'floating';
+  background?: Snippet;
   headerAvatar?: Snippet;
   headerActions?: Snippet;
   headerContent?: Snippet;
   message?: Snippet<[ChatMessageData]>;
+  messageAvatar?: Snippet<[ChatMessageData]>;
+  avatarParty?: ChatParty | 'both';
+  groupAvatars?: boolean;
+  messageTyping?: Snippet;
   messageAttachments?: Snippet<[ChatMessageData]>;
+  renderHtml?: (message: ChatMessageData) => string;
+  pinned?: Snippet;
+  pinnedAfter?: (message: ChatMessageData, index: number) => boolean;
   empty?: Snippet;
   composerLeading?: Snippet;
   sendIcon?: Snippet;

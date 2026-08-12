@@ -9,6 +9,8 @@
       streaming: { type: 'Boolean', reflect: true },
       status: { type: 'String', reflect: true },
       avatar: { type: 'Object' },
+      reserveAvatar: { type: 'Boolean', attribute: 'reserve-avatar' },
+      typing: { type: 'Object' },
       header: { type: 'Object' },
       attachments: { type: 'Object' },
       allowCopy: { type: 'Boolean', attribute: 'allow-copy' },

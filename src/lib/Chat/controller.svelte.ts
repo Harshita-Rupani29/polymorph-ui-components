@@ -116,6 +116,10 @@ export class ChatController {
             });
           },
           onError: (error) => {
+            // Text already accepted but not yet revealed must be committed first, otherwise the
+            // error is appended at the reveal cursor and the rest of the sentence continues
+            // after it — splitting the message mid-word.
+            this.flushReveal();
             this.patchReply((reply) => {
               reply.status = 'error';
               reply.content =
@@ -131,9 +135,14 @@ export class ChatController {
       );
     } catch (error) {
       if (!controller.signal.aborted) {
+        // Same ordering hazard as the onError handler: commit buffered text first, otherwise the
+        // drain below replays it after the error message. Appending rather than replacing also
+        // keeps whatever the responder managed to say before the transport failed.
+        this.flushReveal();
+        const message = error instanceof Error ? error.message : 'Something went wrong.';
         this.patchReply((reply) => {
           reply.status = 'error';
-          reply.content = error instanceof Error ? error.message : 'Something went wrong.';
+          reply.content = reply.content.length > 0 ? `${reply.content}\n\n${message}` : message;
         });
       }
     }
@@ -203,6 +212,18 @@ export class ChatController {
       };
       check();
     });
+  }
+
+  /** Commits any buffered-but-unrevealed text immediately, so writes that follow stay in order. */
+  private flushReveal(): void {
+    const pending = this.revealBuffer;
+    this.revealBuffer = '';
+    this.stopReveal();
+    if (pending.length > 0) {
+      this.patchReply((reply) => {
+        reply.content += pending;
+      });
+    }
   }
 
   private stopReveal(): void {

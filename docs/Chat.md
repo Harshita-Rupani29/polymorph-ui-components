@@ -169,7 +169,7 @@ The fixed-height `.chat-panel` gives `Chat` its bounds; add a slide/scale transi
 | disabled        | `boolean`                     | No       | `false` | Disable the composer entirely.                                             |
 | streaming       | `boolean`                     | No       | `false` | A reply is streaming — the send button becomes a stop button.              |
 | recording       | `boolean`                     | No       | `false` | Visual active state for the composer voice button.                         |
-| autoscroll      | `boolean`                     | No       | `true`  | Auto-scroll to the latest message (only when already near the bottom).     |
+| autoscroll      | `boolean`                     | No       | `true`  | Re-pin to the latest message whenever a message is appended.               |
 | toolStatus      | `ChatToolStatus \| null`      | No       | `null`  | Tool/typing status shown above the composer.                               |
 | suggestions     | `ChatSuggestion[]`            | No       | `[]`    | Prompt chips shown when the conversation is empty.                          |
 | attachments     | `File[]`                      | No       | `[]`    | Bindable. Pending composer attachments.                                    |
@@ -182,7 +182,17 @@ The fixed-height `.chat-panel` gives `Chat` its bounds; add a slide/scale transi
 | headerActions   | `Snippet`                     | No       | `-`     | Extra inline header actions.                                                |
 | headerContent   | `Snippet`                     | No       | `-`     | Extra content as a full-width second row in the header (toolbar, status…).  |
 | message         | `Snippet<[ChatMessageData]>`  | No       | `-`     | Custom per-message rendering. Replaces the default bubble entirely.        |
+| messageAvatar   | `Snippet<[ChatMessageData]>`  | No       | `-`     | Avatar rendered beside each message.                                        |
+| avatarParty     | `'sender' \| 'responder' \| 'both'` | No | `'both'` | Restrict avatars to one side of the conversation.                    |
+| groupAvatars    | `boolean`                     | No       | `false` | Show the avatar only on the first message of a consecutive run by the same party. |
+| messageTyping   | `Snippet`                     | No       | `-`     | Replaces the built-in dots while a message streams with no content yet.     |
 | messageAttachments | `Snippet<[ChatMessageData]>` | No     | `-`     | Your own UI rendered below each bubble, keeping the default bubble and its actions. |
+| renderHtml      | `(message: ChatMessageData) => string` | No | `-`   | Derives a message's HTML body, e.g. rendering and sanitizing markdown.      |
+| pinned          | `Snippet`                     | No       | `-`     | A persistent node placed after the message matched by `pinnedAfter`.        |
+| pinnedAfter     | `(message: ChatMessageData, index: number) => boolean` | No | `-` | Picks the message the pinned node follows.                    |
+| background      | `Snippet`                     | No       | `-`     | Decorative layer behind the whole frame. Non-interactive and `aria-hidden`. |
+| showComposer    | `boolean`                     | No       | `true`  | Set `false` when the composer lives outside the frame, e.g. a `ChatBar`.    |
+| toolStatusPlacement | `'inline' \| 'floating'`  | No       | `'inline'` | `floating` lifts the status out of the footer flow so it hovers over the conversation instead of displacing the composer. |
 | empty           | `Snippet`                     | No       | `-`     | Empty-state content.                                                        |
 | composerLeading | `Snippet`                     | No       | `-`     | Content before the composer input.                                         |
 | sendIcon / stopIcon / voiceIcon / attachIcon | `Snippet`        | No       | `-`     | Custom composer icons; each falls back to a built-in asset.                 |
@@ -216,6 +226,8 @@ The fixed-height `.chat-panel` gives `Chat` its bounds; add a slide/scale transi
 | `--chat-footer-background`    | `transparent` | background       | Footer background.                   |
 | `--chat-footer-border-top`    | `none`        | border-top       | Border above the footer.             |
 | `--chat-tool-status-justify`  | `center`      | justify-content  | Alignment of the tool-status row.    |
+| `--chat-tool-status-floating-bottom` | `100%` | bottom           | Floating status offset from the footer's top edge. |
+| `--chat-tool-status-floating-offset` | `8px`  | margin-bottom    | Extra gap above the footer when floating. |
 
 Child components (`ChatHeader`, `ChatMessageList`, `ChatComposer`, `ChatToolStatus`, `ChatSuggestions`, `ChatMessage`) are themed through their own CSS variables, which cascade into `Chat`.
 

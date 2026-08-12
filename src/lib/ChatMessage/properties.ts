@@ -17,6 +17,8 @@ export type OptionalChatMessageProperties = {
   streaming?: boolean;
   status?: ChatMessageStatus;
   avatar?: Snippet;
+  reserveAvatar?: boolean;
+  typing?: Snippet;
   header?: Snippet;
   attachments?: Snippet | null;
   allowCopy?: boolean;

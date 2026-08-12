@@ -58,6 +58,7 @@ import './components/ChatComposer.wc.svelte';
 import './components/ChatHeader.wc.svelte';
 import './components/ChatToolStatus.wc.svelte';
 import './components/ChatSuggestions.wc.svelte';
+import './components/ChatBar.wc.svelte';
 import './components/Resizable.wc.svelte';
 import './components/Draggable.wc.svelte';
 import './components/ChatBubble.wc.svelte';
