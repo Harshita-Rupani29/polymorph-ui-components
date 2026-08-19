@@ -138,8 +138,15 @@ Each component documents its **complete** variable surface in [`docs/`](docs/).
 
 The same components compile to **framework-agnostic custom elements** — theming works identically because it's pure CSS.
 
+### From a CDN — no build step, no install
+
+The bundle is self-contained (the Svelte runtime is compiled in) and registers every `<pui-*>` element on import, so a single `<script>` tag in a plain `.html` file is enough:
+
 ```html
-<script type="module" src="polymorph-ui-components/wc"></script>
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/polymorph-ui-components@latest/dist-wc/index.js"
+></script>
 
 <pui-button text="Save"></pui-button>
 <pui-input placeholder="Search…"></pui-input>
@@ -152,7 +159,24 @@ The same components compile to **framework-agnostic custom elements** — themin
 </style>
 ```
 
-Drop them into React, Vue, Angular, Astro, or a plain `.html` file — no build step required.
+Pin an exact version for production — `…/polymorph-ui-components@<version>/dist-wc/index.js` — so a release can never change your page underneath you. [unpkg](https://unpkg.com) serves the same path if you prefer it:
+
+```
+https://cdn.jsdelivr.net/npm/polymorph-ui-components@<version>/dist-wc/index.js
+https://unpkg.com/polymorph-ui-components@<version>/dist-wc/index.js
+```
+
+### From npm, through a bundler
+
+```bash
+npm install polymorph-ui-components
+```
+
+```js
+import 'polymorph-ui-components/wc';
+```
+
+Either way, drop them into React, Vue, Angular, Astro, or a plain `.html` file.
 
 ---
 
