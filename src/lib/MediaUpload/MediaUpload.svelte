@@ -88,13 +88,13 @@
       isImage
     };
     items = [...items, item];
+    const updatedItem = items[items.length - 1];
 
     if (isImage) {
       const reader = new FileReader();
       reader.onload = (event) => {
         if (typeof event.target?.result === 'string') {
-          item.src = event.target.result;
-          items = [...items];
+          updatedItem.src = event.target.result;
         }
       };
       reader.readAsDataURL(file);
